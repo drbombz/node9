@@ -1,0 +1,73 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[CompactMode]
+IconSize=22
+PreviewSize=22
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+
+[DetailsMode]
+IconSize=48
+PreviewSize=22
+SidePadding=0
+UseSystemFont=false
+ViewFont=Roboto Light,14,-1,5,25,1,0,0,0,0,Italic
+
+[ExtractDialog]
+3200x1800 screen: Window-Maximized=true
+
+[FileDialogSize]
+2560x1440 screen: Height=736
+2560x1440 screen: Width=1297
+
+[FoldersPanel]
+LimitFoldersPanelToHome=false
+
+[General]
+EditableUrl=false
+Version=202
+ViewPropsTimestamp=2023,8,6,7,44,34.329
+
+[IconsMode]
+IconSize=22
+UseSystemFont=false
+ViewFont=SF Compact Rounded,12,-1,5,50,0,0,0,0,0
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+Recent Files[$e]=xW4wp.png,file:$HOME/.local/share/icons/Reversal-green/places/48/default-folder.svg,file:$HOME/.local/share/icons/Reversal-purple/places/48/default-folder.svg,file:$HOME/Documents/customization/icons-custom/blank-spacer.png,file:$HOME/Documents/customization/icons-custom/dash-spacer.png,file:$HOME/Documents/customization/icons-custom/downArrow-spacer.png
+Recent URLs[$e]=file:$HOME/.local/share/icons/,file:$HOME/.local/share/icons/Reversal-purple/,file:///usr/share/icons/,file:$HOME/Downloads/,file:$HOME/Documents/customization/icons-custom/,file:$HOME/,file:$HOME/Documents/customization/,file:$HOME/.local/share/icons/Reversal-purple/places/48/,file:$HOME/.local/share/icons/Reversal-green/places/48/
+detailViewIconSize=16
+listViewIconSize=64
+
+[KPropertiesDialog]
+2560x1440 screen: Height=604
+2560x1440 screen: Width=566
+3200x1800 screen: Window-Maximized=true
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[PreviewSettings]
+Plugins=audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[ViewPropertiesDialog]
+2560x1440 screen: Height=261
+2560x1440 screen: Width=339
+
+[kuick-copy]
+Paths[$e]=$HOME/Music/__incoming/,$HOME/Music/__incoming/_singles/
+
+[kuick-move]
+Paths[$e]=$HOME/Music/__incoming/_singles/,$HOME/Music/dnb_albums__dj_mixes/,$HOME/Music/__2_sort/,$HOME/Downloads/,$HOME/Music/electronic_albums__dj_mixes/,$HOME/Music/livesets/,$HOME/Music/house_albums__djmixes/,$HOME/Music/rap_albums__dj_mixes/,$HOME/Music/rock__punk_albums/,$HOME/Music/trance_albums__dj_mixes/

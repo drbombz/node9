@@ -1,0 +1,169 @@
+/*
+ Purple =       2A2341 rgba(12, 10, 19, 1)
+ Purple-Light = 50437F
+ Orange =       FF8542
+ */
+
+@define-color purple        #1F1A30;
+@define-color purple-light  #50437F
+@define-color off-white     #FEf2EC;
+@define-color orange        #FF8542;
+@define-color purple-dark   #604da7;
+@define-color ten           #b88f74;
+@define-color white         #aeaeae;
+
+/* Main
+*******************************************/
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   "SF Compact Rounded", "FontAwesome 6 Free";
+    font-size:     19px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+    padding: 0px;
+}
+#waybar {
+    color: #b3b3b3; 
+    background-color: @purple;
+    border-radius: 16px;
+}
+#waybar.solo {
+    color: #b3b3b3;
+}
+
+/* Modules Left
+*******************************************/
+#workspaces {
+    margin: 0 5px;
+}
+#workspaces button {
+    padding: 0 5px;
+    color: @white;
+}
+
+#workspaces button.focused {
+    color: rgba(41, 135, 244, 1);
+}
+
+#workspaces button.visible {
+    /*color: rgba(41, 135, 244, 1);*/
+    color: @orange;
+}
+
+#workspaces button.urgent {
+    color: rgba(33, 164, 223, 1);
+}
+
+#window {
+    color: @tan;
+    
+    border-radius: 10px;
+    padding: 0px 20px 0px 2px;
+}
+
+/* Modules Right
+*******************************************/
+#network,
+#bluetooth,
+#battery,
+#pulseaudio,
+#custom-notification,
+#clock {
+    padding: 0px 10px 0px 10px;
+}
+#network {
+}
+#network.wifi {
+    color: @orange;
+}
+#bluetooth {
+    font-size: 24px;
+}
+#bluetooth.connected {
+
+}
+#bluetooth.disabled {
+    color: @purple-dark;
+}
+
+#bluetooth.off {
+    color: @purple-dark;
+}
+
+#bluetooth.connected {
+    color: @orange;
+}
+#battery {
+}
+#battery.warning {
+   color: rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color: rgba(217, 216, 216, 1);
+}
+#pulseaudio {
+}
+#custom-notification {
+    background-color: @purple;
+}
+#clock {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+tooltip {
+    padding: 3px 3px 3px 3px;
+    background-color: rgba(6, 61, 124, 0.6);
+    border-bottom: 1px solid rgba(99, 99, 99,1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+/*
+.modules-left,
+.modules-right,
+.modules-center {
+    margin: 0 5px;
+    background-color: rgba(26, 26, 26, 1);
+    border-radius: 16px;
+    padding: 2px 20px 2px 20px;
+}
+
+#workspaces {
+    margin: 0 5px;
+    background-color: rgba(26, 26, 26, 1);
+    border-radius: 16px;
+    padding: 2px 10px 2px 10px;
+}
+*/
+#custom-scratchpad {
+    margin: 0px	5px;
+    padding: 0px 5px;
+}
+
+
+
+
+
+#mode,  
+#cpu, 
+#memory, 
+#idle_inhibitor, 
+#temperature,
+#custom-layout,
+#backlight {
+    margin: 0px 8px 0px 12px;
+/*    min-width: 30px;*/
+}
+
+
+
+
+
+

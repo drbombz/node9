@@ -1,0 +1,241 @@
+/* Colors */
+@define-color bgmain rgba(20, 20, 20, 0.8);
+
+@define-color blue #2987F4;
+@define-color green #61dc76;
+
+@define-color gray1 #333333;
+@define-color gray2 #262626;
+@define-color gray3 #303030;
+@define-color gray4 #232323;
+@define-color gray5 #333333;
+@define-color gray6 #262626;
+@define-color gray7 #191919;
+@define-color gray8 #101010;
+
+@define-color window @gray1;
+
+@define-color network       @gray1;
+@define-color bluetooth     @gray2;
+@define-color battery       @gray3;
+@define-color memory        @gray7;
+@define-color audio         @gray5;
+@define-color notification  @gray4;
+@define-color clock         @gray6;
+
+
+* {
+    border:        none;
+    border-radius: 0;
+   /* border-bottom-left-radius: 20;
+    border-bottom-right-radius: 20;*/
+    font-family:   "SF Compact Rounded", "FontAwesome 6 Free";
+    font-size:     18px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+    /*padding: 2px 0px 2px 0px;*/
+    padding: 0px;
+}
+
+#waybar {
+    color: #b3b3b3; 
+    /*background-color: rgba(35, 35, 35, 0.9);*/
+    background-color: rgba(31, 31, 31, 0.9);
+    border-radius: 16px;
+}
+
+#waybar.solo {
+    color: #b3b3b3;
+}
+/*
+.modules-left,
+.modules-right {
+    margin: 0 5px;
+    background-color: rgba(26, 26, 26, 1);
+    border-radius: 16px;
+    padding: 2px 20px 2px 20px;
+}
+*/
+/* Modules-Left Styles
+------------------------------------------*/
+
+/* Window 
+-------------------------*/
+#custom-arrow-window1 {
+    color: @window;
+    background: transparent;
+}
+#custom-arrow-window2 {
+    color: @window;
+    background: transparent;
+}
+#window {
+    border-top-right-radius: 4px;
+    background-color: @window;
+}
+
+/* Workspaces
+-------------------------*/
+#workspaces {
+    margin: 0 5px;
+}
+#workspaces button {
+    padding: 0 5px;
+    color: @blue;
+}
+
+#workspaces button.focused {
+    color: rgba(41, 135, 244, 1);
+}
+
+#workspaces button.visible {
+    /*color: rgba(41, 135, 244, 1);*/
+    font-size: 40px;
+    color: rgba(246, 100, 81, 1);
+}
+
+#workspaces button.urgent {
+    color: rgba(33, 164, 223, 1);
+}
+
+/* Modules-Right Styles
+------------------------------------------*/
+#window {
+    border-top-right-radius: 4px;
+    padding: 0px 10px 0px 10px;    
+}
+#network,
+#bluetooth,
+#battery,
+#memory,
+#pulseaudio,
+#custom-notification,
+#clock {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 0px 10px 0px 10px;
+}
+#custom-arrow-window1,
+#custom-arrow-network,
+#custom-arrow-bluetooth,
+#custom-arrow-battery,
+#custom-arrow-memory,
+#custom-arrow-pulseaudio,
+#custom-arrow-notification,
+#custom-arrow-clock {
+    font-size: 32px;
+    margin-right: -1px;
+}
+#custom-arrow-window2 {
+    font-size: 32px;
+    margin-left: -1px;    
+}
+
+/* Network 
+-------------------------*/
+#custom-arrow-network {
+    color: @network;
+    background: transparent;
+}
+#network {
+    background-color: @network;
+}
+#network.wifi {
+    color: @blue;
+}
+
+/* Bluetooth 
+-------------------------*/
+#custom-arrow-bluetooth {
+    color: @bluetooth;
+    background: @network;
+}
+#bluetooth {
+    color: @blue;
+    background-color: @bluetooth;
+}
+#bluetooth.connected {
+    color: rgba(115, 186, 37, 1);
+}
+#bluetooth.disabled {
+    color: rgba(128, 128, 128, 1);
+}
+
+#bluetooth.off {
+    color: rgba(128, 128, 128, 1);
+}
+
+/* Battery
+-------------------------*/
+#custom-arrow-battery {
+    color: @battery;
+    background: @bluetooth;
+}
+#battery {
+    color: @green;
+    background-color: @battery;
+}
+#battery.warning {
+   color: rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color: rgba(217, 216, 216, 1);
+}
+
+/* Memory
+-------------------------*/
+#custom-arrow-memory {
+    color: @memory;
+    background: @battery;
+}
+#memory {
+    background-color: @memory;
+}
+
+/* Notification
+-------------------------*/
+#custom-arrow-notification {
+    color: @notification;
+    background: @memory;
+}
+#custom-notification {
+    background-color: @notification;
+}
+
+/* Pulseaudio
+-------------------------*/
+#custom-arrow-pulseaudio {
+    color: @audio;
+    background: @notification;
+}
+#pulseaudio {
+    background-color: @audio;
+}
+
+/* Clock
+-------------------------*/
+#custom-arrow-clock {
+    color: @clock;
+    background: @audio;
+}
+#clock {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: @clock;
+}
+
+/* Tooltip
+-------------------------*/
+tooltip {
+    padding: 3px 3px 3px 3px;
+    background-color: rgba(25, 25, 25, 0.6);
+    border-bottom: 1px solid rgba(99, 99, 99,1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
