@@ -1,0 +1,228 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 42, // Waybar height (to be removed for auto height)
+    "margin": "15, 10, 10, 10",
+    // "gtk-layer-shell": "false",
+    
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces", 
+        "custom/scratchpad",
+        "custom/sep1",
+        "hyprland/window",
+        ],
+
+    "modules-center": [],
+   
+    "modules-right": [ 
+        "network", 
+        "bluetooth",
+        "battery",
+        "memory", 
+        "backlight",
+        "pulseaudio", 
+        "custom/notification",
+        "clock"
+        ],
+
+    "hyprland/submap": {
+        "format": " {}",
+	   "max-length": 30,
+	   "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": " {icon} ",
+        "format-icons": {
+             "1": "󰚩",
+             "2": "󰝴",
+             "3": "󰊠",
+             "4": "<span font='14'>󰢚</span>",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+        },
+        "persistent-workspaces": { "*": 4 }
+    },
+    "custom/sep1": {
+        "format": ""
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 65,
+        "icon": false,
+        "rewrite": {
+            "(.*) - Sublime Text(.*)": "$1",
+            "(.*) — Mozilla Firefox": "$1" 
+        },
+        "tooltip": false
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {essid}",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "tooltip": true,
+        "tooltip-format": " {essid} ({signalStrength}%)", 
+        //"format-alt": " {essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        //"format-connected": " {num_connections}",
+        "format-connected": " {device_alias}",
+        //"tooltip-format": "{controller_address} {status}\n\n{num_connections} connected",
+        //"tooltip-format-disabled": "{status}",
+        //"tooltip-format-connected": "{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        //"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        //"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "exec blueman-manager",
+        "on-click-middle": "exec bluetoothctl power off",
+	    "on-click-right": "exec bluetoothctl power on"
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂅   {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{capacity}% {time}",
+        //"format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+    
+    "memory": {
+        "format": "<span font='24px'>󰍛</span>   {}%"
+    },
+    
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}  {percent}% ",
+        "format-icons": [""]
+    },
+    
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        //"format-alt": "{icon}",
+        //"format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+    
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%B %d, %Y %R}",
+        //"format": "",
+        "format-alt": "{:%a %d %b w%V %H:%M}",
+        "tooltip-format": "<span color='#b88f74'><tt><small>{calendar}</small></tt></span>",
+        "calendar": {
+            "mode-mon-col"      : 4,
+            "weeks-pos"         : "left",
+            "on-scroll"         : 1,
+            "on-click-right"    : "mode",
+            "format": {
+                "months":    "<span color='#FF8542'><b>{}</b></span>",
+                "weeks":    "<span color='#604da7'><b>{}</b></span>",
+                "weekdays": "<span color='#FEf2EC'><b>{}</b></span>",
+                "today":    "<span color='#21a4df'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right"    : "mode",
+            "on-scroll-up"      : "shift_up",
+            "on-scroll-down"      : "shift_down"
+        },
+        "interval": 10
+    },
+    "custom/layout": {
+        "tooltip": false,
+        "exec": "swaymsg -mrt subscribe '[\"input\"]' | jq -r --unbuffered \"select(.change == \\\"xkb_layout\\\") | .input | select(.type == \\\"keyboard\\\") | .xkb_active_layout_name | .[0:2]\""
+    },
+    "custom/zypper": {
+        "format": "{} ",
+        "interval": 3600,
+        "exec": "zypper lu | grep 'v |' | wc -l; echo 'packages to update'",
+        "exec-if": "exit 0",
+        "on-click": "exec alacritty -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
+        "signal": 8
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        } 
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "custom/scratchpad": {
+        "format-text": "{}",
+        "return-type": "json",
+        "interval": 3,
+        "exec": "/usr/share/openSUSEway/helpers/scratchpad-indicator.sh 2> /dev/null",
+        "exec-if": "exit 0",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
+    },
+    "custom/notification": {
+    	"tooltip": true,
+    	"format": "{icon}",
+    	"format-icons": {
+    	     "notification": "<span color='#FF8542'><small><sup>⬤</sup></small></span>",
+    	     "none": "",
+    	     "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+    	     "dnd-none": ""
+    	},
+    	"return-type": "json",
+    	"exec-if": "which swaync-client",
+    	"exec": "swaync-client -swb",
+    	"on-click": "swaync-client -t",
+    	"on-click-right": "swaync-client -d -sw",
+    	"escape": true
+   }
+}
