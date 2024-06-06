@@ -100,6 +100,8 @@ declare -a pkg_req=(
 	"libpng12-devel"
 	"libxkbregistry-devel"
 	"meson"
+	"mtpfs"
+	"mtp-tools"
 	"opi"
 	"pango-tools"
 	"pulseaudio-bash-completion"
@@ -454,14 +456,17 @@ out_msg title 'Install Cursors/Fonts/Icons/Wallpaper'
 		cp -r $DIR_DPLY_CFG/gtk/themes/* $DIR_HOME/.themes
 
 	out_msg task in 'GTK: Settings'
-		cp -f /$DIR_DPLY_CFG/gtk/bookmarks $DIR_HOME/.config/gtk-3.0
-		cp -rf $DIR_DPLY_CFG/gtk/settings.ini $DIR_HOME/.config/gtk-3.0
+		verify_dir $DIR_LOCAL_CFG/gtk-3.0
+		cp -f /$DIR_DPLY_CFG/gtk/bookmarks $DIR_LOCAL_CFG/gtk-3.0
+		#cp -rf $DIR_DPLY_CFG/gtk/settings.ini $DIR_HOME/.config/gtk-3.0
 		cp -rf $DIR_DPLY_CFG/gtk/.gtkrc-2.0 $DIR_HOME
+		
 		verify_dir $DIR_HOME/.icons
 		verify_dir $DIR_HOME/.icons/default
 		cp -rf $DIR_DPLY_CFG/gtk/index.theme $DIR_HOME/.icons/default
-		verify_dir $DIR_HOME/.config/xsettingsd
-		cp -rf $DIR_DPLY_CFG/gtk/xsettingsd.conf $DIR_HOME/.config/xsettingsd
+		
+		verify_dir $DIR_LOCAL_CFG/xsettingsd
+		cp -rf $DIR_DPLY_CFG/gtk/xsettingsd.conf $DIR_LOCAL_CFG/xsettingsd
 
 	out_msg task in 'Font: All [LOCAL]'
 		cp -rf $DIR_DPLY/fonts/* $DIR_FONTS_LOCAL

@@ -98,7 +98,7 @@
              "1": "󰚩",
              "2": "󰝴",
              "3": "󰊠",
-             "4": "󰣘",
+             "4": "󰣠",
              "urgent": "",
              "focused": "",
              "default": ""
@@ -110,7 +110,8 @@
         "format": "󰇙"
     },
     "custom/sep1": {
-        "format": ""
+        "format": ""
+        //"format": ""
     },
     "hyprland/window": {
         "format": "{}",
@@ -164,7 +165,7 @@
             "critical": 15
         },
         "format": "{icon}  {capacity}%",
-        "format-charging": "<span font='15' color='#e0675e'></span>  {capacity}%",
+        "format-charging": "<span font='15' color='#8ce291'></span>  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-alt": "{capacity}% {time}",
         "format-icons": [
