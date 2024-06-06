@@ -1,0 +1,243 @@
+//                                  ______
+//    _____________________________/::'   \
+//   /:'   \::'    \::'    \::' _  \:' |   \
+//  /:' |   \'  -   \'    | \'    __\_     / n9! -- [ waybar ]
+// +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
+
+{
+    "layer": "top",
+    "position": "top",
+    //"width": 3000,
+    "height": 45,
+    "margin": "14, 10, 4, 10",
+    "reload_style_on_change": true,
+    "gtk-layer-shell": "false",
+    "modules-left": [
+        "custom/end-left",
+        "hyprland/submap",
+        "group/group-power",
+        "custom/end-right",
+        "hyprland/workspaces",
+        "custom/sep1",
+        "hyprland/window"
+        ],
+    "modules-center": [ ],
+    "modules-right": [ 
+        "network",
+        "custom/vert",
+        "battery",
+        "custom/vert",
+        "memory", 
+        "custom/vert",
+        "pulseaudio",
+        "custom/vert",
+        "bluetooth",
+        "custom/vert",
+        "custom/notification",
+        "clock"
+        ],
+    "custom/end-left": {
+        "format": " ",
+        "tooltip": false
+    },
+    "hyprland/submap": {
+        "format": "<span font='14' color='#a28b6f'> </span> [ <span color='#a28b6f'>{}</span> ] ",
+        "max-length": 30,
+        "tooltip": false
+    },
+    "group/group-power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-wlogout",
+            "transition-left-to-right": true,
+        },
+        "modules": [
+            "custom/wlogout",
+            "custom/power-shutdown",
+            "custom/power-restart",
+            "custom/power-logout",
+        ]
+    },
+    "custom/wlogout": {
+        "format": " <span font='15'>{icon}</span> ",
+        "format-icons": "󰍜",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+    "custom/power-shutdown": {
+        "format": " {icon} ",
+        "format-icons": "󰤆",
+        "on-click": "notify-send test",
+        "tooltip": false
+
+    },
+    "custom/power-restart": {
+        "format": " {icon} ",
+        "format-icons": "",
+        "on-click": "notify-send test",
+        "tooltip": false
+
+    },
+    "custom/power-logout": {
+        "format": " {icon} ",
+        "format-icons": "󰗽",
+        "on-click": "notify-send test",
+        "tooltip": false
+
+    },
+    "custom/end-right": {
+        "format": " ",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": " {icon} ",
+        "format-icons": {
+             "1": "󰚩",
+             "2": "󰝴",
+             "3": "󰊠",
+             "4": "󰣘",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+        },
+        "sort-by-number": true,
+        "persistent-workspaces": { "*" : 4 }
+    },
+    "custom/vert": {
+        "format": "󰇙"
+    },
+    "custom/sep1": {
+        "format": ""
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 65,
+        "icon": false,
+        "rewrite": {
+            "(.*) - Sublime Text(.*)": "$1",
+            "(.*) - Sublime Merge(.*)": "$1",
+            "(.*) — Mozilla Firefox": "$1" 
+        },
+        "tooltip": false
+    },
+    "group/modules-right": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "bluetooth",
+            "battery",
+            "memory",
+            "pulseaudio",
+            "custom/notifications",
+            "clock"
+        ]
+    },    
+    "custom/modright-left-end": {
+        "format": " ",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "<span font='11'> </span> {essid}",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "tooltip": true,
+        "tooltip-format": " {essid} ({signalStrength}%)", 
+        "on-click": "nm-connection-editor"
+    },
+    "bluetooth": {
+        "format": "<span font='14'></span>",
+        "format-disabled": "<span font='14'>󰂲</span>",
+        "format-off": "<span font='14'>󰂲</span>",
+        "format-connected": "<span font='14'></span> {device_alias}",
+        "on-click": "exec blueman-manager",
+        "on-click-middle": "exec bluetoothctl power off",
+	    "on-click-right": "exec bluetoothctl power on"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "<span font='15' color='#e0675e'></span>  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{capacity}% {time}",
+        "format-icons": [
+            "<span color='#e0675e'></span>",
+            "<span color='#faba63'></span>",
+            "<span color='#f2f976'></span>",
+            "<span color='#8ce291'></span>",
+            "<span color='#8ce291'></span>"
+         ]
+        //"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+    "memory": {
+        "format": "<span font='16'>󰍛</span>   {}%"
+    },
+    "backlight": {
+        "format": "{icon}  {percent}% ",
+        "format-icons": [""]
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+             "notification": "<span foreground='#FF8542'><small><sup>⬤</sup></small></span>",
+             "none": "",
+             "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+             "dnd-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+   },
+    "clock": {
+        "timezone": "America/New_York",
+        "format": "  {:%a %d, %y %R}",
+        "format-alt": "{:%a %d %b w%V %H:%M}",
+        "tooltip-format": "<span color='#b88f74'><tt><small>{calendar}</small></tt></span>",
+        "calendar": {
+            "mode-mon-col"      : 4,
+            "weeks-pos"         : "left",
+            "on-scroll"         : 1,
+            "on-click-right"    : "mode",
+            "format": {
+                "months":    "<span color='#FF8542'><b>{}</b></span>",
+                "weeks":    "<span color='#604da7'><b>{}</b></span>",
+                "weekdays": "<span color='#FEf2EC'><b>{}</b></span>",
+                "today":    "<span color='#21a4df'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right"    : "mode",
+            "on-scroll-up"      : "shift_up",
+            "on-scroll-down"    : "shift_down"
+        },
+        "interval": 10
+    }
+}

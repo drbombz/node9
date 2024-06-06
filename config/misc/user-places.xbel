@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xbel>
+<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv">
+ <info>
+  <metadata owner="http://www.kde.org">
+   <kde_places_version>4</kde_places_version>
+   <GroupState-Places-IsHidden>false</GroupState-Places-IsHidden>
+   <GroupState-Remote-IsHidden>false</GroupState-Remote-IsHidden>
+   <GroupState-Devices-IsHidden>false</GroupState-Devices-IsHidden>
+   <GroupState-RemovableDevices-IsHidden>false</GroupState-RemovableDevices-IsHidden>
+   <GroupState-Tags-IsHidden>false</GroupState-Tags-IsHidden>
+   <withRecentlyUsed>true</withRecentlyUsed>
+   <GroupState-RecentlySaved-IsHidden>false</GroupState-RecentlySaved-IsHidden>
+   <withBaloo>true</withBaloo>
+   <GroupState-SearchFor-IsHidden>false</GroupState-SearchFor-IsHidden>
+  </metadata>
+ </info>
+ <bookmark href="file:///home/upgrad3">
+  <title>Home</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="user-home"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/0</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Desktop">
+  <title>Desktop</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="user-desktop"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/1</ID>
+    <isSystemItem>true</isSystemItem>
+    <IsHidden>true</IsHidden>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Documents">
+  <title>Documents</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-documents"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/2</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Downloads">
+  <title>Downloads</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-downloads"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/3</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music">
+  <title>Music</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-music"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/6</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Pictures">
+  <title>Pictures</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pictures"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/7</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Videos">
+  <title>Videos</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-videos"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/8</ID>
+    <isSystemItem>true</isSystemItem>
+    <IsHidden>true</IsHidden>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="trash:/">
+  <title>Trash</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="user-trash"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/5</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/">
+  <title/>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/.icons/blank.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1709362821/1</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/node9">
+  <title> [ node9 ]</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/Documents/customization/icons-custom/dash-spacer.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691391533/4</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/node9/_n9-backups">
+  <title>_n9-backups</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pink"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691330188/3</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/node9/_n9-wwwroot">
+  <title>_n9-wwwroot</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pink"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1700335074/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/">
+  <title/>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/.icons/blank.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1709362763/0</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/nuc9">
+  <title> [ nuc9 ]</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/Documents/customization/icons-custom/dash-spacer.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1694902673/0</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/nuc9/_n9-incoming">
+  <title>_n9-incoming</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pink"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691330029/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="remote:/">
+  <title>Network</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-network"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/4</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/nuc9/_n9-mp3">
+  <title>_n9-mp3</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pink"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691330033/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/nuc9/_n9-staging">
+  <title>_n9-staging</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pink"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1699788692/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///mnt/nuc9/_n9-etc">
+  <title>_n9-etc</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-pink"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1708909853/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3">
+  <title/>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/.icons/blank.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1709362908/2</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Documents">
+  <title> [ local ]</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/Documents/customization/icons-custom/dash-spacer.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691391482/3</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Documents/customization">
+  <title>customization</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-blue"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1694903377/2</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Downloads/nzb">
+  <title>nzb</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-blue"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691337557/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Documents/n9-wwwroot-backups">
+  <title>n9-wwwroot-backups</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-blue"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1697441055/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3">
+  <title/>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/.icons/blank.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1709362919/3</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="recentlyused:/files">
+  <title>Recent Files</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="document-open-recent"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/9</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="recentlyused:/locations">
+  <title>Recent Locations</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-open-recent"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691322042/10</ID>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab///node9/e$:/mnt/node9</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab///nuc9/e$:/mnt/nuc9</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p2</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>e1654af0-e9be-443f-8264-9c3331e2c79b</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sda1</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>f27b-03e9</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <bookmark href="file:///home/upgrad3/Music">
+  <title> [ libraries ]</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="/home/upgrad3/Documents/customization/icons-custom/dash-spacer.png"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691390952/2</ID>
+    <OnlyInApp>dolphin</OnlyInApp>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/__incoming">
+  <title>__ incoming </title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691474396/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/dnb_albums__dj_mixes">
+  <title>dnb_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1699717564/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/dubstep__bass_albums__djj_mixes">
+  <title>dubstep__bass_albums__djj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1704448624/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/electronic_albums__dj_mixes">
+  <title>electronic_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1697880625/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/hardcore_albums__dj_mixes">
+  <title>hardcore_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1699717725/2</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/house_albums__djmixes">
+  <title>house_albums__djmixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1692402503/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/livesets">
+  <title>livesets</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691390614/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/other_albums__dj_mixes">
+  <title>other_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1699717677/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/pop__dance_albums__dj_mixes">
+  <title>pop__dance_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1704448677/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/rap_albums__dj_mixes">
+  <title>rap_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1697880635/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/rock__punk_albums">
+  <title>rock__punk_albums</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1691390748/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/trance_albums__dj_mixes">
+  <title>trance_albums__dj_mixes</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1693143263/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/upgrad3/Music/vinyl__cd_singles">
+  <title>vinyl__cd_singles</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-orange"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1693143295/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:14.0/usb1/1-5</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab///nuc9/_n9-archive:/mnt/n9-archive</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdb1</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <bookmark href="file:///mnt/nuc9/_n9-incoming/Pretty_Pink--Deep_Woods_(SSL)-DVBS-06-01-2024-OMA">
+  <title>Pretty_Pink--Deep_Woods_(SSL)-DVBS-06-01-2024-OMA</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name=""/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1717289651/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+</xbel>

@@ -1,0 +1,77 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[CompactMode]
+IconSize=22
+PreviewSize=22
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+
+[DetailsMode]
+IconSize=48
+PlacesFont=SF Compact Rounded,14,-1,5,50,0,0,0,0,0
+PreviewSize=22
+SidePadding=0
+UseSystemFont=false
+ViewFont=SF Compact Rounded,14,-1,5,50,0,0,0,0,0
+
+[ExtractDialog]
+3200x1800 screen: Window-Maximized=true
+DirHistory[$e]=$HOME/Downloads/One Tone/,$HOME/Downloads/Beacon/
+
+[FileDialogSize]
+2560x1440 screen: Height=736
+2560x1440 screen: Width=1297
+3200x1800 screen: Window-Maximized=true
+
+[FoldersPanel]
+LimitFoldersPanelToHome=false
+
+[General]
+CloseActiveSplitView=false
+EditableUrl=false
+ShowFullPathInTitlebar=true
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2023,8,6,7,44,34.329
+
+[IconsMode]
+IconSize=22
+UseSystemFont=false
+ViewFont=SF Compact Rounded,14,-1,5,50,0,0,0,0,0
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+Recent Files[$e]=file:$HOME,file:$HOME/.icons/blank.png,file:$HOME/Documents/customization/icons-custom/blank-spacer.png,file:$HOME/Documents/customization/icons-custom/dash-spacer.png,file:$HOME/Documents/customization/icons-custom/downArrow-spacer.png
+Recent URLs[$e]=file:$HOME/.icons/,file:$HOME/.local/share/icons/,file:///usr/share/icons/,file:$HOME/Downloads/,file:$HOME/Documents/customization/icons-custom/,file:$HOME/,file:$HOME/Documents/customization/,file:///home/,file:$HOME/Downloads/Beacon/,file:$HOME/Downloads/One Tone/
+detailViewIconSize=16
+listViewIconSize=64
+
+[KPropertiesDialog]
+2560x1440 screen: Height=604
+2560x1440 screen: Width=566
+3200x1800 screen: Window-Maximized=true
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[PreviewSettings]
+Plugins=audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[ViewPropertiesDialog]
+2560x1440 screen: Height=261
+2560x1440 screen: Width=339
+
+[kuick-copy]
+Paths[$e]=$HOME/Music/__incoming/,$HOME/Music/__incoming/_singles/
+
+[kuick-move]
+Paths[$e]=$HOME/Music/__incoming/_singles/,$HOME/Music/dnb_albums__dj_mixes/,$HOME/Music/__2_sort/,$HOME/Downloads/,$HOME/Music/electronic_albums__dj_mixes/,$HOME/Music/livesets/,$HOME/Music/house_albums__djmixes/,$HOME/Music/rap_albums__dj_mixes/,$HOME/Music/rock__punk_albums/,$HOME/Music/trance_albums__dj_mixes/
