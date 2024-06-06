@@ -454,6 +454,7 @@ out_msg title 'Install Cursors/Fonts/Icons/Wallpaper'
 		cp -r $DIR_DPLY_CFG/gtk/themes/* $DIR_HOME/.themes
 
 	out_msg task in 'GTK: Settings'
+		cp -f /$DIR_DPLY_CFG/gtk/bookmarks $DIR_HOME/.config/gtk-3.0
 		cp -rf $DIR_DPLY_CFG/gtk/settings.ini $DIR_HOME/.config/gtk-3.0
 		cp -rf $DIR_DPLY_CFG/gtk/.gtkrc-2.0 $DIR_HOME
 		verify_dir $DIR_HOME/.icons
@@ -519,7 +520,7 @@ out_msg title 'Installing User Configs'
 	out_msg task in 'cmus'
 		cp -rf ./cmus/* $DIR_LOCAL_CFG/cmus
 
-	out_msg task in 'CODE'
+	out_msg task in 'code'
 		sudo cp -f ./code/code.desktop $DIR_SYS_SHARE/applications
 
 	out_msg task in 'hyprland'
@@ -644,9 +645,6 @@ out_msg title 'Configuring Nemo'
 
 	out_msg task 'preferences: show-reload-icon-toolbar' 'true'
 		gsettings set org.nemo.preferences show-reload-icon-toolbar true
-
-	out_msg task 'preferences: show-up-icon-toolbar' 'false'
-		gsettings set org.nemo.preferences show-up-icon-toolbar false
 
 	out_msg task 'preferences: show-directory-item-counts' 'always'
 		gsettings set org.nemo.preferences show-directory-item-counts always
