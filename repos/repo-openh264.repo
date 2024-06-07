@@ -1,0 +1,8 @@
+[repo-openh264]
+name=openSUSE-Tumbleweed (Open H.264 Codec)
+enabled=1
+autorefresh=0
+baseurl=http://codecs.opensuse.org/openh264/openSUSE_Tumbleweed
+path=/
+type=rpm-md
+keeppackages=0

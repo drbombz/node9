@@ -147,7 +147,6 @@ declare -a pkg_repo=(
 	"kitty"
 	"kvantum-qt5"
 	"kvantum-manager"
-	"lxappearance"
 	"nemo"
 	"neofetch"
 	"remmina"
@@ -316,6 +315,12 @@ zypp_in () {
 #==================================================================================
 out_msg header
 echo -e "\n${PURPLE}/// ${BLUE}Oh Hai ${GREEN}$ME${PURPLE}!${NC}"
+
+TEST="$(zypper lr repo-oss &>/dev/null)"
+if [[ "$?" -eq 0 ]]; then
+	echo 'df'
+fi
+exit
 
 # Clone NODE9 Repo
 #-----------------------------------------
