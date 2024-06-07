@@ -256,7 +256,6 @@ out_msg() {
 			else
 				echo -e "${PURPLE}$2:${NC} ${BLUE}$3${NC}"
 			fi
-			sleep 1
 		;;
 
 		title)
