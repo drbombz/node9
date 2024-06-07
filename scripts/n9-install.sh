@@ -159,6 +159,21 @@ declare -a pkg_repo=(
 	"zsh"
 )
 
+declare -a repo_file=(
+	"azhou.repo"
+	"mantarimay.repo"
+	"packman.repo"
+	"repo-debug.repo"
+	"repo-non-oss.repo"
+	"repo-openh264.repo"
+	"repo-oss.repo"
+	"repo-source.repo"
+	"repo-update.repo"
+	"sublime-text.repo"
+	"system_packagemanager.repo"
+	"vscode.repo"
+)
+
 declare -a repo_url=(
     "https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed"
     "https://download.opensuse.org/repositories/home:/AZhou/openSUSE_Tumbleweed"
@@ -316,12 +331,6 @@ zypp_in () {
 out_msg header
 echo -e "\n${PURPLE}/// ${BLUE}Oh Hai ${GREEN}$ME${PURPLE}!${NC}"
 
-TEST="$(zypper lr repo-oss &>/dev/null)"
-if [[ "$?" -eq 0 ]]; then
-	echo 'df'
-fi
-exit
-
 # Clone NODE9 Repo
 #-----------------------------------------
 out_msg title 'Clone node9 GIT'
@@ -341,6 +350,30 @@ out_msg title 'Verifying Deployment Directories'
 		verify_dir ${dirs_dply[$i]}
 	done
 out_msg complete
+
+# Configuring Repositories
+#-----------------------------------------
+out_msg title 'Configuring Repositories'
+	out_msg	task 'removing repos' 'all'
+		sudo rm -rf /etc/zypp/repos.d/*
+	out_msg task in 'current repos'
+		for ((i=0; i<=(${#repo_file[@]}-1); i++))
+		do
+			sudo cp -rf $DIR_DPLY/repos/${repo_file[$i]}.repo /etc/zypp/repos.d/
+		done
+out_msg complete
+
+# Add Required Repositories
+#-----------------------------------------
+#out_msg title 'Adding Repositories'
+#	out_msg	task 'removing repos' 'all'
+#		sudo rm -rf /etc/zypp/repos.d/*
+#	out_msg task in 'current repos'
+#		for ((i=0; i<=(${#repo_file[@]}-1); i++))
+#		do
+#			sudo cp -rf $DIR_DPLY/repos/${repo_file[$i]}.repo /etc/zypp/repos.d/
+#			out_msg complete
+#		done
 
 # Add Required Repositories
 #-----------------------------------------
