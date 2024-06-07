@@ -407,14 +407,14 @@ out_msg title 'Installing Applications'
 
 	# codecs
 	#------------------------------------------------------------
-	out_msg task in 'codecs'
+	out_msg task in codecs
 		opi -n codecs
 		zypp in "Mesa-libGLESv3-devel Mesa-libGLESv2-devel libgbm-devel"
 	out_msg complete
 
 	# bashtop
 	#------------------------------------------------------------
-	out_msg title in 'bashtop'
+	out_msg title in bashtop
 		cd $DIR_DPLY_BUILD
 		git clone https://github.com/aristocratos/bashtop
 		cd bashtop
@@ -423,7 +423,7 @@ out_msg title 'Installing Applications'
 
 	# hyprlock
 	#------------------------------------------------------------
-	out_msg title in 'hyprlock'
+	out_msg title in hyprlock
 		cd $DIR_DPLY_BUILD
 		git clone https://github.com/hyprwm/hyprlock
 		cd hyprlock
@@ -434,7 +434,7 @@ out_msg title 'Installing Applications'
 
 	# swayosd
 	#------------------------------------------------------------
-	out_msg title in 'swayosd'
+	out_msg title in swayosd
 		cd $DIR_DPLY_BUILD
 		git clone https://github.com/ErikReider/swayosd
 		cd swayosd
@@ -445,7 +445,7 @@ out_msg title 'Installing Applications'
 
 	# wlogout
 	#------------------------------------------------------------
-	out_msg title in 'wlogout'
+	out_msg title in wlogout
 		cd $DIR_DPLY_BUILD
 		git clone https://github.com/ArtsyMacaw/wlogout
 		cd wlogout
@@ -456,15 +456,15 @@ out_msg title 'Installing Applications'
 
 	# zsh
 	#------------------------------------------------------------
-	#out_msg title in 'zsh'
+	#out_msg title in zsh
 	#	zypp in zsh
-	out_msg task 'Configure' 'Setting ZSH to default shell'
+	out_msg task Configure 'Setting ZSH to default shell'
 		sudo chsh -s $(which zsh) $ME
 	out_msg complete
 
 	# oh-my-zsh
 	#------------------------------------------------------------
-	out_msg title in 'oh-my-zsh'
+	out_msg title in oh-my-zsh
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended
 
 "
@@ -538,68 +538,68 @@ out_msg complete
 #-----------------------------------------
 out_msg title 'Installing User Configs'
 	cd $DIR_DPLY_CFG
-	out_msg task in 'audacious'
+	out_msg task in audacious
 		cp -rf ./audacious/* $DIR_LOCAL_CFG/audacious
 
-	out_msg task in 'bashtop'
+	out_msg task in bashtop
 		cp -f ./bashtop/bashtop.cfg $DIR_LOCAL_CFG/bashtop
 		cp -f ./bashtop/node9.theme $DIR_LOCAL_CFG/bashtop/themes
 
-	out_msg task in 'cava'
+	out_msg task in cava
 		cp -rf ./cava/* $DIR_LOCAL_CFG/cava
 
-	out_msg task in 'cmus'
+	out_msg task in cmus
 		cp -rf ./cmus/* $DIR_LOCAL_CFG/cmus
 
-	out_msg task in 'code'
+	out_msg task in code
 		sudo cp -f ./code/code.desktop $DIR_SYS_SHARE/applications
 
-	out_msg task in 'hyprland'
+	out_msg task in hyprland
 		cp -f ./hypr/hyprland.conf $DIR_LOCAL_CFG/hypr
 
-	out_msg task in 'hyprlock'
+	out_msg task in hyprlock
 		cp -f ./hypr/hyprlock.conf $DIR_LOCAL_CFG/hypr
 
-	out_msg task in 'hyprpaper'
+	out_msg task in hyprpaper
 		cp -f ./hyprpaper/hyprpaper.conf $DIR_LOCAL_CFG/hyprpaper
 
-	out_msg task in 'kitty'
+	out_msg task in kitty
 		cp -rf ./kitty/* $DIR_LOCAL_CFG/kitty
 
-	out_msg task in 'kvantum'
+	out_msg task in kvantum
 		cp -rf ./kvantum/* $DIR_LOCAL_CFG/Kvantum
 
-	out_msg task in 'neofetch'
+	out_msg task in neofetch
 		cp -rf ./neofetch/* $DIR_LOCAL_CFG/neofetch
 
-	out_msg task in 'oh-my-zsh'
+	out_msg task in oh-my-zsh
 		cp -rf ./oh-my-zsh/* $DIR_HOME/.oh-my-zsh/themes
 		cp -f ./zsh/.zshrc $DIR_HOME
 
-	out_msg task in 'rofi'
+	out_msg task in rofi
 		cp -f ./rofi/config.rasi $DIR_LOCAL_CFG/rofi
 		cp -rf ./rofi/themes/* $DIR_LOCAL_CFG/rofi/themes
 
-	out_msg task in 'sddm'
+	out_msg task in sddm
 		sudo tar -xzf ./sddm/sugar-dark.tar.gz -C $DIR_SYS_SDDM/themes
 		sudo cp -f ./sddm/theme.conf $DIR_SYS_SDDM/themes/sugar-dark
 		sudo mkdir $DIR_SYS_SDDM/themes/sugar-dark/Backgrounds
 		sudo cp -f $DIR_DPLY/wallpaper/purple-planet.png $DIR_SYS_SDDM/themes/sugar-dark/Backgrounds
 		sudo cp -f ./sddm/sddm.conf /etc/sddm.conf.d
 
-	out_msg task in 'sublime-text'
+	out_msg task in sublime-text
 		cp -rf ./sublime-text/* $DIR_LOCAL_CFG/sublime-text
 
-	out_msg task in 'swaync'
+	out_msg task in swaync
 		cp -rf ./swaync/* $DIR_LOCAL_CFG/swaync
 
-	out_msg task in 'swayosd'
+	out_msg task in swayosd
 		cp -rf ./swayosd/* $DIR_LOCAL_CFG/swayosd
 
-	out_msg task in 'waybar'
+	out_msg task in waybar
 		cp -rf ./waybar/* $DIR_LOCAL_CFG/waybar
 
-	out_msg task in 'wlogout'
+	out_msg task in wlogout
 		cp -f ./wlogout/layout $DIR_LOCAL_CFG/wlogout
 		cp -f ./wlogout/style.css $DIR_LOCAL_CFG/wlogout
 		cp -rf ./wlogout/icons $DIR_LOCAL_CFG/wlogout
@@ -608,27 +608,27 @@ out_msg complete
 # Set GTK Enviroment
 #-----------------------------------------
 out_msg title 'Configuring GTK Enviroment'
-	out_msg task 'theme' 'dracula'
+	out_msg task theme dracula
 		gsettings set org.gnome.desktop.interface gtk-theme dracula
 		gsettings set org.gnome.desktop.wm.preferences theme dracula
 
-	out_msg task 'cusor theme' 'layan-white-cursors'
+	out_msg task 'cusor theme' layan-white-cursors
 		gsettings set org.gnome.desktop.interface cursor-theme layan-white-cursors
 
-	out_msg task 'cusor size' '36'
+	out_msg task 'cusor size' 36
 		gsettings set org.gnome.desktop.interface cursor-size 36
 
-	out_msg task 'font' 'sf-compact-rounded 12'
+	out_msg task font sf-compact-rounded-12
 		gsettings set org.gnome.desktop.interface font-name 'SF Compact Rounded 12'
 		gsettings set org.gnome.desktop.interface document-font-name 'SF Compact Rounded 12'
 
-	out_msg task 'icon theme' 'flatery-blue-dark'
+	out_msg task 'icon theme' flatery-blue-dark
 		gsettings set org.gnome.desktop.interface icon-theme flatery-blue-dark
 
-	out_msg task 'text-scaling-factor' '1.25'
+	out_msg task text-scaling-factor 1.25
 		gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 
-	out_msg task 'perfered color scheme' 'perfer-dark'
+	out_msg task 'perfered color scheme' perfer-dark
 		gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 out_msg complete
 
@@ -638,46 +638,46 @@ out_msg title 'Configuring Nemo'
 	out_msg task "list-view/${YELLOW}default-zoom${PURPLE}" standard
 		gsettings set org.nemo.list-view default-zoom-level small
 
-	out_msg task "desktop/${YELLOW}background-fade${PURPLE}" 'false'
+	out_msg task "desktop/${YELLOW}background-fade${PURPLE}" false
 		gsettings set org.nemo.desktop background-fade false
 
-	out_msg task "preferences/${YELLOW}confirm-trash${PURPLE}" 'false'
+	out_msg task "preferences/${YELLOW}confirm-trash${PURPLE}" false
 		gsettings set org.nemo.preferences confirm-trash false
 
-	out_msg task "preferences/${YELLOW}default-folder-viewer${PURPLE}" 'false'
+	out_msg task "preferences/${YELLOW}default-folder-viewer${PURPLE}" false
 		gsettings set org.nemo.preferences default-folder-viewer list-view
 
-	out_msg task "preferences/${YELLOW}never-queue-file-ops${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}never-queue-file-ops${PURPLE}" true
 		gsettings set org.nemo.preferences never-queue-file-ops true
 
-	out_msg task "preferences/${YELLOW}selection-menu-copy-to${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}selection-menu-copy-to${PURPLE}" true
 		gsettings set org.nemo.preferences.menu-config selection-menu-copy-to true
 
-	out_msg task "preferences/${YELLOW}selection-menu-copy-to${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}selection-menu-copy-to${PURPLE}" true
 		gsettings set org.nemo.preferences.menu-config selection-menu-move-to true
 
-	out_msg task "preferences/${YELLOW}show-advanced-permissions${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}show-advanced-permissions${PURPLE}" true
 		gsettings set org.nemo.preferences show-advanced-permissions true
 
-	out_msg task "preferences/${YELLOW}show-compact-view-icon-toolbar${PURPLE}" 'false'
+	out_msg task "preferences/${YELLOW}show-compact-view-icon-toolbar${PURPLE}" false
 		gsettings set org.nemo.preferences show-compact-view-icon-toolbar false
 
-	out_msg task "preferences/${YELLOW}show-edit-icon-toolbar${PURPLE}" 'false'
+	out_msg task "preferences/${YELLOW}show-edit-icon-toolbar${PURPLE}" false
 		gsettings set org.nemo.preferences show-edit-icon-toolbar false
 
-	out_msg task "preferences/${YELLOW}show-full-path-titles${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}show-full-path-titles${PURPLE}" true
 		gsettings set org.nemo.preferences show-full-path-titles true
 
-	out_msg task "preferences/${YELLOW}show-hidden-files${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}show-hidden-files${PURPLE}" true
 		gsettings set org.nemo.preferences show-hidden-files true
 
-	out_msg task "preferences/${YELLOW}show-location-entry${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}show-location-entry${PURPLE}" true
 		gsettings set org.nemo.preferences show-location-entry true
 
-	out_msg task "preferences/${YELLOW}show-reload-icon-toolbar${PURPLE}" 'true'
+	out_msg task "preferences/${YELLOW}show-reload-icon-toolbar${PURPLE}" true
 		gsettings set org.nemo.preferences show-reload-icon-toolbar true
 
-	out_msg task "preferences/${YELLOW}show-directory-item-counts${PURPLE}" 'always'
+	out_msg task "preferences/${YELLOW}show-directory-item-counts${PURPLE}" always
 		gsettings set org.nemo.preferences show-directory-item-counts always
 out_msg complete
 
