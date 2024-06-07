@@ -160,18 +160,18 @@ declare -a pkg_repo=(
 )
 
 declare -a repo_file=(
-	"azhou.repo"
-	"mantarimay.repo"
-	"packman.repo"
-	"repo-debug.repo"
-	"repo-non-oss.repo"
-	"repo-openh264.repo"
-	"repo-oss.repo"
-	"repo-source.repo"
-	"repo-update.repo"
-	"sublime-text.repo"
-	"system_packagemanager.repo"
-	"vscode.repo"
+	"azhou"
+	"mantarimay"
+	"packman"
+	"repo-debug"
+	"repo-non-oss"
+	"repo-openh264"
+	"repo-oss"
+	"repo-source"
+	"repo-update"
+	"sublime-text"
+	"system_packagemanager"
+	"vscode"
 )
 
 declare -a repo_url=(
@@ -215,7 +215,7 @@ out_msg() {
 		;;
 
 		error)
-			echo -e "${RED}[ERROR]: $2${NC}"
+			echo -e "${RED}[ERROR]: $MSG${NC}"
 		;;
 
 		header)
@@ -351,14 +351,15 @@ out_msg title 'Verifying Deployment Directories'
 	done
 out_msg complete
 
-# Configuring Repositories
+# Add Required Repositories
 #-----------------------------------------
-out_msg title 'Configuring Repositories'
+out_msg title 'Adding Repositories'
 	out_msg	task 'removing repos' 'all'
 		sudo rm -rf /etc/zypp/repos.d/*
-	out_msg task in 'current repos'
+
 		for ((i=0; i<=(${#repo_file[@]}-1); i++))
 		do
+			out_task in ${repo_file[$i]}
 			sudo cp -rf $DIR_DPLY/repos/${repo_file[$i]}.repo /etc/zypp/repos.d/
 		done
 out_msg complete
@@ -366,24 +367,12 @@ out_msg complete
 # Add Required Repositories
 #-----------------------------------------
 #out_msg title 'Adding Repositories'
-#	out_msg	task 'removing repos' 'all'
-#		sudo rm -rf /etc/zypp/repos.d/*
-#	out_msg task in 'current repos'
-#		for ((i=0; i<=(${#repo_file[@]}-1); i++))
-#		do
-#			sudo cp -rf $DIR_DPLY/repos/${repo_file[$i]}.repo /etc/zypp/repos.d/
-#			out_msg complete
-#		done
-
-# Add Required Repositories
-#-----------------------------------------
-out_msg title 'Adding Repositories'
-	echo
-	for ((i=0; i<=(${#repo_name[@]}-1); i++))
-	do
-		zypp ar ${repo_url[$i]} ${repo_name[$i]}
-		out_msg complete
-	done
+#	echo
+#	for ((i=0; i<=(${#repo_name[@]}-1); i++))
+#	do
+#		zypp ar ${repo_url[$i]} ${repo_name[$i]}
+#		out_msg complete
+#	done
 
 # Update all Repositories
 #-----------------------------------------
@@ -496,7 +485,6 @@ out_msg title 'Install Cursors/Fonts/Icons/Wallpaper'
 	out_msg task in 'GTK: Settings'
 		verify_dir $DIR_LOCAL_CFG/gtk-3.0
 		cp -f /$DIR_DPLY_CFG/gtk/bookmarks $DIR_LOCAL_CFG/gtk-3.0
-		#cp -rf $DIR_DPLY_CFG/gtk/settings.ini $DIR_HOME/.config/gtk-3.0
 		cp -rf $DIR_DPLY_CFG/gtk/.gtkrc-2.0 $DIR_HOME
 		
 		verify_dir $DIR_HOME/.icons
@@ -647,49 +635,49 @@ out_msg complete
 # Configure Nemo
 #-----------------------------------------
 out_msg title 'Configuring Nemo'
-	out_msg task 'list-view: default-zoom' 'standard'
+	out_msg task "list-view/${YELLOW}default-zoom${PURPLE}" standard
 		gsettings set org.nemo.list-view default-zoom-level small
 
-	out_msg task 'desktop: background-fade' 'false'
+	out_msg task "desktop/${YELLOW}background-fade${PURPLE}" 'false'
 		gsettings set org.nemo.desktop background-fade false
 
-	out_msg task 'preferences: confirm-trash' 'false'
+	out_msg task "preferences/${YELLOW}confirm-trash${PURPLE}" 'false'
 		gsettings set org.nemo.preferences confirm-trash false
 
-	out_msg task 'preferences: default-folder-viewer' 'false'
+	out_msg task "preferences/${YELLOW}default-folder-viewer${PURPLE}" 'false'
 		gsettings set org.nemo.preferences default-folder-viewer list-view
 
-	out_msg task 'preferences: never-queue-file-ops' 'true'
+	out_msg task "preferences/${YELLOW}never-queue-file-ops${PURPLE}" 'true'
 		gsettings set org.nemo.preferences never-queue-file-ops true
 
-	out_msg task 'preferences: selection-menu-copy-to' 'true'
+	out_msg task "preferences/${YELLOW}selection-menu-copy-to${PURPLE}" 'true'
 		gsettings set org.nemo.preferences.menu-config selection-menu-copy-to true
 
-	out_msg task 'preferences: selection-menu-copy-to' 'true'
+	out_msg task "preferences/${YELLOW}selection-menu-copy-to${PURPLE}" 'true'
 		gsettings set org.nemo.preferences.menu-config selection-menu-move-to true
 
-	out_msg task 'preferences: show-advanced-permissions' 'true'
+	out_msg task "preferences/${YELLOW}show-advanced-permissions${PURPLE}" 'true'
 		gsettings set org.nemo.preferences show-advanced-permissions true
 
-	out_msg task 'preferences: show-compact-view-icon-toolbar' 'false'
+	out_msg task "preferences/${YELLOW}show-compact-view-icon-toolbar${PURPLE}" 'false'
 		gsettings set org.nemo.preferences show-compact-view-icon-toolbar false
 
-	out_msg task 'preferences: show-edit-icon-toolbar' 'false'
+	out_msg task "preferences/${YELLOW}show-edit-icon-toolbar${PURPLE}" 'false'
 		gsettings set org.nemo.preferences show-edit-icon-toolbar false
 
-	out_msg task 'preferences: show-full-path-titles' 'true'
+	out_msg task "preferences/${YELLOW}show-full-path-titles${PURPLE}" 'true'
 		gsettings set org.nemo.preferences show-full-path-titles true
 
-	out_msg task 'preferences: show-hidden-files' 'true'
+	out_msg task "preferences/${YELLOW}show-hidden-files${PURPLE}" 'true'
 		gsettings set org.nemo.preferences show-hidden-files true
 
-	out_msg task 'preferences: show-location-entry' 'true'
+	out_msg task "preferences/${YELLOW}show-location-entry${PURPLE}" 'true'
 		gsettings set org.nemo.preferences show-location-entry true
 
-	out_msg task 'preferences: show-reload-icon-toolbar' 'true'
+	out_msg task "preferences/${YELLOW}show-reload-icon-toolbar${PURPLE}" 'true'
 		gsettings set org.nemo.preferences show-reload-icon-toolbar true
 
-	out_msg task 'preferences: show-directory-item-counts' 'always'
+	out_msg task "preferences/${YELLOW}show-directory-item-counts${PURPLE}" 'always'
 		gsettings set org.nemo.preferences show-directory-item-counts always
 out_msg complete
 
