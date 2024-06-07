@@ -317,13 +317,13 @@ zypp () {
 		then
 			out_msg info "Package '$2' is already installed"
 		else
-			sudo zypper --non-interactive --no-gpg-checks in $2
+			sudo zypper --non-interactive --no-gpg-checks --color in $2
 		fi
 	fi
 }
 
 zypp_in () {
-	sudo zypper --non-interactive --no-gpg-checks in $1
+	sudo zypper --non-interactive --no-gpg-checks --color in $1
 }
 
 # Main
@@ -385,7 +385,7 @@ out_msg complete
 # Update all Repositories
 #-----------------------------------------
 out_msg title 'Updating Repos'
-	sudo zypper --no-gpg-checks refresh
+	sudo zypper --non-interactive --no-gpg-checks --color refresh
 out_msg complete
 
 # Install all Required Pkgs
