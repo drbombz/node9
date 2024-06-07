@@ -256,6 +256,7 @@ out_msg() {
 			else
 				echo -e "${PURPLE}$2:${NC} ${BLUE}$3${NC}"
 			fi
+			sleep 1
 		;;
 
 		title)
@@ -359,7 +360,7 @@ out_msg title 'Adding Repositories'
 
 		for ((i=0; i<=(${#repo_file[@]}-1); i++))
 		do
-			out_task in ${repo_file[$i]}
+			out_msg task in ${repo_file[$i]}
 			sudo cp -rf $DIR_DPLY/repos/${repo_file[$i]}.repo /etc/zypp/repos.d/
 		done
 out_msg complete
