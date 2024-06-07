@@ -332,6 +332,14 @@ zypp_in () {
 out_msg header
 echo -e "\n${PURPLE}/// ${BLUE}Oh Hai ${GREEN}$ME${PURPLE}!${NC}"
 
+# Create System Snapshot
+#-----------------------------------------
+out_msg title 'Creating System Snapsnot'
+	SNAPNAME="Before N9 Deploy $(date '+%m-%d-%Y %H:%M')"
+	out_msg task 'Creating Snapshot' "'${SNAPNAME}'"
+		sudo snapper create --description "${SNAPNAME}"
+out_msg complete
+
 # Clone NODE9 Repo
 #-----------------------------------------
 out_msg title 'Clone node9 GIT'
