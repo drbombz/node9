@@ -10,7 +10,7 @@ configuration {
     show-icons:                 true;
     display-drun:               "";
 	drun-display-format:        "{name}";
-    display-run:               " ";
+    display-run:                " ";
 
 }
 

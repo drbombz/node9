@@ -236,10 +236,10 @@ out_msg() {
 			;;
 
 		line)
-			if [ -z "$2" ]; then
-				LEN=70
-			else
+			if [ $2 ]; then
 				LEN=$2
+			else
+				LEN=70
 			fi
 
 			echo -e -n ${PURPLE}
@@ -250,7 +250,7 @@ out_msg() {
 		;;
 
 		task)
-			if [[ $2 == "in" ]]; then
+			if [[ $2 == 'in' ]]; then
 				out_msg task 'Installing' "$3"
 			elif [[ $2 == "in_conf" ]]; then
 				echo -e "${PURPLE}Installing:${NC} ${BLUE}Config/Themes${NC}"
@@ -260,7 +260,7 @@ out_msg() {
 		;;
 
 		title)
-			if [[ $2 == "in" ]]; then
+			if [[ $2 == 'in' ]]; then
 				out_msg task 'Installing' $3
 				out_msg line 40
 			else
@@ -650,10 +650,8 @@ out_msg title 'Configuring Nemo'
 	out_msg task "desktop/${YELLOW}background-fade${PURPLE}" false
 		gsettings set org.nemo.desktop background-fade false
 
-
 	out_msg task "desktop/${YELLOW}terminal${PURPLE}" kitty
 		gsettings set org.cinnamon.desktop.applications.terminal exec kitty
-
 
 	out_msg task "preferences/${YELLOW}confirm-trash${PURPLE}" false
 		gsettings set org.nemo.preferences confirm-trash false
