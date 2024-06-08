@@ -252,7 +252,7 @@ user_pref("services.sync.forms.lastSync", "0");
 user_pref("services.sync.globalScore", 0);
 user_pref("services.sync.lastPing", 1717845108);
 user_pref("services.sync.lastSync", "Sat Jun 08 2024 17:10:50 GMT-0400 (Eastern Daylight Time)");
-user_pref("services.sync.nextSync", 1717884650);
+user_pref("services.sync.nextSync", 1717890841);
 user_pref("services.sync.prefs.lastSync", "1716478881.13");
 user_pref("services.sync.prefs.sync-seen.browser.contentblocking.category", true);
 user_pref("services.sync.prefs.sync-seen.browser.download.useDownloadDir", true);
