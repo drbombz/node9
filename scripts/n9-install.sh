@@ -97,6 +97,7 @@ declare -a pkg_req=(
 	"libdrm-tools"
 	"libevdev-devel"
 	"libKF5GuiAddons5"
+	"libopenssl1_1"
 	"libpng12-devel"
 	"libxkbregistry-devel"
 	"meson"
