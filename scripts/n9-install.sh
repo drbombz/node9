@@ -79,6 +79,12 @@ declare -a dirs_cfg=(
 	"wlogout"
 )
 
+declare -a dirs_home=(
+	"Documents"
+	"Downloads"
+	"Pictures"
+)
+
 # Required Packages
 declare -a pkg_req=(
 	"cairo-devel"
@@ -350,13 +356,23 @@ out_msg title 'Clone node9 GIT'
 	fi
 	out_msg complete
 
-# Verify all Directories/Create
+# Verify Deployment Directories
 #-----------------------------------------
 out_msg title 'Verifying Deployment Directories'
 	for ((i=0; i<=(${#dirs_dply[@]}-1); i++))
 	do
 		out_msg task "${dirs_dply_name[$i]}" ${dirs_dply[$i]}
 		verify_dir ${dirs_dply[$i]}
+	done
+out_msg complete
+
+# Create Default HOME Directories
+#-----------------------------------------
+out_msg title 'Verifying Defaul HOME Directories'
+	for ((i=0; i<=(${#dirs_home[@]}-1); i++))
+	do
+		out_msg task "${dirs_home[$i]}" $DIR_HOME/${dirs_home[$i]}
+		verify_dir $DIR_HOME/${dirs_home[$i]}
 	done
 out_msg complete
 
