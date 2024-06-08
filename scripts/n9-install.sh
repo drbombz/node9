@@ -363,7 +363,7 @@ out_msg complete
 # Add Required Repositories
 #-----------------------------------------
 out_msg title 'Adding Repositories'
-	out_msg	task 'removing repos' 'all'
+	out_msg	task 'Removing Repos' All
 		sudo rm -rf /etc/zypp/repos.d/*
 
 		for ((i=0; i<=(${#repo_file[@]}-1); i++))
@@ -461,14 +461,6 @@ out_msg title 'Installing Applications'
 		meson build
 		ninja -C build
 		sudo ninja -C build install
-	out_msg complete
-
-	# zsh
-	#------------------------------------------------------------
-	#out_msg title in zsh
-	#	zypp in zsh
-	out_msg task Configure 'Setting ZSH to default shell'
-		sudo chsh -s $(which zsh) $ME
 	out_msg complete
 
 	# oh-my-zsh
@@ -617,27 +609,27 @@ out_msg complete
 # Set GTK Enviroment
 #-----------------------------------------
 out_msg title 'Configuring GTK Enviroment'
-	out_msg task theme dracula
+	out_msg task "desktop/${YELLOW}theme${PURPLE}" dracula
 		gsettings set org.gnome.desktop.interface gtk-theme dracula
 		gsettings set org.gnome.desktop.wm.preferences theme dracula
 
-	out_msg task 'cusor theme' layan-white-cursors
+	out_msg task "desktop/${YELLOW}cusor-theme${PURPLE}" layan-white-cursors
 		gsettings set org.gnome.desktop.interface cursor-theme layan-white-cursors
 
-	out_msg task 'cusor size' 36
+	out_msg task "desktop/${YELLOW}cusor size${PURPLE}" 36
 		gsettings set org.gnome.desktop.interface cursor-size 36
 
-	out_msg task font sf-compact-rounded-12
+	out_msg task "desktop/${YELLOW}Font${PURPLE}" sf-compact-rounded-12
 		gsettings set org.gnome.desktop.interface font-name 'SF Compact Rounded 12'
 		gsettings set org.gnome.desktop.interface document-font-name 'SF Compact Rounded 12'
 
-	out_msg task 'icon theme' flatery-blue-dark
+	out_msg task "desktop/${YELLOW}Icon Theme${PURPLE}" flatery-blue-dark
 		gsettings set org.gnome.desktop.interface icon-theme flatery-blue-dark
 
-	out_msg task text-scaling-factor 1.25
+	out_msg task "desktop/${YELLOW}text-scaling-factor${PURPLE}" 1.25
 		gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 
-	out_msg task 'perfered color scheme' perfer-dark
+	out_msg task "desktop/${YELLOW}perfered-color-scheme${PURPLE}" perfer-dark
 		gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 out_msg complete
 
@@ -651,7 +643,7 @@ out_msg title 'Configuring Nemo'
 		gsettings set org.nemo.desktop background-fade false
 
 	out_msg task "desktop/${YELLOW}terminal${PURPLE}" kitty
-		gsettings set org.cinnamon.desktop.applications.terminal exec kitty
+		gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 
 	out_msg task "preferences/${YELLOW}confirm-trash${PURPLE}" false
 		gsettings set org.nemo.preferences confirm-trash false
@@ -714,6 +706,9 @@ out_msg title 'Configuring Misc Settings'
 
 	out_msg task in 'n9-scripts'
 		cp -rf $DIR_DPLY/scripts/* $DIR_HOME/.n9-scripts
+
+	out_msg task Configure 'Setting ZSH to default shell'
+		sudo chsh -s $(which zsh) $ME
 out_msg complete
 
 # Finished!
