@@ -650,6 +650,11 @@ out_msg title 'Configuring Nemo'
 	out_msg task "desktop/${YELLOW}background-fade${PURPLE}" false
 		gsettings set org.nemo.desktop background-fade false
 
+
+	out_msg task "desktop/${YELLOW}terminal${PURPLE}" kitty
+		gsettings set org.cinnamon.desktop.applications.terminal exec kitty
+
+
 	out_msg task "preferences/${YELLOW}confirm-trash${PURPLE}" false
 		gsettings set org.nemo.preferences confirm-trash false
 
