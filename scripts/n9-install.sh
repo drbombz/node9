@@ -70,6 +70,7 @@ declare -a dirs_cfg=(
 	"kitty"
 	"Kvantum"
 	"neofetch"
+	"remmina"
 	"rofi"
 	"rofi/themes"
 	"sublime-text"
@@ -586,6 +587,9 @@ out_msg title 'Installing User Configs'
 	out_msg task in rofi
 		cp -f ./rofi/config.rasi $DIR_LOCAL_CFG/rofi
 		cp -rf ./rofi/themes/* $DIR_LOCAL_CFG/rofi/themes
+
+	out_msg task in remmina
+		cp -f ./remmina/remmina.pref $DIR_LOCAL_CFG/remmina
 
 	out_msg task in sddm
 		sudo tar -xzf ./sddm/sugar-dark.tar.gz -C $DIR_SYS_SDDM/themes
