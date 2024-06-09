@@ -83,6 +83,7 @@ declare -a dirs_cfg=(
 declare -a dirs_home=(
 	"Documents"
 	"Downloads"
+	"Music"
 	"Pictures"
 )
 
