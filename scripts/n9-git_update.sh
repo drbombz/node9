@@ -100,6 +100,9 @@ out_title 'Syincing Dots'
 	out_copy oh-my-zsh
 		cp ~/.oh-my-zsh/themes/node9.zsh-theme $CONFIG_DIR/oh-my-zsh
 
+	out_copy remmina
+		cp ~/.config/remmina/remmina.pref $CONFIG_DIR/remmina
+
 	out_copy rofi
 		cp ~/.config/rofi/config.rasi $CONFIG_DIR/rofi
 		cp ~/.config/rofi/themes/* $CONFIG_DIR/rofi/themes
