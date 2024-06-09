@@ -389,16 +389,6 @@ out_msg title 'Adding Repositories'
 		done
 out_msg complete
 
-# Add Required Repositories
-#-----------------------------------------
-#out_msg title 'Adding Repositories'
-#	echo
-#	for ((i=0; i<=(${#repo_name[@]}-1); i++))
-#	do
-#		zypp ar ${repo_url[$i]} ${repo_name[$i]}
-#		out_msg complete
-#	done
-
 # Update all Repositories
 #-----------------------------------------
 out_msg title 'Updating Repos'
