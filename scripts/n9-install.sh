@@ -724,6 +724,9 @@ out_msg title 'Configuring Firefox'
 # Configure Misc Settings
 #-----------------------------------------
 out_msg title 'Configuring Misc Settings'
+	out_msg task in 'grub.conf'
+		sudo cp -f $DIR_DPLY_CFG/grub/grub /etc/default
+		
 	out_msg task in 'user-places'
 		cp -f $DIR_DPLY_CFG/misc/user-places.xbel $DIR_LOCAL_SHARE
 
