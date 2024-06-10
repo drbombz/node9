@@ -89,6 +89,7 @@ declare -a dirs_home=(
 
 # Required Packages
 declare -a pkg_req=(
+	"brightnessctl"
 	"cairo-devel"
 	"cairo-tools"
 	"file-devel"
@@ -438,6 +439,17 @@ out_msg title 'Installing Applications'
 		sudo make install
 	out_msg complete
 
+	# hyprutils
+	#------------------------------------------------------------
+	out_msg title in hyprutils
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprutils
+		cd hyprutils
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+	
 	# hyprlock
 	#------------------------------------------------------------
 	out_msg title in hyprlock
