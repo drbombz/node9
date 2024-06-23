@@ -209,3 +209,4 @@ do
 	echo -n ' .'
 	sleep 1
 done
+sleep 1000
