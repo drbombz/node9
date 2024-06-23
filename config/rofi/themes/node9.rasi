@@ -16,10 +16,10 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    background:     #222631EE;
+    background:     #20222dEE;
     background-alt: #282A36FF;
     foreground:     #FFFFFFFF;
-    selected:       #50437FEE;
+    selected:       #854db3EE;
     active:         #50FA7BFF;
     urgent:         #FF5555FF;
 
@@ -112,7 +112,7 @@ listview {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                #ffffff;
     background-color:            transparent;
     text-color:                  #bababe;
     cursor:                      "default";

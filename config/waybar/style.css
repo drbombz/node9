@@ -4,17 +4,28 @@
   /:' |   \'  -   \'    | \'    __\_     / n9! -- [ waybar ]
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
+
+@define-color blue          #89b4fa;
 @define-color cyan          #64a8e2;
-@define-color green         #8ce291;
 @define-color gray          #595959;
+@define-color green         #a6e3a1;
+@define-color flamingo      #f2cdcd;
+@define-color lavender      #b4befe;
+@define-color maroon        #eba0ac;
+@define-color mauve         #cba6f7;
+@define-color orange        #FF8542;
+@define-color peach         #fab387;
+@define-color pink          #f5c2e7;
+@define-color pink-light    #ff97d3;
 @define-color purple        #1D192D;
 @define-color purple-light  #50437F;
-@define-color purple-lightr #bbb4d7;
-@define-color off-white     #b3b3b3;
-@define-color orange        #FF8542;
-@define-color red           #e0675e;
-@define-color white         #aeaeae;
-@define-color yellow        #f7f955;
+@define-color red           #f38ba8;
+@define-color rosewater     #f5e0dc;
+@define-color sapphire      #74c7ec;
+@define-color sky           #89dceb;
+@define-color teal          #94e2d5;
+@define-color yellow        #f9e2af;
+@define-color white         #efefef;
 @define-color clock         #322b4e;
 
 /* Main
@@ -31,7 +42,7 @@
 #waybar {
     min-width: 400px;
     color: #a2a2a2;
-    background-image: linear-gradient(#202020, #2d2d2d);
+    background-image: linear-gradient(#14161d, #2b2f3f);
     border-top: 2px solid @purple-light;
     border-bottom: 2px solid @purple-light;
     border-top-right-radius: 16px;
@@ -98,10 +109,10 @@
     color: @white;
 }
 #workspaces button.focused {
-    color: @off-white;
+    color: @yellow;
 }
 #workspaces button.visible {
-    color: @orange;
+    color: @cyan;
 }
 #workspaces button.urgent {
     color: @tan;
@@ -116,7 +127,7 @@
     transition: all 0.5s cubic-bezier(0.85, 1, 0.2, 1);
 }
 #window {
-    color: #a5a5a5;
+    color: #9aa4c4;
     font-size: 20px;
     font-family: "Poppins";
     border-radius: 10px;
@@ -153,27 +164,33 @@
 #battery,
 #memory,
 #backlight,
-#pulseaudio,
 #custom-notification,
+#pulseaudio,
 #clock {
-    font-size: 20px;
+    font-size: 19px;
     padding: 0px 18px 0px 0px;
 }
 #custom-vert {
     font-size: 18px;
-    color: @tan;
+    color: #cdd6f4;
 }
 #network {
     background: transparent;
 }
 #network.wifi {
-    color: @orange;
+    color: @cyan;
 }
 #bluetooth {
+    color: @teal;
     padding-right: 22px;
     font-size: 20px;
 }
+#bluetooth.connected,
+#bluetooth.disabled,
+#bluetooth.off {
+}
 #battery {
+    color: @mauve;
     padding-right: 14px;
 }
 #battery.warning {
@@ -186,18 +203,26 @@
     background: transparent;
 }
 #memory {
+    color: @pink-light;
     padding-right: 14px;
 }
 #pulseaudio {
+    color: @white;
     padding-top: 2px;
 }
 #custom-notification {
+    color: #81a7bf;
     background-color: transparent;
 }
+#custom-audio_idle_inhibitor {
+    color: @yellow;
+    padding-right:20px;
+}
 #clock {
-    color: #939cb7;
-    padding: 3px 15px 0px 15px;
-    background-image: linear-gradient(#1D192D, #342d51);
+    color: @white;
+    padding: 3px 15px 0px 18px;
+    background-image: linear-gradient(#0e352f, #1a5e53);
+    background-image: linear-gradient(#272737, #434b63);
     border-right: 2px solid @purple-light; 
     border-left: 2px solid @purple-light;
     border-top-right-radius: 16px;

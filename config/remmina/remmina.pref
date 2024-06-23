@@ -89,7 +89,7 @@ rdp_quality_1=7
 rdp_quality_2=1
 rdp_quality_9=80
 rdp_deviceScaleFactor=100
-rdp_desktopScaleFactor=100
+rdp_desktopScaleFactor=150
 rdp_desktopOrientation=0
 shortcutkey_clipboard=98
 

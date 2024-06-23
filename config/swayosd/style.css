@@ -7,8 +7,8 @@
 window#osd {
   padding: 12px 20px;
   border-radius: 999px;
-  border: 1px solid #604da7;
-  background: alpha(#343a4d, 0.8);
+  border: 1px solid #64a8e2;
+  background: alpha(#56498a, 0.9);
 }
 window#osd #container {
   margin: 16px 50px 16px 50px;

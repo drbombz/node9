@@ -272,8 +272,9 @@
 */
 .control-center {
   background-color: #343a4d;
+  background-color: rgba(52, 58, 77, 0.9);
   color: @text-color;
-  border: 1px solid #50437F;
+  border: 3px solid #50437F;
   border-radius: 12px;
 }
 

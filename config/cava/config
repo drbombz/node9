@@ -224,28 +224,36 @@ bar_spacing = 0
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
-gradient_count = 6
+gradient_count = 8
+
+# n9
+gradient_color_1 = '#2d2547'
+gradient_color_2 = '#564888'
+gradient_color_3 = '#7766af'
+gradient_color_4 = '#9185bf'
+gradient_color_5 = '#afa6d0'
+gradient_color_6 = '#d3c4e0'
+gradient_color_7 = '#efe9f4'
+gradient_color_8 = '#ffffff'
+
+# Catppuccin
+#gradient_color_1 = '#94e2d5'
+#gradient_color_2 = '#89dceb'
+#radient_color_3 = '#74c7ec'
+#gradient_color_4 = '#89b4fa'
+#gradient_color_5 = '#cba6f7'
+#gradient_color_6 = '#f5c2e7'
+#gradient_color_7 = '#eba0ac'
+#gradient_color_8 = '#f38ba8'
 
 # Slate Blue
-gradient_color_1 = '#272c40'
-gradient_color_2 = '#39405d'
-gradient_color_3 = '#606b9e'
-gradient_color_4 = '#7f88b1'
-gradient_color_5 = '#9aa1c2'
-gradient_color_6 = '#b9bed4'
-gradient_color_7 = '#c0bad9'
-
-# Purple
-#gradient_color_1 = '#2e2847'
-#gradient_color_2 = '#3d355f'
-#gradient_color_3 = '#4e4378'
-#gradient_color_4 = '#786cad'
-#gradient_color_5 = '#c0bad9'
-#gradient_color_6 = '#c0bad9'
-#gradient_color_7 = '#c0bad9'
-# ; gradient_color_8 = '#c0bad9'
-
-
+#gradient_color_1 = '#28283e'
+#gradient_color_2 = '#3c3c5b'
+##gradient_color_3 = '#606b9e'
+##gradient_color_4 = '#7f88b1'
+##gradient_color_5 = '#9aa1c2'
+##gradient_color_6 = '#b9bed4'
+##gradient_color_7 = '#c0bad9'
 
 [smoothing]
 
@@ -255,7 +263,7 @@ gradient_color_7 = '#c0bad9'
 ; integral = 77
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-monstercat = 1
+monstercat = 0
 waves = 0
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.

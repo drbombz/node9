@@ -103,8 +103,23 @@ n () # to cd on quit
     fi
 }
 
-print -P "%{$fg_bold[magenta]%                                   ______"
-print -P "    _____________________________/::'   \\"
-print -P "   /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
-print -P "  /:' |   \\\'  -   \\\'    | \\\'    __\\\_     / %F{blue}n9!%F{magenta}"
-print -P " +\\\___|___/_______/_______/_______/_____/------------------------------------------------------------------+"
+#print -P "%{$fg_bold[magenta]%                                   ______"
+#print -P "    _____________________________/::'   \\"
+#print -P "   /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
+#print -P "  /:' |   \\\'  -   \\\'    | \\\'    __\\\_     / %F{blue}n9!%F{magenta}"
+#print -P " +\\\___|___/_______/_______/_______/_____/------------------------------------------------------------------+"
+
+SPACE_TOTAL=$(df -h --output=size "$HOME" | tail -n1 | xargs)
+SPACE_AVAIL=$(df -h --output=avail "$HOME" | tail -n1 | xargs)
+SESSION_DESKTOP=$(echo $DESKTOP_SESSION)
+SESSION_TYPE=$(echo $XDG_SESSION_TYPE)
+BLUE='\033[0;36m'$(tput bold)
+PURPLE='\033[0;35m'$(tput bold)
+
+print -P "${BLUE}          ______"
+print -P "    _____/::'   \\"
+print -P "   /:'   \\\:' |   \\\ %F{magenta}n9! "
+print -P "${BLUE} +/:' |   \\\_     /--------------------------------------------------------------------------------------+"
+print -n -P "  \\\___|___/_____/ "
+print -n -P "%F{magenta}-- %F{blue}[ %F{magenta}Storage_${BLUE}${SPACE_AVAIL}%F{magenta}/${BLUE}${SPACE_TOTAL}%F{blue} ]"
+print -P "%F{blue}[ %F{magenta}Session_${BLUE}${SESSION_TYPE}%F{magenta}/${BLUE}${SESSION_DESKTOP}%F{blue} ]"

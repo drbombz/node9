@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"installed_packages":
 	[
+		"Catppuccin color schemes",
 		"CFML",
 		"Dracula Color Scheme",
 		"Nord",
