@@ -90,6 +90,7 @@ declare -a dirs_home=(
 # Required Packages
 declare -a pkg_req=(
 	"brightnessctl"
+	"caca-utils"
 	"cairo-devel"
 	"cairo-tools"
 	"file-devel"
@@ -108,7 +109,10 @@ declare -a pkg_req=(
 	"libKF5GuiAddons5"
 	"libopenssl1_1"
 	"libpng12-devel"
+	"libsdbus-c++1"
 	"libxkbregistry-devel"
+	"NetworkManager-connection-editor"
+	"NetworkManager-bluetooth"
 	"meson"
 	"mtpfs"
 	"mtp-tools"
@@ -118,8 +122,12 @@ declare -a pkg_req=(
 	"pulseaudio-zsh-completion"
 	"rust1.78"
 	"sassc"
+	"sdbus-cpp-devel"
 	"scdoc"
+	"unrar"
+	"unzip"
 	"wayland-protocols-devel"
+	"xdg-desktop-portal-hyprland"
 )
 
 # Optional Packages
@@ -438,15 +446,14 @@ out_msg title 'Installing Applications'
 		cd bashtop
 		sudo make install
 	out_msg complete
-
-	# hyprutils
+	
+	# hypridle
 	#------------------------------------------------------------
-	out_msg title in hyprutils
+	out_msg title in hypridle
 		cd $DIR_DPLY_BUILD
-		git clone https://github.com/hyprwm/hyprutils
-		cd hyprutils
-		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
-		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		git clone https://github.com/hyprwm/hypridle && cd hypridle
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -S . -B ./build
+		cmake --build ./build --config Release --target hypridle -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
 		sudo cmake --install build
 	out_msg complete
 	
@@ -458,6 +465,17 @@ out_msg title 'Installing Applications'
 		cd hyprlock
 		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -S . -B ./build
 		cmake --build ./build --config Release --target hyprlock -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+
+	# hyprutils
+	#------------------------------------------------------------
+	out_msg title in hyprutils
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprutils
+		cd hyprutils
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
 		sudo cmake --install build
 	out_msg complete
 

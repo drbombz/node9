@@ -1,55 +1,139 @@
-#!/bin/zsh
+#!/bin/bash
 clear
-autoload -U colors && colors
 
-out_complete () {
-	print -P "%{$fg_bold[magenta] ---[ %{$fg[blue]Complete! %{$fg_bold[magenta]]-------------------------"
+# Global Vars
+#==================================================================================
+
+# Colors
+PURPLE='\033[0;35m'$(tput bold)
+BLUE='\033[0;36m'$(tput bold)
+YELLOW='\033[1;33m'$(tput bold)
+GREEN='\033[1;32m'$(tput bold)
+RED='\033[0;31m'$(tput bold)
+NC='\033[0m'
+
+# Main Directories
+ME=$(whoami)
+DIR_HOME="/home/$ME"
+DIR_LOCAL_CFG="$DIR_HOME/.config"
+
+# Functions
+#==================================================================================
+get_sudo() {
+	echo
+	out_msg info "$1"
+	echo -e -n "\n${BLUE}[${NC} ${PURPLE}Enter Password for sudo${NC} ${BLUE}]:${NC}"
+	read -s -p " " sudoPW
+	echo $sudoPW | sudo -S zypper lr >/dev/null 2>&1
+	echo
+}
+out_msg() {
+	case $1 in
+		complete)
+			echo -e -n ${PURPLE}
+			for((l=1;l <= 29; l++)) do
+				echo -e -n "-"
+			done
+			echo -e -n "[${NC} ${GREEN}Complete${NC} ${PURPLE}]"
+			for((l=1;l <= 29; l++)) do
+				echo -e -n "-"
+			done
+			echo -e "\n${NC}"
+		;;
+
+		error)
+			echo -e "${RED}[ERROR]: $MSG${NC}"
+		;;
+
+		header)
+			echo -e "${PURPLE}                                 ______"
+			echo -e "   _____________________________/::'   \\"
+			echo -e "  /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
+			echo -e -n " /:' |   \\\'  -   \\\'    | \\\'    __\\\_     /${NC}"
+			echo -e " ${BLUE}n9! -- [${NC} ${PURPLE}$2${NC} ${BLUE}]${NC}"
+			echo -e -n "${PURPLE}+\\\___|___/_______/_______/_______/_____/--------------"
+			echo -e "----------------------------------------------------+${NC}"
+			if [ $3 ]; then
+				get_sudo "This script requires ${RED}sudo${NC} ${YELLOW}for some actions${NC}"
+			fi
+			sleep 1
+		;;
+
+		info)
+			echo -e "${YELLOW}[INFO]: $2${NC}"
+			;;
+
+		line)
+			if [ $2 ]; then
+				LEN=$2
+			else
+				LEN=70
+			fi
+
+			echo -e -n ${PURPLE}
+			for((l=1;l <= $LEN; l++)) do
+				echo -e -n "-"
+			done
+			echo -e ${NC}
+		;;
+
+		task)
+			if [[ $2 == 'in' ]]; then
+				out_msg task 'Installing' "$3"
+			elif [[ $2 == "in_conf" ]]; then
+				echo -e "${PURPLE}Installing:${NC} ${BLUE}Config/Themes${NC}"
+			else
+				echo -e "${PURPLE}$2:${NC} ${BLUE}$3${NC}"
+			fi
+		;;
+
+		title)
+			if [[ $2 == 'in' ]]; then
+				out_msg task 'Installing' $3
+				out_msg line 40
+			else
+				echo -e "\n${BLUE}[${NC} ${PURPLE}$2${NC} ${BLUE} ]${NC}"
+				out_msg line
+				sleep 1
+			fi
+		;;
+	esac
 }
 
-out_line () {
-	print -P " %{$fg_bold[magenta]$1...%{$fg_bold[yellow]"
-}
+# Main
+#==================================================================================
+case $1 in
+	start)
+		out_msg header 'Nzbget Management: Start Daemon/GUI'
+		
+		out_msg title 'Starting Daemon'
+			out_msg task 'Using Config' "${DIR_LOCAL_CFG}/nzbget/nzbget.conf"
+			nzbget -D -c ~/.config/nzbget/nzbget.conf
+		out_msg complete
+		sleep 1
+		out_msg title 'Opening GUI'
+			out_msg task 'URL' 'http://127.0.0.1:6789'
+			firefox http://127.0.0.1:6789
+		out_msg complete
+	;;
+	
+	stop)
+		out_msg header 'Nzbget Management: Stop Daemon'
+		out_msg title 'Stopping Daemon'
+			out_msg task 'Using Config' "${DIR_LOCAL_CFG}/nzbget/nzbget.conf"
+			nzbget -Q -c ~/.config/nzbget/nzbget.conf &> /dev/null 2>$1
+		out_msg complete
+	;;
+esac
 
-out_title () {
-	print -P -l "\n%{$fg_bold[blue] [ %{$fg_bold[magenta]$1%{$fg_bold[blue] ]"
-	print -P "%{$fg_bold[magenta] ----------------------------"
-}
-
-out_task () {
-	print -P " %{$fg_bold[magenta]$1...%{$fg_bold[yellow]"
-}
-
-print -P "%{$fg_bold[magenta]%                                   ______"
-print -P "    _____________________________/::'   \\"
-print -P "   /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
-print -P "  /:' |   \\\'  -   \\\'    | \\\'    __\\\_     / %F{blue}n9! -- [%F{magenta} nzbget %F{blue}]%F{magenta}"
-print -P " +\\\___|___/_______/_______/_______/_____/------------------------------------------------------------------+%{$reset_color%}"
-
-
-STATUS="$(systemctl is-active --quiet nzbget)" 
-if [[ "${STATUS}" == "active" ]] then
-    print -P "\n%{$fg_bold[blue] [ % %{$fg_bold[magenta]% nzbget is %{$fg_bold[green]RUNNING%{$fg_bold[blue] ]"
-else
-    print -P "\n%{$fg_bold[blue] ++ % %{$fg_bold[magenta]% nzbget is %{$fg_bold[yellow]NOT RUNNING%{$fg_bold[blue] ++"
-fi
-
-
-out_title 'Start/Stop nzbget daemon'
-    print -P " 1. Start"
-    print -P " 2. Stop"
-    print -P "%{$fg_bold[magenta] ----------------------------"
-    read  "option? Selection : "
-
-    if [[ "$option" == "1" ]] then
-        out_title 'Starting nzbget'
-        out_task 'Daemon starting up'
-        ~/Documents/builds/nzbget-git/nzbget -D
-        out_complete
-    elif [[ "$option" == "2" ]] then
-        out_title 'Stopping nzbget'
-        out_task 'Daemon shutting down'
-        ~/Documents/builds/nzbget-git/nzbget -Q
-        out_complete
-    else
-        print -P '\n Invaild option!'
-    fi
+echo -e -n "${RED}All Done! ${NC}" 
+for ((i=3; i!=0; i--))
+do
+	echo -e -n "${PURPLE}$i"
+	if [ $i != 1 ]; then
+		echo -e -n "${PURPLE}.."
+	fi
+	sleep 1
+done
+echo -e " ///${NC} ${BLUE}goodbye!"
+sleep 1

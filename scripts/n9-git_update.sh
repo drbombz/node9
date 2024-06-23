@@ -1,157 +1,210 @@
-#!/bin/zsh
+!/bin/bash
 clear
+resize -s 40 140 > /dev/null 2>&1
+
+# Global Vars
+#==================================================================================
+
+# Colors
+PURPLE='\033[0;35m'$(tput bold)
+BLUE='\033[0;36m'$(tput bold)
+YELLOW='\033[1;33m'$(tput bold)
+GREEN='\033[1;32m'$(tput bold)
+RED='\033[0;31m'$(tput bold)
+NC='\033[0m'
+
+# Main Directories
+ME=$(whoami)
+DIR_HOME="/home/$ME"
+DIR_LOCAL_CFG="$DIR_HOME/.config"
+DIR_GIT="$DIR_HOME/.git/node9"
+DIR_GIT_CFG="$DIR_GIT/config"
 
 autoload -U colors && colors
-ROOT_DIR="/home/upgrad3/.git/node9"
-CONFIG_DIR="$ROOT_DIR/config"
-SCRIPTS_DIR="$ROOT_DIR/scripts"
 
-out_complete () {
-	print -P "%{$fg_bold[magenta] ---[ %{$fg[blue]Complete! %{$fg_bold[magenta]]-------------------------"
+# Functions
+#==================================================================================
+out_msg() {
+	case $1 in
+		complete)
+			echo -e -n ${PURPLE}
+			for((l=1;l <= 29; l++)) do
+				echo -e -n "-"
+			done
+			echo -e -n "[${NC} ${GREEN}Complete${NC} ${PURPLE}]"
+			for((l=1;l <= 29; l++)) do
+				echo -e -n "-"
+			done
+			echo -e "\n${NC}"
+		;;
+
+		error)
+			echo -e "${RED}[ERROR]: $MSG${NC}"
+		;;
+
+		header)
+			echo -e "${PURPLE}                                 ______"
+			echo -e "   _____________________________/::'   \\"
+			echo -e "  /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
+			echo -e -n " /:' |   \\\'  -   \\\'    | \\\'    __\\\_     /${NC}"
+			echo -e " ${BLUE}n9! -- [${NC} ${PURPLE}git-update${NC} ${BLUE}]${NC}"
+			echo -e -n "${PURPLE}+\\\___|___/_______/_______/_______/_____/--------------"
+			echo -e "----------------------------------------------------+${NC}"
+			#get_sudo "Deployment requires ${RED}sudo${NC} ${YELLOW}for some actions${NC}"
+			sleep 1
+		;;
+
+		info)
+			echo -e "${YELLOW}[INFO]: $2${NC}"
+			;;
+
+		line)
+			if [ $2 ]; then
+				LEN=$2
+			else
+				LEN=70
+			fi
+
+			echo -e -n ${PURPLE}
+			for((l=1;l <= $LEN; l++)) do
+				echo -e -n "-"
+			done
+			echo -e ${NC}
+		;;
+
+		task)
+			if [[ $2 == 'sync' ]]; then
+				out_msg task 'Syncing' "$3"
+			else
+				echo -e "${PURPLE}$2:${NC} ${BLUE}$3${NC}"
+			fi
+		;;
+
+		title)
+			if [[ $2 == 'in' ]]; then
+				out_msg task 'Installing' $3
+				out_msg line 40
+			else
+				echo -e "\n${BLUE}[${NC} ${PURPLE}$2${NC} ${BLUE} ]${NC}"
+				out_msg line
+				sleep 1
+			fi
+		;;
+	esac
 }
 
-out_copy () {
-	print -P " %{$fg_bold[magenta]Copying: %{$fg_bold[blue] $1"
-}
+# Main
+#==================================================================================
+out_msg header
+echo -e "\n${PURPLE}/// ${BLUE}Oh Hai ${GREEN}$ME${PURPLE}!${NC}"
 
-out_gitcmd () {
-	print -P " %{$fg_bold[magenta]$1...%{$fg_bold[yellow]"
-}
+out_msg title 'Syincing Dots'
+	out_msg task sync audacious
+		cp $DIR_LOCAL_CFG/audacious/config $DIR_GIT_CFG/audacious
+		cp $DIR_LOCAL_CFG/audacious/playlist-state $DIR_GIT_CFG/audacious
+		cp $DIR_LOCAL_CFG/audacious/plugin-registry $DIR_GIT_CFG/audacious
+		cp $DIR_LOCAL_CFG/audacious/QtUi.conf $DIR_GIT_CFG/audacious
 
-out_title () {
-	print -P -l "\n%{$fg_bold[blue] [ %{$fg_bold[magenta]$1%{$fg_bold[blue] ]"
-	print -P "%{$fg_bold[magenta] ----------------------------"
-}
+	out_msg task sync bashtop
+		cp $DIR_LOCAL_CFG/bashtop/bashtop.cfg $DIR_GIT_CFG/bashtop
+		cp $DIR_LOCAL_CFG/bashtop/themes/* $DIR_GIT_CFG/bashtop/themes
 
-print -P "%{$fg_bold[magenta]%                                   ______"
-print -P "    _____________________________/::'   \\"
-print -P "   /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
-print -P "  /:' |   \\\'  -   \\\'    | \\\'    __\\\_     / %F{blue}n9! -- [%F{magenta} Update: GIT/node9 %F{blue}]%F{magenta}"
-print -P " +\\\___|___/_______/_______/_______/_____/------------------------------------------------------------------+%{$reset_color%}"
-sleep 2
+	out_msg task sync cava
+		cp $DIR_LOCAL_CFG/cava/config $DIR_GIT_CFG/cava
 
-out_title 'Syincing Dots'
-	out_copy audacious
-		cp ~/.config/audacious/config $CONFIG_DIR/audacious
-		cp ~/.config/audacious/playlist-state $CONFIG_DIR/audacious
-		cp ~/.config/audacious/plugin-registry $CONFIG_DIR/audacious
-		cp ~/.config/audacious/QtUi.conf $CONFIG_DIR/audacious
+	out_msg task sync cmus
+		cp $DIR_LOCAL_CFG/cmus/autosave $DIR_GIT_CFG/cmus
+		cp $DIR_LOCAL_CFG/cmus/rc $DIR_GIT_CFG/cmus
 
-	out_copy bashtop
-		cp ~/.config/bashtop/bashtop.cfg $CONFIG_DIR/bashtop
-		cp ~/.config/bashtop/user_themes/node9.theme $CONFIG_DIR/bashtop
-
-	out_copy cava
-		cp ~/.config/cava/config $CONFIG_DIR/cava
-
-	out_copy cmus
-		cp ~/.config/cmus/autosave $CONFIG_DIR/cmus
-		cp ~/.config/cmus/rc $CONFIG_DIR/cmus
-
-	out_copy dolphin
-		cp ~/.config/dolphinrc $CONFIG_DIR/dolphin
-
-	out_copy firefox
+	out_msg task sync firefox
 		FFPROF=$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | sed 's/^.*Path=//p' | tail -n1)
-		cp ~/.mozilla/firefox/$FFPROF/addons.json $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/addonStartup.json.lz4 $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/extension-preferences.json $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/extension-settings.json $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/prefs.js $CONFIG_DIR/firefox/user.js
-		cp ~/.mozilla/firefox/$FFPROF/permissions.sqlite $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/content-prefs.sqlite $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/search.json.mozlz4 $CONFIG_DIR/firefox
-		cp ~/.mozilla/firefox/$FFPROF/handlers.json $CONFIG_DIR/firefox
+		cp ~/.mozilla/firefox/$FFPROF/addons.json $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/addonStartup.json.lz4 $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/extension-preferences.json $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/extension-settings.json $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/prefs.js $DIR_GIT_CFG/firefox/user.js
+		cp ~/.mozilla/firefox/$FFPROF/permissions.sqlite $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/content-prefs.sqlite $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/search.json.mozlz4 $DIR_GIT_CFG/firefox
+		cp ~/.mozilla/firefox/$FFPROF/handlers.json $DIR_GIT_CFG/firefox
 	
-	out_copy gtk
-		cp -r ~/.themes/dracula $CONFIG_DIR/gtk/themes
-		cp ~/.config/gtk-3.0/settings.ini $CONFIG_DIR/gtk
-		cp ~/.gtkrc-2.0 $CONFIG_DIR/gtk
-		cp ~/.icons/default/index.theme $CONFIG_DIR/gtk
-		cp ~/.config/xsettingsd/xsettingsd.conf $CONFIG_DIR/gtk
-		cp ~/.config/gtk-3.0/bookmarks $CONFIG_DIR/gtk
+	out_msg task sync gtk
+		cp -r ~/.themes/ $DIR_GIT_CFG/gtk/themes
+		cp $DIR_LOCAL_CFG/gtk-3.0/* $DIR_GIT_CFG/gtk
+		cp ~/.gtkrc-2.0 $DIR_GIT_CFG/gtk
+		cp ~/.icons/default/index.theme $DIR_GIT_CFG/gtk
+		cp $DIR_LOCAL_CFG/xsettingsd/xsettingsd.conf $DIR_GIT_CFG/gtk
 
-	out_copy hyprland
-		cp -rf ~/.config/hypr/* $CONFIG_DIR/hypr
+	out_msg task sync hypr
+		cp -rf $DIR_LOCAL_CFG/hypr/* $DIR_GIT_CFG/hypr
 
-	out_copy hyprpaper
-		cp ~/.config/hyprpaper/hyprpaper.conf $CONFIG_DIR/hyprpaper
-		cp ~/.config/hyprpaper/wallpaper.png $CONFIG_DIR/hyprpaper
+	out_msg task sync kitty
+		cp $DIR_LOCAL_CFG/kitty/* $DIR_GIT_CFG/kitty
 
-	out_copy kitty
-		cp ~/.config/kitty/* $CONFIG_DIR/kitty
+	out_msg task sync kvantum
+		cp -rf $DIR_LOCAL_CFG/Kvantum/node9 $DIR_GIT_CFG/kvantum
+		cp $DIR_LOCAL_CFG/Kvantum/kvantum.kvconfig $DIR_GIT_CFG/kvantum
 
-	out_copy krusader
-		cp ~/.config/krusaderrc $CONFIG_DIR/krusader
+	out_msg task sync neofetch
+		cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
 
-	out_copy kvantum
-		cp -rf ~/.config/Kvantum/node9 $CONFIG_DIR/kvantum
-		cp ~/.config/Kvantum/kvantum.kvconfig $CONFIG_DIR/kvantum
+	out_msg task sync oh-my-zsh
+		cp ~/.oh-my-zsh/themes/node9.zsh-theme $DIR_GIT_CFG/oh-my-zsh
 
-	out_copy neofetch
-		cp ~/.config/neofetch/config.conf $CONFIG_DIR/neofetch
+	out_msg task sync remmina
+		cp $DIR_LOCAL_CFG/remmina/remmina.pref $DIR_GIT_CFG/remmina
 
-	out_copy misc
-		cp ~/.local/share/user-places.xbel $CONFIG_DIR/misc
+	out_msg task sync rofi
+		cp $DIR_LOCAL_CFG/rofi/config.rasi $DIR_GIT_CFG/rofi
+		cp $DIR_LOCAL_CFG/rofi/themes/* $DIR_GIT_CFG/rofi/themes
 
-	out_copy nwg-look
-		cp ~/.config/nwg-look/* $CONFIG_DIR/nwg-look
+	out_msg task sync sddm--sugar-dark-theme
+		cp /usr/share/sddm/themes/sugar-dark/theme.conf $DIR_GIT_CFG/sddm
 
-	out_copy oh-my-zsh
-		cp ~/.oh-my-zsh/themes/node9.zsh-theme $CONFIG_DIR/oh-my-zsh
+	out_msg task sync sublime-text
+		cp -r $DIR_LOCAL_CFG/sublime-text/Installed\ Packages/ $DIR_GIT_CFG/sublime-text
+		cp -r $DIR_LOCAL_CFG/sublime-text/Packages $DIR_GIT_CFG/sublime-text
 
-	out_copy remmina
-		cp ~/.config/remmina/remmina.pref $CONFIG_DIR/remmina
+	out_msg task sync swappy
+		cp $DIR_LOCAL_CFG/swappy/config $DIR_GIT_CFG/swappy
 
-	out_copy rofi
-		cp ~/.config/rofi/config.rasi $CONFIG_DIR/rofi
-		cp ~/.config/rofi/themes/* $CONFIG_DIR/rofi/themes
+	out_msg task sync swaync
+		cp $DIR_LOCAL_CFG/swaync/* $DIR_GIT_CFG/swaync
 
-	out_copy sddm--sugar-dark-theme
-		cp /usr/share/sddm/themes/sugar-dark/theme.conf $CONFIG_DIR/sddm
+	out_msg task sync swayosd
+		cp $DIR_LOCAL_CFG/swayosd/* $DIR_GIT_CFG/swayosd
 
-	out_copy sublime-text
-		cp -r ~/.config/sublime-text/Installed\ Packages/ $CONFIG_DIR/sublime-text
-		cp -r ~/.config/sublime-text/Packages $CONFIG_DIR/sublime-text
+	out_msg task sync waybar
+		cp $DIR_LOCAL_CFG/waybar/config $DIR_GIT_CFG/waybar
+		cp $DIR_LOCAL_CFG/waybar/style.css $DIR_GIT_CFG/waybar
 
-	out_copy swaync
-		cp ~/.config/swaync/* $CONFIG_DIR/swaync
+	out_msg task sync wlogout
+		cp $DIR_LOCAL_CFG/wlogout/layout $DIR_GIT_CFG/wlogout
+		cp $DIR_LOCAL_CFG/wlogout/style.css $DIR_GIT_CFG/wlogout
+		cp $DIR_LOCAL_CFG/wlogout/icons/* $DIR_GIT_CFG/wlogout/icons
 
-	out_copy swayosd
-		cp ~/.config/swayosd/* $CONFIG_DIR/swayosd
+	out_msg task sync zsh
+		cp ~/.zshrc $DIR_GIT_CFG/zsh
+out_msg complete
 
-	out_copy waybar
-		cp ~/.config/waybar/config $CONFIG_DIR/waybar
-		cp ~/.config/waybar/style.css $CONFIG_DIR/waybar
+out_msg title 'Syincing Misc'
+	out_msg task sync 'Scripts'
+		cp ~/.n9-scripts/* $DIR_GIT/scripts
+out_msg complete
 
-	out_copy wlogout
-		cp ~/.config/wlogout/layout $CONFIG_DIR/wlogout
-		cp ~/.config/wlogout/style.css $CONFIG_DIR/wlogout
-		cp ~/.config/wlogout/icons/* $CONFIG_DIR/wlogout/icons
-
-	out_copy zsh
-		cp ~/.zshrc $CONFIG_DIR/zsh
-out_complete
-
-out_title 'Syincing Misc'
-	out_copy 'Scripts'
-		cp ~/.n9-scripts/* $SCRIPTS_DIR
-out_complete
-
-cd $ROOT_DIR
-
-out_title 'Pushing GIT'
-	out_gitcmd 'Adding Files'
+out_msg title 'Pushing GIT'
+	cd $DIR_GIT
+	out_msg task 'Adding Files' All
 		git add --all >/dev/null
 
-	out_gitcmd 'Committing'
+	out_msg task Committing "Comment 'Update'"
 		git commit -m 'Updated' >/dev/null
 
-	out_gitcmd 'Pushing'
+	out_msg task Pushing 'Origin - Master'
 		git push origin master 2>/dev/null
-out_complete
+out_msg complete
 
-print -P -n "\n %{$fg_bold[blue]All done!"
+echo -e "\n${PURPLE}///${NC} ${BLUE}Local Git Synced / Repo Updated... goodbye!${NC}\n"
 
 for i in $(seq 1 5)
 do

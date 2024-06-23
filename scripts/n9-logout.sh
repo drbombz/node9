@@ -12,7 +12,7 @@ hyprctl --batch "$HYPRCMDS" >> /tmp/hypr/hyprexitwithgrace.log 2>&1
 # DON'T DO IT! Exiting hyprland aborts shutdown request.
 # Instead rely on shutdown to exit hyprland process.
 # (Hyprland appears to be a good Linux SIGNAL citizen.)
-mkdir /tmp/hypr
-hyprctl dispatch exit >> /tmp/hypr/hyprexitwithgrace.log 2>&1
+#mkdir /tmp/hypr
+#hyprctl dispatch exit >> /tmp/hypr/hyprexitwithgrace.log 2>&1
 
-# loginctl kill-session $XDG_SESSION_ID
+loginctl kill-session $XDG_SESSION_ID
