@@ -191,7 +191,7 @@ out_msg title 'Syincing Misc'
 out_msg complete
 
 out_msg title 'Pushing GIT'
-	cd $DIR_GIT
+	cd ~/.git/node9
 	out_msg task 'Adding Files' All
 		git add --all >/dev/null
 
