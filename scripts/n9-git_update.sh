@@ -20,8 +20,6 @@ DIR_LOCAL_CFG="$DIR_HOME/.config"
 DIR_GIT="$DIR_HOME/.git/node9"
 DIR_GIT_CFG="$DIR_GIT/config"
 
-autoload -U colors && colors
-
 # Functions
 #==================================================================================
 out_msg() {
