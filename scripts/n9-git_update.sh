@@ -95,7 +95,7 @@ out_msg() {
 #==================================================================================
 out_msg header
 echo -e "\n${PURPLE}/// ${BLUE}Oh Hai ${GREEN}$ME${PURPLE}!${NC}"
-
+echo $DIR_GIT
 out_msg title 'Syincing Dots'
 	out_msg task sync audacious
 		cp $DIR_LOCAL_CFG/audacious/config $DIR_GIT_CFG/audacious
