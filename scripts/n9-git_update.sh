@@ -199,7 +199,7 @@ out_msg title 'Pushing GIT'
 		git commit -m 'Updated' >/dev/null
 
 	out_msg task Pushing 'Origin - Master'
-		git push origin master
+		git push -u origin master
 out_msg complete
 
 echo -e "\n${PURPLE}///${NC} ${BLUE}Local Git Synced / Repo Updated... goodbye!${NC}\n"
