@@ -1,7 +1,6 @@
 #!/bin/bash
 clear
 
-
 # Global Vars
 #==================================================================================
 
@@ -95,7 +94,7 @@ out_msg() {
 #==================================================================================
 out_msg header
 echo -e "\n${PURPLE}/// ${BLUE}Oh Hai ${GREEN}$ME${PURPLE}!${NC}"
-echo $DIR_GIT
+
 out_msg title 'Syincing Dots'
 	out_msg task sync audacious
 		cp $DIR_LOCAL_CFG/audacious/config $DIR_GIT_CFG/audacious
@@ -204,9 +203,8 @@ out_msg complete
 
 echo -e "\n${PURPLE}///${NC} ${BLUE}Local Git Synced / Repo Updated... goodbye!${NC}\n"
 
-for i in $(seq 1 5)
+for i in $(seq 1 3)
 do
 	echo -n ' .'
 	sleep 1
 done
-sleep 1000
