@@ -449,7 +449,7 @@ out_msg title 'Installing User Configs'
 
 	out_msg task in sddm
 		sudo tar -xzf $DIR_DPLY_CFG/sddm/sugar-dark.tar.gz -C $DIR_SYS_SDDM/themes
-		sudo cp -f ./sddm/theme.conf $DIR_SYS_SDDM/themes/sugar-dark
+		sudo cp -f $DIR_DPLY_CFG/sddm/theme.conf $DIR_SYS_SDDM/themes/sugar-dark
 		sudo mkdir $DIR_SYS_SDDM/themes/sugar-dark/Backgrounds
 		sudo cp -f $DIR_DPLY/wallpaper/purple-dark-fractal.png $DIR_SYS_SDDM/themes/sugar-dark/Backgrounds
 		sudo cp -f $DIR_DPLY_CFG/sddm/sddm.conf /etc/sddm.conf.d
