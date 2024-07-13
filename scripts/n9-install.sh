@@ -182,166 +182,41 @@ declare -a dirs_dply=(
 )
 
 # Deployment Directory Names
-declare -a dirs_dply_name=(
-	"home"
-	"deploy-root"
-	"deploy-build"
-	"deploy-config"
-	"local-config"
-	"local-icons"
-	"local-scripts"
-	"local-wallpaper"
-	"system-fonts"
-	"system-icons"
-)
+declare -a dirs_dply_name=('home' 'deploy-root' 'deploy-build' 'deploy-config' 'local-config' 'local-icons' 'local-scripts' 'local-wallpaper' 'system-fonts' 'system-icons')
 
 # Config Directories
-declare -a dirs_cfg=(
-	"audacious"
-	"bashtop"
-	"cava"
-	"cmus"
-	"hypr"
-	"kitty"
-	"Kvantum"
-	"neofetch"
-	"remmina"
-	"rofi"
-	"sublime-text"
-	"swaync"
-	"swayosd"
-	"waybar"
-	"wlogout"
-)
+declare -a dirs_cfg=('audacious' 'bashtop' 'cava' 'cmus' 'hypr' 'kitty' 'Kvantum' 'neofetch' 'remmina' 'rofi' 'sublime-text' 'swaync' 'swayosd' 'waybar' 'wlogout')
 
-declare -a dirs_home=(
-	"Documents"
-	"Downloads"
-	"Music"
-	"Pictures"
-)
+# Home Directories
+declare -a dirs_home=('Documents' 'Downloads' 'Music' 'Pictures')
 
 # Required Packages
-declare -a pkg_req=(
-	"brightnessctl"
-	"caca-utils"
-	"cairo-devel"
-	"cairo-tools"
-	"cargo"
-	"file-devel"
-	"fmt-devel"
-	"freeglut-devel"
-	"go1.22"
-	"gobject-introspection"
-	"gtk-layer-shell-devel"
-	"gtkmm3-devel"
-	"hyprlang-devel"
-	"jsoncpp-devel"
-	"kf6-extra-cmake-modules"
-	"libappindicator3-1"
-	"libdrm-tools"
-	"libevdev-devel"
-	"libKF5GuiAddons5"
-	"libopenssl1_1"
-	"libpng12-devel"
-	"libsdbus-c++1"
-	"libxkbregistry-devel"
-	"NetworkManager-connection-editor"
-	"NetworkManager-bluetooth"
-	"meson"
-	"mtpfs"
-	"mtp-tools"
-	"opi"
-	"pango-tools"
-	"pulseaudio-bash-completion"
-	"pulseaudio-zsh-completion"
-	"sassc"
-	"sdbus-cpp-devel"
-	"scdoc"
-	"unrar"
-	"unzip"
-	"wayland-protocols-devel"
-	"xdg-desktop-portal-hyprland"
-)
+declare -a pkg_req=('brightnessctl' 'caca-utils' 'cairo-devel' 'cairo-tools' 'cargo' 'file-devel' 'fmt-devel' 'freeglut-devel'
+'go1.22' 'gobject-introspection' 'gtk-layer-shell-devel' 'gtkmm3-devel' 'hyprlang-devel' 'jsoncpp-devel' 'kf6-extra-cmake-modules'
+'libappindicator3-1' 'libdrm-tools' 'libevdev-devel' 'libKF5GuiAddons5' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'libxkbregistry-devel'
+'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'pulseaudio-bash-completion' 
+'pulseaudio-zsh-completion' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
 
 # Optional Packages
-declare -a pkg_opt=(
-	"cmake"
-	"gtk3-devel"
-	"libdrm-devel"
-	"libinput-devel"
-	"libqt5-qtwayland-devel"
-	"libqt5-qdbus"
-	"libqt5-qtsvg-devel"
-	"libQt5DBus-devel"
-	"libqt5-qttools"
-	"libwebp-devel"
-	"libxkbcommon-devel"
-	"libxkbcommon-x11-devel"
-	"libXcursor-devel"
-	"ninja"
-	"pam-devel"
-	"pango-devel"
-	"systemd-devel"
-)
+declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5-qtwayland-devel' 'libqt5-qdbus' 'libqt5-qtsvg-devel'
+'libQt5DBus-devel' 'libqt5-qttools' 'libwebp-devel' 'libxkbcommon-devel' 'libxkbcommon-x11-devel' 'libXcursor-devel' 'ninja' 'pam-devel'
+'pango-devel' 'systemd-devel')
 
-declare -a pkg_repo=(
-	"sway"
-	"audacious"
-	"cava"
-	"cmus"
-	"code"
-	"dconf-editor"
-	"grim"
-	"gthumb"
-	"hyprland"
-	"hyprpaper"
-	"hyprpicker"
-	"kitty"
-	"kvantum-qt5"
-	"kvantum-manager"
-	"nemo"
-	"neofetch"
-	"remmina"
-	"rofi-wayland"
-	"sddm"
-	"sublime-text"
-	"swappy"
-	"swaync"
-	"waybar"
-	"zsh"
-)
+declare -a pkg_repo=('sway' 'audacious' 'cava' 'cmus' 'code' 'dconf-editor' 'grim' 'gthumb' 'hyprland' 'hyprpaper' 'hyprpicker' 'kitty'
+'kvantum-qt5' 'kvantum-manager' 'nemo' 'neofetch' 'remmina' 'rofi-wayland' 'sddm' 'sublime-text' 'swappy' 'swaync' 'waybar' 'zsh')
 
-declare -a repo_file=(
-	"azhou"
-	"mantarimay"
-	"packman"
-	"repo-debug"
-	"repo-non-oss"
-	"repo-openh264"
-	"repo-oss"
-	"repo-source"
-	"repo-update"
-	"sublime-text"
-	"system_packagemanager"
-	"vscode"
-)
+declare -a repo_file=('azhou' 'mantarimay' 'packman' 'repo-debug' 'repo-non-oss' 'repo-openh264' 'repo-oss' 'repo-source' 'repo-update'
+'sublime-text' 'system_packagemanager' 'vscode')
 
 declare -a repo_url=(
-    "https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed"
-    "https://download.opensuse.org/repositories/home:/AZhou/openSUSE_Tumbleweed"
-    "https://download.opensuse.org/repositories/home:/mantarimay:/sway/standard/"
-    "https://download.sublimetext.com/rpm/stable/x86_64"
-    "https://packages.microsoft.com/yumrepos/vscode"
+    'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed'
+    'https://download.opensuse.org/repositories/home:/AZhou/openSUSE_Tumbleweed'
+    'https://download.opensuse.org/repositories/home:/mantarimay:/sway/standard/'
+    'https://download.sublimetext.com/rpm/stable/x86_64'
+    'https://packages.microsoft.com/yumrepos/vscode'
 )
 
-declare -a repo_name=(
-    "packman"
-    "repo-azhou"
-    "repo-mantarimay"
-    "sublime-text"
-    "vscode"
-)
+declare -a repo_name=('packman' 'repo-azhou' 'repo-mantarimay' 'sublime-text' 'vscode')
 
 # Main
 #==================================================================================
