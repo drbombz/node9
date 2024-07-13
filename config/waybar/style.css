@@ -1,0 +1,250 @@
+/*                                ______
+    _____________________________/::'   \
+   /:'   \::'    \::'    \::' _  \:' |   \
+  /:' |   \'  -   \'    | \'    __\_     / n9! -- [ waybar ]
+ +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
+                                                                                                          */
+
+@define-color blue          #89b4fa;
+@define-color cyan          #64a8e2;
+@define-color gray          #595959;
+@define-color green         #a6e3a1;
+@define-color flamingo      #f2cdcd;
+@define-color lavender      #b4befe;
+@define-color maroon        #eba0ac;
+@define-color mauve         #cba6f7;
+@define-color orange        #FF8542;
+@define-color peach         #fab387;
+@define-color pink          #f5c2e7;
+@define-color pink-light    #ff97d3;
+@define-color purple        #1D192D;
+@define-color purple-light  #50437F;
+@define-color red           #f38ba8;
+@define-color rosewater     #f5e0dc;
+@define-color sapphire      #74c7ec;
+@define-color sky           #89dceb;
+@define-color teal          #94e2d5;
+@define-color yellow        #f9e2af;
+@define-color white         #efefef;
+@define-color clock         #322b4e;
+
+/* Main
+*******************************************/
+* {
+    padding: 0px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Roboto", "FontAwesome 6 Free", "MaterialDesign-Font";
+    text-shadow: none;
+    transition-duration: 0s;
+}
+#waybar {
+    min-width: 400px;
+    color: #a2a2a2;
+    background-image: linear-gradient(#14161d, #2b2f3f);
+    border-top: 2px solid @purple-light;
+    border-bottom: 2px solid @purple-light;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+#waybar.solo {
+    color: #b3b3b3;
+}
+
+/* Modules Left
+*******************************************/
+.modules-left {
+    border-top: 2px solid @purple-light;
+    border-bottom: 2px solid @purple-light;
+    border-bottom-left-radius: 16px;
+}
+#custom-end-left,
+#custom-end-right,
+#submap,
+#custom-wlogout,
+#custom-power-shutdown,
+#custom-power-restart,
+#custom-power-logout {
+    padding: 0px 0px 0px 0px;
+    color: #7d88a8;
+    font-size: 24px;
+    background-image: linear-gradient(#1f1f2c, #343a4d);
+}
+#custom-end-left {
+    color: #7d88a8;
+    padding-left: 5px;
+    border-left: 2px solid @purple-light;
+    border-bottom-left-radius: 16px;
+}
+#submap {
+    /*color: @tan;*/
+    font-size: 19px;
+    padding: 2px 13px 0px;
+}
+#custom-wlogout {
+    color: #a5a5a5;
+    padding: 2px 6px 0px 7px;
+}
+#custom-power-logout {
+    padding: 0px 0px 0px 0px;
+}
+#submap:hover,
+#custom-power-shutdown:hover,
+#custom-power-restart:hover,
+#custom-power-logout:hover {
+    color: @cyan;
+}
+#custom-end-right {
+    padding-left: 7px;
+    border-right: 2px solid @purple-light;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 0px;
+}
+#workspaces {
+}
+#workspaces button {
+    font-size: 22px;
+    padding: 0px 10px 0px 7px;
+    color: @white;
+}
+#workspaces button.focused {
+    color: @yellow;
+}
+#workspaces button.visible {
+    color: @cyan;
+}
+#workspaces button.urgent {
+    color: @tan;
+}
+#workspaces button:hover {
+    background: @purple-light;
+    border-top: 1px solid @purple-light;
+    border-bottom: 1px solid @purple-light;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;  
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(0.85, 1, 0.2, 1);
+}
+#window {
+    color: #9aa4c4;
+    font-size: 20px;
+    font-family: "Poppins";
+    border-radius: 10px;
+    padding: 0px 20px 0px 5px;
+
+}
+.modules-center {
+    border-top: 2px solid @purple-light;
+    border-bottom: 2px solid @purple-light;
+}
+
+
+/* Seperators
+*******************************************/
+#custom-sep1 {
+    color: @gray;
+    font-size: 18px;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+/* Modules Right
+*******************************************/
+.modules-right {
+    background-image: linear-gradient(#1f1f2c, #343a4d);
+    padding-left: 15px;
+    border: 2px solid @purple-light;
+    border-right: none;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 18px;
+}
+#custom-vert,
+#network,
+#bluetooth,
+#battery,
+#memory,
+#backlight,
+#custom-notification,
+#pulseaudio,
+#clock {
+    font-size: 19px;
+    padding: 0px 18px 0px 0px;
+}
+#custom-vert {
+    font-size: 18px;
+    color: #cdd6f4;
+}
+#network {
+    background: transparent;
+}
+#network.wifi {
+    color: @cyan;
+}
+#bluetooth {
+    color: @teal;
+    padding-right: 22px;
+    font-size: 20px;
+}
+#bluetooth.connected,
+#bluetooth.disabled,
+#bluetooth.off {
+}
+#battery {
+    padding-right: 14px;
+}
+#battery.full {
+    color: @green;
+}
+#battery.good,
+#battery.charging {
+    color: @green;
+}
+#battery.warning {
+    color: @yellow;
+}
+#battery.critical {
+    color: @red;
+}
+#battery.plugged {
+    color: @green;
+}
+#memory {
+    color: @pink-light;
+    padding-right: 14px;
+}
+#pulseaudio {
+    color: @white;
+    padding-top: 2px;
+}
+#custom-notification {
+    color: #81a7bf;
+    background-color: transparent;
+}
+#custom-audio_idle_inhibitor {
+    color: @yellow;
+    padding-right:20px;
+}
+#clock {
+    color: @white;
+    padding: 3px 15px 0px 18px;
+    background-image: linear-gradient(#0e352f, #1a5e53);
+    background-image: linear-gradient(#272737, #434b63);
+    border-right: 2px solid @purple-light; 
+    border-left: 2px solid @purple-light;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 18px;
+}
+
+/* Tooltip
+*******************************************/
+tooltip {
+    background-color: #343a4d;
+    background-image: linear-gradient(#212531, #343a4d);
+    border: 1px solid @purple-light;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+tooltip label {
+    color: #7d88a8;
+    padding: 10px;
+}

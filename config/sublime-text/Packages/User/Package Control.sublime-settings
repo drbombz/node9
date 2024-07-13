@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"Catppuccin color schemes",
+		"CFML",
+		"Dracula Color Scheme",
+		"Nord",
+		"Package Control",
+		"PowerShell",
+		"Tinacious Design colour scheme",
+	],
+	"in_process_packages":
+	[
+	],
+}

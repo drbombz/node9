@@ -1,0 +1,89 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+
+#TabsToolbar { visibility: collapse; will-change: auto !important; }
+
+@media not (-moz-bool-pref: "uc.tweak.no-window-controls") { 
+:root:not([inDOMFullscreen], [sizemode="fullscreen"]) {
+    
+    & .titlebar-buttonbox-container {
+        height: 40px !important;
+        visibility: visible !important;
+        z-index: 100 !important;
+        position: absolute !important;
+    }
+    &[uidensity=compact] .titlebar-buttonbox-container { 
+        height: 34px !important; 
+    }
+    &[uidensity=touch] .titlebar-buttonbox-container {
+        height: 44px !important;
+    }
+    @media (-moz-bool-pref: "uc.tweak.extra-thin-nav-bar") {
+        :root[uidensity=compact] .titlebar-buttonbox-container {
+            height: 28px !important;
+        }
+    }
+
+    @media (-moz-platform: macos ) {
+        #nav-bar {
+            margin-left: 68px !important;
+        }
+    }   
+
+    @media (-moz-platform: windows) {
+        .titlebar-buttonbox-container {
+            top: 0 !important;
+            right: 0 !important;
+        }
+        #nav-bar {
+            margin-right: 138px !important;
+        }
+    }
+
+    @media (-moz-platform: linux) {
+        #toolbar-menubar > .titlebar-buttonbox-container {
+            visibility: collapse !important;
+        }
+
+        @media (-moz-gtk-csd-minimize-button) or (-moz-gtk-csd-maximize-button) or (-moz-gtk-csd-close-button) {
+            --gtk-window-button-width: 36px;
+            @media (-moz-bool-pref: "uc.tweak.extra-thin-nav-bar") {
+                &[uidensity=compact] {
+                    --gtk-window-button-width: 32px;
+                }
+            }
+        }
+        @media ((-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button)) or 
+           ((-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button)) or
+           ((-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button)) {
+            --gtk-window-button-width: 66px;
+            @media (-moz-bool-pref: "uc.tweak.extra-thin-nav-bar") {
+                &[uidensity=compact] {
+                    --gtk-window-button-width: 60px;
+                }
+            }
+        }
+
+        @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+            --gtk-window-button-width: 96px;
+            @media (-moz-bool-pref: "uc.tweak.extra-thin-nav-bar") {
+                &[uidensity=compact] {
+                    --gtk-window-button-width: 84px;
+                }
+            }
+        }       
+
+        @media not (-moz-gtk-csd-reversed-placement) {
+            #nav-bar { margin-right: var(--gtk-window-button-width) !important; }
+            .titlebar-buttonbox-container { right: 0; }
+        }
+        @media (-moz-gtk-csd-reversed-placement) {
+            #nav-bar { margin-left: var(--gtk-window-button-width) !important; }
+            .titlebar-buttonbox-container { left: 0; }
+        }
+    }   
+}}

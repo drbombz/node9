@@ -1,0 +1,47 @@
+background            #5187ae
+foreground            #cdc8da
+cursor                #FF8542
+selection_background  #1e1d2a
+selection_foreground #100814
+
+# black
+color0                #241f2a
+
+color8                #312d3c
+
+# magenta
+color1                #d0537e
+
+#pink
+color9                #d4346c
+
+# green forest
+#color2                #4cd642
+color2 #5187ae
+
+# green aqua
+color10               #7de78c
+
+# dark yellow
+color3                #e1cf73
+
+# yellow
+color11               #fde83a
+
+# blue
+color4                #6480af
+color12               #8fb9f9
+
+# purple
+color5                #9681be
+color13               #712ed2
+
+# blue mint
+color6                #8aaabd
+color14               #abd3eb
+
+#dark purple (main)
+color7                #b186d3
+
+# magenta light
+color15               #9d8bbd

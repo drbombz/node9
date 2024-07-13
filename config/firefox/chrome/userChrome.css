@@ -1,0 +1,30 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@import url("browser/main.css");
+@import url("vars.css");
+
+:root {
+    @media not (-moz-bool-pref: "uc.tweak.no-panel-hint") {
+        --user-panel-hint: color-mix( in srgb, var(--toolbarbutton-icon-fill), transparent 75%);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        --user-bg: rgb(27, 26, 32) !important;
+        @media (-moz-bool-pref: "uc.tweak.translucency") {
+            --user-bg: color-mix(in srgb, rgb(27, 26, 32), transparent 20%) !important;
+        }
+    }
+}
+
+:root[lwtheme="true"] {
+    --user-bg: var(--lwt-accent-color) !important;
+    @media (-moz-bool-pref: "uc.tweak.translucency") {
+        --user-bg: color-mix(in srgb, var(--lwt-accent-color), transparent 20%) !important;
+    }
+}
+
+body { background-color: var(--user-bg) !important; }

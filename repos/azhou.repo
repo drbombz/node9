@@ -1,0 +1,9 @@
+[azhou]
+name=AZhou (openSUSE_Tumbleweed)
+enabled=1
+autorefresh=0
+baseurl=https://download.opensuse.org/repositories/home:/AZhou/openSUSE_Tumbleweed/
+type=rpm-md
+gpgcheck=1
+gpgkey=https://download.opensuse.org/repositories/home:/AZhou/openSUSE_Tumbleweed/repodata/repomd.xml.key
+keeppackages=0

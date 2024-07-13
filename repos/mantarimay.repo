@@ -1,0 +1,7 @@
+[mantarimay]
+name=mantarimay:sway
+enabled=1
+autorefresh=1
+baseurl=https://download.opensuse.org/repositories/home:/mantarimay:/sway/standard/
+type=rpm-md
+keeppackages=0

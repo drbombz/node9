@@ -1,0 +1,5 @@
+[vscode]
+name=Microsoft Visual Studio Code
+enabled=1
+autorefresh=0
+baseurl=https://packages.microsoft.com/yumrepos/vscode
