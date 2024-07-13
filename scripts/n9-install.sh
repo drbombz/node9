@@ -185,7 +185,7 @@ declare -a dirs_dply=(
 declare -a dirs_dply_name=('home' 'deploy-root' 'deploy-build' 'deploy-config' 'local-config' 'local-icons' 'local-scripts' 'local-wallpaper' 'system-fonts' 'system-icons')
 
 # Config Directories
-declare -a dirs_cfg=('audacious' 'bashtop' 'cava' 'cmus' 'hypr' 'kitty' 'Kvantum' 'neofetch' 'remmina' 'rofi' 'sublime-text' 'swaync' 'swayosd' 'waybar' 'wlogout')
+declare -a dirs_cfg=('audacious' 'bashtop' 'cava' 'cmus' 'hypr' 'kitty' 'kvantum' 'neofetch' 'remmina' 'rofi' 'sublime-text' 'swaync' 'swayosd' 'waybar' 'wlogout')
 
 # Home Directories
 declare -a dirs_home=('Documents' 'Downloads' 'Music' 'Pictures')
@@ -417,8 +417,8 @@ out_msg title 'Install Cursors/Fonts/Icons/Wallpaper'
 		cp -rf $DIR_DPLY_CFG/gtk/xsettingsd.conf $DIR_HOME_CFG/xsettingsd
 
 	out_msg task in 'fonts: (fira/font-awesome/iosevka/material-design/sf-compact)'
-		cp -rf $DIR_DPLY/fonts/* $DIR_FONTS_LOCAL
-		#sudo cp -rf $DIR_DPLY/fonts/* $DIR_FONTS_LOCAL
+		cp -rf $DIR_DPLY/fonts/* $DIR_HOME_SHARE/fonts
+		sudo cp -rf $DIR_DPLY/fonts/material-design $DIR_SYS_FONTS
 	
 	out_msg task in 'icons: (dracula-icons-main/kora-grey)'
 		cp -rf $DIR_DPLY/icons/* $DIR_HOME_ICONS
@@ -441,7 +441,7 @@ out_msg title 'Installing User Configs'
 		verify_dir $DIR_HOME_CFG/$APPNAME
 		cp -rf $DIR_DPLY_CFG/$APPNAME/* $DIR_HOME_CFG/$APPNAME
 	done
-	
+	mv $DIR_HOME_CFG/kvantum $DIR_HOME_CFG/Kvantum
 	out_msg task in oh-my-zsh
 		verify_dir $DIR_HOME/.oh-my-zsh/themes
 		cp -rf $DIR_DPLY_CFG/oh-my-zsh/* $DIR_HOME/.oh-my-zsh/themes
@@ -467,7 +467,7 @@ out_msg title 'Configuring GTK Enviroment'
 	else
 		IFS='='; SETTING=(${LINE}); unset IFS
 		out_msg task "${SETTING[0]}" "${SETTING[1]}"
-		sleep 0.2
+		sleep 0.1
 	fi
 	done < "$DIR_HOME_CFG/gtk-3.0/gtk-settings.ini"
 
