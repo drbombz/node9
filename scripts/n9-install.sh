@@ -439,20 +439,20 @@ out_msg title 'Installing User Configs'
 		APPNAME=${dirs_cfg[$i]}
 		out_msg task in $APPNAME
 		verify_dir $DIR_HOME_CFG/$APPNAME
-		cp -rf ./$DIR_HOME_CFG/$APPNAME/* $DIR_HOME_CFG/$APPNAME
+		cp -rf $DIR_DPLY_CFG/$APPNAME/* $DIR_HOME_CFG/$APPNAME
 	done
 	
 	out_msg task in oh-my-zsh
 		verify_dir $DIR_HOME/.oh-my-zsh/themes
-		cp -rf ./oh-my-zsh/* $DIR_HOME/.oh-my-zsh/themes
-		cp -f ./zsh/.zshrc $DIR_HOME
+		cp -rf $DIR_DPLY_CFG/oh-my-zsh/* $DIR_HOME/.oh-my-zsh/themes
+		cp -f $DIR_DPLY_CFG/zsh/.zshrc $DIR_HOME
 
 	out_msg task in sddm
-		sudo tar -xzf ./sddm/sugar-dark.tar.gz -C $DIR_SYS_SDDM/themes
+		sudo tar -xzf $DIR_DPLY_CFG/sddm/sugar-dark.tar.gz -C $DIR_SYS_SDDM/themes
 		sudo cp -f ./sddm/theme.conf $DIR_SYS_SDDM/themes/sugar-dark
 		sudo mkdir $DIR_SYS_SDDM/themes/sugar-dark/Backgrounds
 		sudo cp -f $DIR_DPLY/wallpaper/purple-dark-fractal.png $DIR_SYS_SDDM/themes/sugar-dark/Backgrounds
-		sudo cp -f ./sddm/sddm.conf /etc/sddm.conf.d
+		sudo cp -f $DIR_DPLY_CFG/sddm/sddm.conf /etc/sddm.conf.d
 out_msg complete
 
 # Set GTK Enviroment
@@ -481,7 +481,7 @@ out_msg title 'Configuring Firefox'
 	
 	echo -e "${PURPLE}profile:${NC} ${BLUE}$FFPROF${NC}"
 	out_msg task in 'firefox-profile'
-		cp -rf ./firefox/* $DIR_FF
+		cp -rf $DIR_DPLY_CFG/firefox/* $DIR_FF
 	out_msg complete
 
 # Configure Misc Settings
