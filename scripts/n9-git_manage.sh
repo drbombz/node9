@@ -145,7 +145,7 @@ case $1 in
 			cp $DIR_LOCAL_CFG/kitty/* $DIR_GIT_CFG/kitty
 
 		out_msg task sync kvantum
-			cp -rf $DIR_LOCAL_CFG/Kvantum/* $DIR_GIT_CFG/Kvantum
+			cp -rf $DIR_LOCAL_CFG/Kvantum/* $DIR_GIT_CFG/kvantum
 
 		out_msg task sync neofetch
 			cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
