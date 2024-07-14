@@ -185,7 +185,7 @@ declare -a dirs_dply=(
 declare -a dirs_dply_name=('home' 'deploy-root' 'deploy-build' 'deploy-config' 'local-config' 'local-icons' 'local-scripts' 'local-wallpaper' 'system-fonts' 'system-icons')
 
 # Config Directories
-declare -a dirs_cfg=('audacious' 'bashtop' 'cava' 'cmus' 'hypr' 'kitty' 'kvantum' 'neofetch' 'remmina' 'rofi' 'sublime-text' 'swaync' 'swayosd' 'waybar' 'wlogout')
+declare -a dirs_cfg=('audacious' 'bashtop' 'cava' 'cmus' 'hypr' 'kitty' 'kvantum' 'neofetch' 'nfoview' 'remmina' 'rofi' 'sublime-text' 'swaync' 'swayosd' 'waybar' 'wlogout')
 
 # Home Directories
 declare -a dirs_home=('Documents' 'Downloads' 'Music' 'Pictures')
@@ -193,7 +193,7 @@ declare -a dirs_home=('Documents' 'Downloads' 'Music' 'Pictures')
 # Required Packages
 declare -a pkg_req=('brightnessctl' 'caca-utils' 'cairo-devel' 'cairo-tools' 'cargo' 'file-devel' 'fmt-devel' 'freeglut-devel'
 'go1.22' 'gobject-introspection' 'gtk-layer-shell-devel' 'gtkmm3-devel' 'hyprlang-devel' 'jsoncpp-devel' 'kf6-extra-cmake-modules'
-'libappindicator3-1' 'libdrm-tools' 'libevdev-devel' 'libKF5GuiAddons5' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'libxkbregistry-devel'
+'libappindicator3-1' 'libdrm-tools' 'libevdev-devel' 'libKF5GuiAddons5' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'typelib-1_0-Gtk-4_0' 'libxkbregistry-devel'
 'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'pulseaudio-bash-completion' 
 'pulseaudio-zsh-completion' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
 
@@ -203,7 +203,7 @@ declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5
 'pango-devel' 'systemd-devel')
 
 declare -a pkg_repo=('sway' 'audacious' 'cava' 'cmus' 'code' 'dconf-editor' 'grim' 'gthumb' 'hyprland' 'hyprpaper' 'hyprpicker' 'kitty'
-'kvantum-qt5' 'kvantum-manager' 'nemo' 'neofetch' 'remmina' 'rofi-wayland' 'sddm' 'sublime-text' 'swappy' 'swaync' 'waybar' 'zsh')
+'kvantum-qt5' 'kvantum-manager' 'nemo' 'neofetch' 'nfoview' 'remmina' 'rofi-wayland' 'sddm' 'sublime-text' 'swappy' 'swaync' 'waybar' 'zsh')
 
 declare -a repo_file=('azhou' 'mantarimay' 'packman' 'repo-debug' 'repo-non-oss' 'repo-openh264' 'repo-oss' 'repo-source' 'repo-update'
 'sublime-text' 'system_packagemanager' 'vscode')

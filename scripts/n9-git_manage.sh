@@ -91,6 +91,17 @@ out_msg() {
 	esac
 }
 
+verify_dir () {
+		if [ ! -d "$1" ]; then
+		DIR_OUTP=$(mkdir $1 2>&1)
+			if [ ! -d "$1" ]; then
+				out_msg error "Failed to create directory [$DIR_OUTP]"
+			else
+				out_msg info "Created directory [$1]"
+			fi
+		fi
+}
+
 # Main
 #==================================================================================
 out_msg header
@@ -149,6 +160,10 @@ case $1 in
 
 		out_msg task sync neofetch
 			cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
+
+		out_msg task sync nfoview
+			verify_dir $DIR_LOCAL_CFG/nfoview
+			cp -r $DIR_LOCAL_CFG/nfoview/* $DIR_GIT_CFG/nfoview
 
 		out_msg task sync oh-my-zsh
 			cp ~/.oh-my-zsh/themes/node9.zsh-theme $DIR_GIT_CFG/oh-my-zsh
