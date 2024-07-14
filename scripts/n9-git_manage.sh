@@ -162,7 +162,7 @@ case $1 in
 			cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
 
 		out_msg task sync nfoview
-			verify_dir $DIR_LOCAL_CFG/nfoview
+			verify_dir $DIR_GIT_CFG/nfoview
 			cp -r $DIR_LOCAL_CFG/nfoview/* $DIR_GIT_CFG/nfoview
 
 		out_msg task sync oh-my-zsh
