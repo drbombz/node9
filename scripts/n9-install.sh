@@ -203,7 +203,7 @@ declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5
 'pango-devel' 'systemd-devel')
 
 declare -a pkg_repo=('sway' 'audacious' 'cava' 'cmus' 'code' 'dconf-editor' 'grim' 'gthumb' 'hyprland' 'hyprpaper' 'hyprpicker' 'kitty'
-'kvantum-qt5' 'kvantum-manager' 'nemo' 'neofetch' 'nfoview' 'remmina' 'rofi-wayland' 'sddm' 'sublime-text' 'swappy' 'swaync' 'waybar' 'zsh')
+'kvantum-qt5' 'kvantum-manager' 'lsd' 'nemo' 'neofetch' 'nfoview' 'remmina' 'rofi-wayland' 'sddm' 'sublime-text' 'swappy' 'swaync' 'waybar' 'zsh')
 
 declare -a repo_file=('azhou' 'mantarimay' 'packman' 'repo-debug' 'repo-non-oss' 'repo-openh264' 'repo-oss' 'repo-source' 'repo-update'
 'sublime-text' 'system_packagemanager' 'vscode')

@@ -122,9 +122,9 @@ bind browser space win-activate
 bind browser u win-update
 bind common ! push shell 
 bind common + vol +10%
-bind common , seek -10s
+bind common , seek -15s
 bind common - vol -10%
-bind common . seek +10s
+bind common . seek +15s
 bind common / search-start
 bind common 1 view tree
 bind common 2 view sorted

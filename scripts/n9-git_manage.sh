@@ -158,6 +158,9 @@ case $1 in
 		out_msg task sync kvantum
 			cp -rf $DIR_LOCAL_CFG/Kvantum/* $DIR_GIT_CFG/kvantum
 
+		out_msg task lsd
+			cp -rf $DIR_LOCAL_CFG/lsd/* $DIR_GIT_CFG/lsd
+
 		out_msg task sync neofetch
 			cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
 
