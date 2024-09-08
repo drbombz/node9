@@ -46,12 +46,12 @@ out_msg() {
 		;;
 
 		header)
-			echo -e "${PURPLE}                                 ______"
+			echo -e "${BLUE}                                 ______"
 			echo -e "   _____________________________/::'   \\"
 			echo -e "  /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
 			echo -e -n " /:' |   \\\'  -   \\\'    | \\\'    __\\\_     /${NC}"
-			echo -e " ${BLUE}n9! -- [${NC} ${PURPLE}$2${NC} ${BLUE}]${NC}"
-			echo -e -n "${PURPLE}+\\\___|___/_______/_______/_______/_____/--------------"
+			echo -e " ${PURPLE}n9! -- [${NC} ${BLUE}$2${NC} ${PURPLE}]${NC}"
+			echo -e -n "${BLUE}+\\\___|___/_______/_______/_______/_____/--------------"
 			echo -e "----------------------------------------------------+${NC}"
 			if [ $3 ]; then
 				get_sudo "This script requires ${RED}sudo${NC} ${YELLOW}for some actions${NC}"
@@ -105,7 +105,7 @@ out_msg() {
 case $1 in
 	start)
 		out_msg header 'Nzbget Management: Start Daemon/GUI'
-		
+
 		out_msg title 'Starting Daemon'
 			out_msg task 'Using Config' "${DIR_LOCAL_CFG}/nzbget/nzbget.conf"
 			nzbget -D -c ~/.config/nzbget/nzbget.conf
@@ -127,7 +127,9 @@ case $1 in
 esac
 
 echo -e -n "${RED}All Done! ${NC}" 
-for ((i=3; i!=0; i--))
+sleep 2
+echo -e " ///${NC} ${BLUE}goodbye!"
+sleep 1for ((i=3; i!=0; i--))
 do
 	echo -e -n "${PURPLE}$i"
 	if [ $i != 1 ]; then
@@ -135,5 +137,3 @@ do
 	fi
 	sleep 1
 done
-echo -e " ///${NC} ${BLUE}goodbye!"
-sleep 1

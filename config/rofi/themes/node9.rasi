@@ -22,7 +22,8 @@ configuration {
 
 * {
 
-    background:     #1E1E2DFF;
+    /*background:     #1E1E2D99;*/
+    background:     #170c22dd;
     background-alt: #282A36FF;
     border:         #666666EE;
     foreground:     #FFFFFFFF;
@@ -37,7 +38,8 @@ configuration {
     background-color:            var(background);
     foreground-color:            var(foreground);
     alternate-background:        var(background-alt);
-    normal-background:           var(background);
+    /*normal-background:           var(background);*/
+    normal-background: transparent;
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
     urgent-foreground:           var(background);
@@ -49,7 +51,8 @@ configuration {
     selected-urgent-foreground:  var(selected-text);
     selected-active-background:  var(urgent);
     selected-active-foreground:  var(selected-text);
-    alternate-normal-background: var(background);
+    /*alternate-normal-background: var(background);*/
+    alternate-normal-background: transparent;
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
     alternate-urgent-foreground: var(background);

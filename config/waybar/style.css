@@ -4,7 +4,7 @@
   /:' |   \'  -   \'    | \'    __\_     / n9! -- [ waybar ]
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
-
+                                                                                                          
 @define-color blue          #89b4fa;
 @define-color cyan          #64a8e2;
 @define-color gray          #595959;
@@ -43,6 +43,7 @@
     min-width: 400px;
     color: #a2a2a2;
     background-image: linear-gradient(#14161d, #2b2f3f);
+    background-image: linear-gradient(#0d0e13, #252836);
     border-top: 2px solid @purple-light;
     border-bottom: 2px solid @purple-light;
     border-top-right-radius: 16px;
@@ -77,6 +78,13 @@
     border-left: 2px solid @purple-light;
     border-bottom-left-radius: 16px;
 }
+#custom-end-left-modright {
+    color: #7d88a8;
+    background-image: linear-gradient(#272737, #434b63);
+    padding-left: 5px;
+    border-left: 2px solid @purple-light;
+    border-bottom-left-radius: 16px;
+}
 #submap {
     /*color: @tan;*/
     font-size: 19px;
@@ -104,8 +112,8 @@
 #workspaces {
 }
 #workspaces button {
-    font-size: 22px;
-    padding: 0px 10px 0px 7px;
+    font-size: 26px;
+    padding: 4px 10px 0px 7px;
     color: @white;
 }
 #workspaces button.focused {
@@ -128,10 +136,10 @@
 }
 #window {
     color: #9aa4c4;
-    font-size: 20px;
-    font-family: "Poppins";
+    font-size: 22px;
+    font-family: "Roboto";
     border-radius: 10px;
-    padding: 0px 20px 0px 5px;
+    padding: 5px 20px 0px 5px;
 
 }
 .modules-center {
@@ -144,15 +152,15 @@
 *******************************************/
 #custom-sep1 {
     color: @gray;
-    font-size: 18px;
-    padding-right: 10px;
-    padding-left: 5px;
+    font-size: 22px;
+    padding: 2px 10px 0 5px;
 }
 /* Modules Right
 *******************************************/
 .modules-right {
     background-image: linear-gradient(#1f1f2c, #343a4d);
     padding-left: 15px;
+    padding-top: 0px;
     border: 2px solid @purple-light;
     border-right: none;
     border-top-right-radius: 16px;
@@ -167,8 +175,8 @@
 #custom-notification,
 #pulseaudio,
 #clock {
-    font-size: 19px;
-    padding: 0px 18px 0px 0px;
+    font-size: 22px;
+    padding: 5px 18px 0px 0px;
 }
 #custom-vert {
     font-size: 18px;
@@ -196,7 +204,8 @@
     color: @green;
 }
 #battery.good,
-#battery.charging {
+#battery.charging,
+#battery.plugged {
     color: @green;
 }
 #battery.warning {
@@ -214,7 +223,6 @@
 }
 #pulseaudio {
     color: @white;
-    padding-top: 2px;
 }
 #custom-notification {
     color: #81a7bf;
@@ -222,17 +230,20 @@
 }
 #custom-audio_idle_inhibitor {
     color: @yellow;
+    font-size: 22px;
+    padding-top:5px;
     padding-right:20px;
 }
 #clock {
     color: @white;
-    padding: 3px 15px 0px 18px;
+    padding: 5px 20px 0px 23px;
     background-image: linear-gradient(#0e352f, #1a5e53);
     background-image: linear-gradient(#272737, #434b63);
     border-right: 2px solid @purple-light; 
     border-left: 2px solid @purple-light;
+    border-bottom-left-radius: 16px;
     border-top-right-radius: 16px;
-    border-bottom-left-radius: 18px;
+    
 }
 
 /* Tooltip

@@ -4,7 +4,7 @@
   /:' |   \'  -   \'    | \'    __\_     / n9! -- [ swaync ]
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
-@define-color noti-border-color rgba(108, 108, 108, 0.8);
+@define-color noti-border-color rgba(80, 67, 127, 0.8);
 @define-color noti-bg rgba(48, 54, 71, 0.8);
 @define-color noti-bg-opaque rgb(48, 54, 71);
 @define-color noti-bg-darker rgb(32, 36, 47);
@@ -54,7 +54,7 @@
 .notification-row .notification-background .notification {
   /* The actual notification */
   border-radius: 8px;
-  border: 1px solid @noti-border-color;
+  border: 2px solid @noti-border-color;
   padding: 3px 0 3px 4px;
   transition: background 0.15s ease-in-out;
   background: @noti-bg;
@@ -274,7 +274,7 @@
   background-color: #343a4d;
   background-color: rgba(52, 58, 77, 0.9);
   color: @text-color;
-  border: 3px solid #50437F;
+  border: 2px solid @noti-border-color;
   border-radius: 12px;
 }
 
@@ -320,7 +320,7 @@
   color: @text-color;
   margin: 20px;
   padding: 10px 15px 20px 15px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-bottom: 2px dotted #707070;
 }
 

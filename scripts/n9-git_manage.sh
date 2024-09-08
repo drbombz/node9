@@ -41,12 +41,12 @@ out_msg() {
 		;;
 
 		header)
-			echo -e "${PURPLE}                                 ______"
+			echo -e "${BLUE}                                 ______"
 			echo -e "   _____________________________/::'   \\"
 			echo -e "  /:'   \\\::'    \\\::'    \\\::' _  \\\:' |   \\"
 			echo -e -n " /:' |   \\\'  -   \\\'    | \\\'    __\\\_     /${NC}"
-			echo -e " ${BLUE}n9! -- [${NC} ${PURPLE}git-update${NC} ${BLUE}]${NC}"
-			echo -e -n "${PURPLE}+\\\___|___/_______/_______/_______/_____/--------------"
+			echo -e " ${PURPLE}n9! -- [${NC} ${BLUE}git-update${NC} ${PURPLE}]${NC}"
+			echo -e -n "${BLUE}+\\\___|___/_______/_______/_______/_____/--------------"
 			echo -e "----------------------------------------------------+${NC}"
 			#get_sudo "Deployment requires ${RED}sudo${NC} ${YELLOW}for some actions${NC}"
 			sleep 1
@@ -158,8 +158,11 @@ case $1 in
 		out_msg task sync kvantum
 			cp -rf $DIR_LOCAL_CFG/Kvantum/* $DIR_GIT_CFG/kvantum
 
-		out_msg task lsd
+		out_msg task sync lsd
 			cp -rf $DIR_LOCAL_CFG/lsd/* $DIR_GIT_CFG/lsd
+
+		out_msg task sync n9-scripts
+			cp ~/.n9-scripts/* $DIR_GIT/scripts
 
 		out_msg task sync neofetch
 			cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
@@ -177,7 +180,7 @@ case $1 in
 		out_msg task sync rofi
 			cp $DIR_LOCAL_CFG/rofi/config.rasi $DIR_GIT_CFG/rofi
 			cp $DIR_LOCAL_CFG/rofi/themes/* $DIR_GIT_CFG/rofi/themes
-
+				
 		out_msg task sync sddm--sugar-dark-theme
 			cp /usr/share/sddm/themes/sugar-dark/theme.conf $DIR_GIT_CFG/sddm
 
@@ -210,12 +213,7 @@ case $1 in
 			cp ~/.zshrc $DIR_GIT_CFG/zsh
 	out_msg complete
 
-	out_msg title 'Syincing Misc'
-		out_msg task sync 'Scripts'
-			cp ~/.n9-scripts/* $DIR_GIT/scripts
-	out_msg complete
-
-	out_msg title 'Pushing GIT'
+	out_msg title 'Syncing GIT'
 		cd $DIR_GIT_CFG
 		out_msg task 'Adding Files' All
 			git add --all >/dev/null
@@ -250,7 +248,6 @@ case $1 in
 			git push -f origin master >/dev/null 2>&1
 	;;
 esac
-
 
 if [[ $1 == 'sync' ]]; then
 	echo -e -n "\n${BLUE}Local Git ${GREEN}Synced / GitHub Repo Updated${NC}"

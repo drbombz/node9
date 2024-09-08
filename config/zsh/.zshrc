@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 alias nnn='~/.local/bin/nnn -de' # -d for details and -e to open files in $VISUAL (for other options, see 'man nnn'...)
 alias z='sudo zypper'
-alias l='lsd -l --date "+%b %d %H:%M" --size short'
+alias l='lsd -l --date "+%b %d %H:%M" --size short -a --group-directories-first'
 alias ls='lsd'
 #-----
 export NNN_OPTS="H"

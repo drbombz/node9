@@ -8,7 +8,8 @@
     "layer"     : "top",
     "position"  : "top",
     "width"     : 3000,
-    "height"    : 45,
+    //"height"    : 45,
+    "height"    : 55,
     "margin"    : "14, 10, 4, 10",
     "reload_style_on_change": true,
     "gtk-layer-shell"       : "false",
@@ -223,9 +224,14 @@
         "on-click-right": "swaync-client -d -sw",
         "escape"        : true
    },
+    "custom/end-left-modright": {
+        "format"    : " ",
+        "tooltip"   : false
+    },
     "clock": {
         "timezone"      : "America/New_York",
-        "format"        : "  {:%a %d, %y %R}",
+        //"format"        : "<span font='10'></span>  {:%a %d, %y %R}",
+        "format"        : "<span font='14' color='#bcc0cc'>󰃰</span>   {:%a %d, %y %R}",
         "format-alt"    : "{:%a %d %b w%V %H:%M}",
         "tooltip-format": "<span color='#b88f74'><tt><small>{calendar}</small></tt></span>",
         "calendar": {
