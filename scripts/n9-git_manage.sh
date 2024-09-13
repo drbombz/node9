@@ -261,4 +261,4 @@ do
 	sleep 1
 done
 echo -e " ///${NC} ${BLUE}goodbye!"
-sleep 2
+sleep 900
