@@ -22,8 +22,8 @@ configuration {
 
 * {
 
-    /*background:     #1E1E2D99;*/
-    background:     #170c22dd;
+    background:     #171722ee;
+    /*background:     #170c22dd;*/
     background-alt: #282A36FF;
     border:         #666666EE;
     foreground:     #FFFFFFFF;

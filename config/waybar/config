@@ -5,14 +5,16 @@
 // +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
 
 {
+// Main
+// ------------------------------------------------------------- 
     "layer"     : "top",
     "position"  : "top",
-    "width"     : 3000,
-    //"height"    : 45,
+    "width"     : 3200,
     "height"    : 55,
     "margin"    : "14, 10, 4, 10",
     "reload_style_on_change": true,
-    "gtk-layer-shell"       : "false",
+    "gtk-layer-shell"   : "false",
+    
     "modules-left": [
         "custom/end-left",
         "hyprland/submap",
@@ -22,31 +24,49 @@
         "custom/sep1",
         "hyprland/window"
         ],
-    "modules-center": [ ],
+    
+    "modules-center": [  ],
+    
     "modules-right": [ 
-        "network",
-        "custom/vert",
-        "bluetooth",
-        "custom/vert",
-        "battery",
-        "custom/vert",
-        "memory", 
-        "custom/vert",
-        "pulseaudio",
-        "custom/audio_idle_inhibitor",
-        "custom/vert",
-        "custom/notification",
-        "clock"
+        "group/tasks",
+        "group/systray-clock",
+        "custom/end-right-wb"
         ],
-    "custom/end-left": {
-        "format"    : " ",
-        "tooltip"   : false
+
+// Groups
+// -------------------------------------------------------------        
+    "group/tasks": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-wlogout"
+        },
+        "modules": [
+            "custom/taskbar-button",
+            "wlr/taskbar",
+            "custom/vert",
+            "memory"            
+        ]
     },
-    "hyprland/submap": {
-        "format": "<span font='14' color='#a28b6f'> </span> [ <span color='#a28b6f'>{}</span> ] ",
-        "max-length": 30,
-        "tooltip"   : false
+
+    "group/systray-clock": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "custom/vert",
+            "bluetooth",
+            "custom/vert",
+            "battery",
+            "custom/vert",
+            "pulseaudio",
+            "pulseaudio/slider",
+            "custom/audio_idle_inhibitor",
+            "custom/vert",
+            "custom/notification",
+            "clock"
+        ]
     },
+
     "group/group-power": {
         "orientation": "horizontal",
         "drawer": {
@@ -61,12 +81,23 @@
             "custom/power-logout",
         ]
     },
+
+// Custom: Icons
+// ------------------------------------------------------------- 
+    "custom/taskbar-button": {
+        "format"        : "{icon}",
+        "format-icons"  : "",
+        "on-click"      : "",
+        "tooltip"       : false
+    },
+    
     "custom/wlogout": {
         "format"        : " <span font='15'>{icon}</span> ",
         "format-icons"  : "󰍜",
-        "on-click"      : "wlogout",
+        "on-click"      : "",
         "tooltip"       : false
     },
+    
     "custom/power-shutdown": {
         "format"        : " {icon} ",
         "format-icons"  : "󰤆",
@@ -74,6 +105,7 @@
         "tooltip"       : false
 
     },
+    
     "custom/power-restart": {
         "format"        : " {icon} ",
         "format-icons"  : "",
@@ -81,6 +113,7 @@
         "tooltip"       : false
 
     },
+    
     "custom/power-logout": {
         "format"        : " {icon} ",
         "format-icons"  : "󰗽",
@@ -88,10 +121,41 @@
         "tooltip"       : false
 
     },
+    
+    "custom/vert": {
+        "format": "󰇙"
+    },
+    
+    "custom/sep1": {
+        "format": ""
+    },
+
+// Custom: Rounded Corners
+// -------------------------------------------------------------   
+    "custom/end-left": {
+        "format"    : " ",
+        "tooltip"   : false
+    },
+    
     "custom/end-right": {
         "format"    : " ",
         "tooltip"   : false
     },
+
+    "custom/end-right-wb": {
+        "format"    : " ",
+        "tooltip"   : false
+    },
+
+    
+// Modules
+// -------------------------------------------------------------  
+    "hyprland/submap": {
+        "format": "<span font='14' color='#a28b6f'> </span> [ <span color='#a28b6f'>{}</span> ] ",
+        "max-length": 30,
+        "tooltip"   : false
+    },
+    
     "hyprland/workspaces": {
         "all-outputs"   : false,
         "disable-scroll": true,
@@ -108,12 +172,22 @@
         "sort-by-number"        : true,
         "persistent-workspaces" : { "*" : 4 }
     },
-    "custom/vert": {
-        "format": "󰇙"
+    
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 28,
+        "icon-theme": "Zafiro-Icons-Light",
+        "sort-by-app-id": true,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [ ],
+        "app_ids-mapping": { },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox"
+        }
     },
-    "custom/sep1": {
-        "format": ""
-    },
+
     "hyprland/window": {
         "format"    : "{}",
         "max-length": 65,
@@ -125,22 +199,7 @@
         },
         "tooltip": false
     },
-    "group/modules-right": {
-        "orientation": "horizontal",
-        "modules": [
-            "network",
-            "bluetooth",
-            "battery",
-            "memory",
-            "pulseaudio",
-            "custom/notifications",
-            "clock"
-        ]
-    },    
-    "custom/modright-left-end": {
-        "format"    : " ",
-        "tooltip"   : false
-    },
+    
     "network": {
         "format-wifi"           : "<span font='11'> </span> {essid}",
         "format-ethernet"       : "",
@@ -150,15 +209,17 @@
         "tooltip-format"        : " {essid} ({signalStrength}%)", 
         "on-click"              : "nm-connection-editor"
     },
+
     "bluetooth": {
         "format"            : "<span font='14' color='#d198b0'></span>",
         "format-disabled"   : "<span font='14'>󰂲</span>",
         "format-off"        : "<span font='14'>󰂲</span>",
-        "format-connected"  : "<span font='14'></span> {device_alias}",
+        "format-connected"  : "<span font='12'></span> {device_alias}",
         "on-click"          : "exec blueman-manager",
         "on-click-middle"   : "exec bluetoothctl power off",
         "on-click-right"    : "exec bluetoothctl power on"
     },
+
     "battery": {
         "states": {
             "good"      : 100,
@@ -172,13 +233,16 @@
         "format-icons": ["","","","",""]
         //"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
     },
+    
     "memory": {
         "format": "<span font='14'>󰍛</span>   {}%"
     },
+    
     "backlight": {
         "format"        : "{icon}  {percent}% ",
         "format-icons"  : [""]
     },
+    
     "pulseaudio": {
         "format"        : "{icon}  {volume}%",
         "format-muted"  : "",
@@ -196,6 +260,13 @@
         "on-click-right": "pavucontrol",
         "tooltip"       : false
     },
+    
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    
     "custom/audio_idle_inhibitor": {
         "format"        : "{icon}",
         "exec"          : "sway-audio-idle-inhibit --dry-print-both-waybar",
@@ -208,12 +279,13 @@
             "none": ""
         }
     },
+    
     "custom/notification": {
         "tooltip": true,
         "format": "{icon}",
         "format-icons": {
-             "notification"     : "<span foreground='#FF8542'><small><sup>⬤</sup></small></span>",
-             "none"             : "",
+             "notification"     : "󰍪z<span foreground='#FF8542'><small><sup>⬤</sup></small></span>",
+             "none"             : "󰍪",
              "dnd-notification" : "<span foreground='red'><small><sup>⬤</sup></small></span>",
              "dnd-none"         : ""
         },
@@ -223,14 +295,10 @@
         "on-click"      : "swaync-client -t",
         "on-click-right": "swaync-client -d -sw",
         "escape"        : true
-   },
-    "custom/end-left-modright": {
-        "format"    : " ",
-        "tooltip"   : false
     },
+    
     "clock": {
         "timezone"      : "America/New_York",
-        //"format"        : "<span font='10'></span>  {:%a %d, %y %R}",
         "format"        : "<span font='14' color='#bcc0cc'>󰃰</span>   {:%a %d, %y %R}",
         "format-alt"    : "{:%a %d %b w%V %H:%M}",
         "tooltip-format": "<span color='#b88f74'><tt><small>{calendar}</small></tt></span>",

@@ -54,7 +54,7 @@ set device=/dev/cdrom
 set display_artist_sort_name=false
 set dsp.alsa.device=
 set dsp.oss.device=
-set follow=true
+set follow=false
 set format_clipped_text=…
 set format_current= %a - %l%! - %n. %t%= %y 
 set format_playlist= %-21%a %3n. %t%= %y %d %{?X!=0?%3X ?    }
@@ -103,7 +103,7 @@ set show_current_bitrate=false
 set show_hidden=true
 set show_playback_position=true
 set show_remaining_time=true
-set shuffle=tracks
+set shuffle=albums
 set skip_track_info=false
 set smart_artist_sort=true
 set softvol=false

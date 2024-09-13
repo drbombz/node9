@@ -15,8 +15,8 @@
 @define-color mauve         #cba6f7;
 @define-color orange        #FF8542;
 @define-color peach         #fab387;
-@define-color pink          #f5c2e7;
-@define-color pink-light    #ff97d3;
+@define-color pink          #ff97d3;
+@define-color pink-light    #f5c2e7;
 @define-color purple        #1D192D;
 @define-color purple-light  #50437F;
 @define-color red           #f38ba8;
@@ -46,8 +46,8 @@
     background-image: linear-gradient(#0d0e13, #252836);
     border-top: 2px solid @purple-light;
     border-bottom: 2px solid @purple-light;
-    border-top-right-radius: 16px;
     border-bottom-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 #waybar.solo {
     color: #b3b3b3;
@@ -60,6 +60,17 @@
     border-bottom: 2px solid @purple-light;
     border-bottom-left-radius: 16px;
 }
+
+/* Modules Right
+*******************************************/
+.modules-right {  
+    padding-left: 15px;
+    padding-top: 0px;
+    border-left: 0px;
+}
+
+/* Modules: Left
+*******************************************/
 #custom-end-left,
 #custom-end-right,
 #submap,
@@ -86,7 +97,6 @@
     border-bottom-left-radius: 16px;
 }
 #submap {
-    /*color: @tan;*/
     font-size: 19px;
     padding: 2px 13px 0px;
 }
@@ -103,11 +113,19 @@
 #custom-power-logout:hover {
     color: @cyan;
 }
+
 #custom-end-right {
-    padding-left: 7px;
+    padding-left: 5px;
     border-right: 2px solid @purple-light;
     border-top-right-radius: 18px;
     border-bottom-right-radius: 0px;
+}
+#custom-end-right-wb {
+    background-image: linear-gradient(#272737, #434b63);
+    padding-left: 5px;
+    border-right: 2px solid @purple-light;
+    border-top: 2px solid @purple-light;
+    border-top-right-radius: 16px;
 }
 #workspaces {
 }
@@ -142,11 +160,6 @@
     padding: 5px 20px 0px 5px;
 
 }
-.modules-center {
-    border-top: 2px solid @purple-light;
-    border-bottom: 2px solid @purple-light;
-}
-
 
 /* Seperators
 *******************************************/
@@ -155,18 +168,49 @@
     font-size: 22px;
     padding: 2px 10px 0 5px;
 }
-/* Modules Right
+
+/* Modules: Right
 *******************************************/
-.modules-right {
-    background-image: linear-gradient(#1f1f2c, #343a4d);
-    padding-left: 15px;
-    padding-top: 0px;
-    border: 2px solid @purple-light;
-    border-right: none;
-    border-top-right-radius: 16px;
-    border-bottom-left-radius: 18px;
+
+/* Taskbar
+----------------------*/
+#taskbar {
+    padding: 3px 5px 0 0;
 }
+#taskbar button {
+    padding: 10px;
+}
+#custom-taskbar-button {
+    color: @pink-light;
+    font-size: 22px;
+    padding: 6px 10px 0 0;
+}
+#custom-taskbar-end-left {
+    padding-left: 5px;
+    border-right: 2px solid @purple-light;
+    border-top-left-radius: 18px;
+}
+#taskbar,
+#custom-taskbar-button {
+    background-image: linear-gradient(#0d0e13, #252836);
+    border-top: 2px solid @purple-light;
+    border-bottom: 2px solid @purple-light;
+}
+
+/* Group 
+----------------------*/
+#systray-clock {
+    background-image: linear-gradient(#1f1f2c, #343a4d);
+    border: 2px solid @purple-light;
+    border-right: 0px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 0px;
+}
+
+/* Systray-Clock Modules 
+----------------------*/
 #custom-vert,
+#pulseaudio-slider,
 #network,
 #bluetooth,
 #battery,
@@ -183,7 +227,7 @@
     color: #cdd6f4;
 }
 #network {
-    background: transparent;
+    padding-left: 16px;
 }
 #network.wifi {
     color: @cyan;
@@ -218,15 +262,34 @@
     color: @green;
 }
 #memory {
-    color: @pink-light;
+    color: @pink;
     padding-right: 14px;
 }
 #pulseaudio {
     color: @white;
 }
-#custom-notification {
-    color: #81a7bf;
-    background-color: transparent;
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 80px;
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @gray;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: green;
+}
+#pulseaudio-slider trough, #backlight-slider trough {
+    min-height: 10px;
+    min-width: 100px;
 }
 #custom-audio_idle_inhibitor {
     color: @yellow;
@@ -234,16 +297,20 @@
     padding-top:5px;
     padding-right:20px;
 }
+#custom-notification {
+    color: @pink;
+    font-size: 30px;
+    padding-right: 30px;
+    background-color: transparent;
+}
 #clock {
     color: @white;
-    padding: 5px 20px 0px 23px;
-    background-image: linear-gradient(#0e352f, #1a5e53);
+    padding: 5px 8px 0px 18px;
     background-image: linear-gradient(#272737, #434b63);
-    border-right: 2px solid @purple-light; 
+    
+    border-right: 0px solid @purple-light; 
     border-left: 2px solid @purple-light;
     border-bottom-left-radius: 16px;
-    border-top-right-radius: 16px;
-    
 }
 
 /* Tooltip
