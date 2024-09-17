@@ -284,10 +284,10 @@
         "tooltip": true,
         "format": "{icon}",
         "format-icons": {
-             "notification"     : "󰍪z<span foreground='#FF8542'><small><sup>⬤</sup></small></span>",
-             "none"             : "󰍪",
-             "dnd-notification" : "<span foreground='red'><small><sup>⬤</sup></small></span>",
-             "dnd-none"         : ""
+             "notification"     : "󰍥<span foreground='#209fb5'><sup></sup></span>",
+             "none"             : "󰍥",
+             "dnd-notification" : "󱙎<span foreground='#209fb5'><sup></sup></span>",
+             "dnd-none"         : "󱙎"
         },
         "return-type"   : "json",
         "exec-if"       : "which swaync-client",

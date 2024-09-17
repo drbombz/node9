@@ -202,7 +202,7 @@ declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5
 'libQt5DBus-devel' 'libqt5-qttools' 'libwebp-devel' 'libxkbcommon-devel' 'libxkbcommon-x11-devel' 'libXcursor-devel' 'ninja' 'pam-devel'
 'pango-devel' 'systemd-devel')
 
-declare -a pkg_repo=('sway' 'audacious' 'cava' 'cmus' 'code' 'dconf-editor' 'grim' 'gthumb' 'hyprland' 'hyprpaper' 'hyprpicker' 'kitty'
+declare -a pkg_repo=('sway' 'audacious' 'cava' 'clapper' 'cmus' 'code' 'dconf-editor' 'grim' 'gthumb' 'hyprland' 'hyprpaper' 'hyprpicker' 'kitty'
 'kvantum-qt5' 'kvantum-manager' 'lsd' 'nemo' 'neofetch' 'nfoview' 'remmina' 'rofi-wayland' 'sddm' 'sublime-text' 'swappy' 'swaync' 'waybar' 'zsh')
 
 declare -a repo_file=('azhou' 'mantarimay' 'packman' 'repo-debug' 'repo-non-oss' 'repo-openh264' 'repo-oss' 'repo-source' 'repo-update'
@@ -420,7 +420,7 @@ out_msg title 'Install Cursors/Fonts/Icons/Wallpaper'
 		cp -rf $DIR_DPLY/fonts/* $DIR_HOME_SHARE/fonts
 		sudo cp -rf $DIR_DPLY/fonts/material-design $DIR_SYS_FONTS
 	
-	out_msg task in 'icons: (dracula-icons-main/kora-grey)'
+	out_msg task in 'icons: (dracula-icons-main/kora-grey/zafiro-icons-light)'
 		cp -rf $DIR_DPLY/icons/* $DIR_HOME_ICONS
 
 	out_msg task in 'icons: n9-icons'

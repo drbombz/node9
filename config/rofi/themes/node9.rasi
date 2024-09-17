@@ -14,7 +14,7 @@ configuration {
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
-    font:                       "SF Compact Rounded 14";
+    font:                       "SF Compact Rounded 16";
 	window-format:              "{w} · {c} · {t}";
 }
 
@@ -23,23 +23,21 @@ configuration {
 * {
 
     background:     #171722ee;
-    /*background:     #170c22dd;*/
     background-alt: #282A36FF;
     border:         #666666EE;
     foreground:     #FFFFFFFF;
     handle:         #64a8e2FF;
-    selected:       #9f73c3EE;
+    selected:       #9a6bc0ee;
     selected-text:  #1b1b1bFF;
-    active:         #50FA7BFF;
-    urgent:         #FF5555FF;
+    active:         #a6e3a1FF;
+    urgent:         #f38ba8FF;
 
     border-color:                var(border);
     handle-color:                var(handle);
     background-color:            var(background);
     foreground-color:            var(foreground);
     alternate-background:        var(background-alt);
-    /*normal-background:           var(background);*/
-    normal-background: transparent;
+    normal-background:           transparent;
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
     urgent-foreground:           var(background);
@@ -51,7 +49,6 @@ configuration {
     selected-urgent-foreground:  var(selected-text);
     selected-active-background:  var(urgent);
     selected-active-foreground:  var(selected-text);
-    /*alternate-normal-background: var(background);*/
     alternate-normal-background: transparent;
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
@@ -238,7 +235,7 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        26px;
+    size:                        34px;
     cursor:                      inherit;
 }
 element-text {

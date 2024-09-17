@@ -35,14 +35,13 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
-    font-family: "Roboto", "FontAwesome 6 Free", "MaterialDesign-Font";
+    font-family: "Roboto", "FontAwesome 6 Free", "MaterialDesign-Font", "SF Compact Rounded";
     text-shadow: none;
     transition-duration: 0s;
 }
 #waybar {
     min-width: 400px;
     color: #a2a2a2;
-    background-image: linear-gradient(#14161d, #2b2f3f);
     background-image: linear-gradient(#0d0e13, #252836);
     border-top: 2px solid @purple-light;
     border-bottom: 2px solid @purple-light;
@@ -153,11 +152,11 @@
     transition: all 0.5s cubic-bezier(0.85, 1, 0.2, 1);
 }
 #window {
-    color: #9aa4c4;
+    color: #b5b5b5;
     font-size: 22px;
     font-family: "Roboto";
     border-radius: 10px;
-    padding: 5px 20px 0px 5px;
+    padding: 3px 20px 0px 5px;
 
 }
 
@@ -181,7 +180,7 @@
     padding: 10px;
 }
 #custom-taskbar-button {
-    color: @pink-light;
+    color: #969bb7;
     font-size: 22px;
     padding: 6px 10px 0 0;
 }

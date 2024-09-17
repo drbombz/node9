@@ -12,7 +12,10 @@ configuration {
 	case-sensitive: false;
 	cycle: true;
 	filter: "";
+	hover-select: true;
 	scroll-method: 0;
+	me-select-entry: "";
+	me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
 	normalize-match: true;
 	show-icons: true;
 	icon-theme: "dracula-icons-main";
@@ -83,7 +86,7 @@ configuration {
 
 	/*---------- Misc setting ----------*/
 	terminal: "rofi-sensible-terminal";
-	font: "Mono 12";
+	font: "Mono 13";
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
