@@ -8,6 +8,7 @@
 @define-color blue          #89b4fa;
 @define-color cyan          #64a8e2;
 @define-color gray          #595959;
+@define-color gray-light    #959595;
 @define-color green         #a6e3a1;
 @define-color flamingo      #f2cdcd;
 @define-color lavender      #b4befe;
@@ -48,9 +49,6 @@
     border-bottom-left-radius: 16px;
     border-top-right-radius: 16px;
 }
-#waybar.solo {
-    color: #b3b3b3;
-}
 
 /* Modules Left
 *******************************************/
@@ -58,6 +56,7 @@
     border-top: 2px solid @purple-light;
     border-bottom: 2px solid @purple-light;
     border-bottom-left-radius: 16px;
+    background-image: linear-gradient(#171424, #302c4f);
 }
 
 /* Modules Right
@@ -88,13 +87,6 @@
     border-left: 2px solid @purple-light;
     border-bottom-left-radius: 16px;
 }
-#custom-end-left-modright {
-    color: #7d88a8;
-    background-image: linear-gradient(#272737, #434b63);
-    padding-left: 5px;
-    border-left: 2px solid @purple-light;
-    border-bottom-left-radius: 16px;
-}
 #submap {
     font-size: 19px;
     padding: 2px 13px 0px;
@@ -112,12 +104,26 @@
 #custom-power-logout:hover {
     color: @cyan;
 }
-
 #custom-end-right {
     padding-left: 5px;
     border-right: 2px solid @purple-light;
     border-top-right-radius: 18px;
     border-bottom-right-radius: 0px;
+}
+
+#custom-end-window-left {
+    color: #7d88a8;
+    padding-right: 5px;
+    border-left: 3px solid @purple-light;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+#custom-end-window-right {
+    color: #7d88a8;
+    padding-left: 5px;
+    border-right: 3px solid @purple-light;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
 }
 #custom-end-right-wb {
     background-image: linear-gradient(#272737, #434b63);
@@ -156,17 +162,24 @@
     font-size: 22px;
     font-family: "Roboto";
     border-radius: 10px;
-    padding: 3px 20px 0px 5px;
+    padding: 3px 5px 0px 12px;
 
 }
 
 /* Seperators
 *******************************************/
 #custom-sep1 {
-    color: @gray;
+    color: @orange;
     font-size: 22px;
-    padding: 2px 10px 0 5px;
+    padding: 2px 8px 0 10px;
 }
+
+/* Modules: Center
+*******************************************/
+#cava {
+    border: 1px solid @rosewater;
+}
+
 
 /* Modules: Right
 *******************************************/
@@ -226,6 +239,7 @@
     color: #cdd6f4;
 }
 #network {
+    padding-top: 2px;
     padding-left: 16px;
 }
 #network.wifi {
@@ -239,6 +253,9 @@
 #bluetooth.connected,
 #bluetooth.disabled,
 #bluetooth.off {
+}
+#backlight {
+    color: @lavender;
 }
 #battery {
     padding-right: 14px;
@@ -265,9 +282,10 @@
     padding-right: 14px;
 }
 #pulseaudio {
-    color: @white;
+    color: @teal;
 }
 #pulseaudio-slider slider {
+    background-color: @cyan;
     min-height: 0px;
     min-width: 0px;
     opacity: 0;
@@ -279,12 +297,12 @@
     min-height: 80px;
     min-width: 10px;
     border-radius: 5px;
-    background-color: @gray;
+    background-color: @gray-light;
 }
 #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
-    background-color: green;
+    color: @green;
 }
 #pulseaudio-slider trough, #backlight-slider trough {
     min-height: 10px;
@@ -306,7 +324,7 @@
     color: @white;
     padding: 5px 8px 0px 18px;
     background-image: linear-gradient(#272737, #434b63);
-    
+    letter-spacing: 1px;
     border-right: 0px solid @purple-light; 
     border-left: 2px solid @purple-light;
     border-bottom-left-radius: 16px;
@@ -316,12 +334,12 @@
 *******************************************/
 tooltip {
     background-color: #343a4d;
-    background-image: linear-gradient(#212531, #343a4d);
-    border: 1px solid @purple-light;
+    background-image: linear-gradient(#272737, #434b63);
+    border: 1px solid @sapphire;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
 }
 tooltip label {
-    color: #7d88a8;
-    padding: 10px;
+    color: @rosewater;
+    padding: 15px;
 }

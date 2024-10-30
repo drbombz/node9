@@ -1,4 +1,5 @@
 echo
 echo
+echo
 neofetch
-read -n 1 -s
+read -n 1

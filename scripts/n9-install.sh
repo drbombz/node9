@@ -191,11 +191,11 @@ declare -a dirs_cfg=('audacious' 'bashtop' 'cava' 'cmus' 'hypr' 'kitty' 'kvantum
 declare -a dirs_home=('Documents' 'Downloads' 'Music' 'Pictures')
 
 # Required Packages
-declare -a pkg_req=('brightnessctl' 'caca-utils' 'cairo-devel' 'cairo-tools' 'cargo' 'file-devel' 'fmt-devel' 'freeglut-devel'
-'go1.22' 'gobject-introspection' 'gtk-layer-shell-devel' 'gtkmm3-devel' 'hyprlang-devel' 'jsoncpp-devel' 'kf6-extra-cmake-modules'
-'libappindicator3-1' 'libdrm-tools' 'libevdev-devel' 'libKF5GuiAddons5' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'typelib-1_0-Gtk-4_0' 'libxkbregistry-devel'
-'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'pulseaudio-bash-completion' 
-'pulseaudio-zsh-completion' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
+declare -a pkg_req=('brightnessctl' 'caca-utils' 'cairo-devel' 'cairo-tools' 'cargo' 'file-devel' 'fmt-devel' 'freeglut-devel' 'fftw3-devel'
+'go1.22' 'gobject-introspection' 'gobject-introspection-devel' 'gtk-layer-shell-devel' 'gtkmm3-devel' 'hyprlang-devel' 'libiniparser-devel' 'jsoncpp-devel' 'kf6-extra-cmake-modules'
+'libappindicator3-1' 'libdbusmenu-gtk3-devel' 'libdisplay-info-devel' 'libdrm-tools' 'libevdev-devel' 'libKF5GuiAddons5' 'libmpdclient-devel' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'librsvg' 'librsvg-devel' 
+'libzip' 'libzip-devel' 'typelib-1_0-Gtk-4_0' 'libxkbregistry-devel' 'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'playerctl-devel' 'pugixml-devel' 
+'pulseaudio-bash-completion' 'pulseaudio-zsh-completion' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'sndio' 'sndio-devel' 'spdlog-devel' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
 
 # Optional Packages
 declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5-qtwayland-devel' 'libqt5-qdbus' 'libqt5-qtsvg-devel'
@@ -305,6 +305,16 @@ out_msg title 'Installing Applications'
 		out_msg complete
 	done
 
+	# aquamarine
+	#------------------------------------------------------------
+	out_msg title in aquamarine
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/aquamarine && cd aquamarine
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+
 	# codecs
 	#------------------------------------------------------------
 	out_msg task in codecs
@@ -319,7 +329,18 @@ out_msg title 'Installing Applications'
 		git clone https://github.com/aristocratos/bashtop & cd bashtop
 		sudo make install
 	out_msg complete
-	
+
+
+	# hyprcursor
+	#------------------------------------------------------------
+	out_msg title in hyprcursor
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprcursor && cd hyprcursor
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+
 	# hypridle
 	#------------------------------------------------------------
 	out_msg title in hypridle
@@ -327,16 +348,6 @@ out_msg title 'Installing Applications'
 		git clone https://github.com/hyprwm/hypridle && cd hypridle
 		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -S . -B ./build
 		cmake --build ./build --config Release --target hypridle -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
-		sudo cmake --install build
-	out_msg complete
-
-	# hyprutils
-	#------------------------------------------------------------
-	out_msg title in hyprutils
-		cd $DIR_DPLY_BUILD
-		git clone https://github.com/hyprwm/hyprutils.git && cd hyprutils
-		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
-		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
 		sudo cmake --install build
 	out_msg complete
 
@@ -350,6 +361,16 @@ out_msg title 'Installing Applications'
 		sudo cmake --install build
 	out_msg complete
 
+	# hyprpaper
+	#------------------------------------------------------------
+	out_msg title in hyprpaper
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprutils && cd hyprpaper
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target hyprpaper -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+
 	# hyprutils
 	#------------------------------------------------------------
 	out_msg title in hyprutils
@@ -357,6 +378,16 @@ out_msg title 'Installing Applications'
 		git clone https://github.com/hyprwm/hyprutils && cd hyprutils
 		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
 		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+
+	# hyprwayland-scanner
+	#------------------------------------------------------------
+	out_msg title in hyprwayland-scanner
+		cd $DIR_DPLY_BUILD
+		git clone https://https://github.com/hyprwm/hyprwayland-scanner && cd hyprwayland-scanner
+		cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
+		cmake --build build -j `nproc`
 		sudo cmake --install build
 	out_msg complete
 

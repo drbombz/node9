@@ -227,8 +227,8 @@ gradient = 1
 gradient_count = 8
 
 # n9
-gradient_color_1 = '#2d2547'
-gradient_color_2 = '#564888'
+gradient_color_1 = '#564888'
+gradient_color_2 = '#64549f'
 gradient_color_3 = '#7766af'
 gradient_color_4 = '#9185bf'
 gradient_color_5 = '#afa6d0'

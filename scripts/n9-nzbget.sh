@@ -102,6 +102,31 @@ out_msg() {
 
 # Main
 #==================================================================================
+
+if [ $# -eq 0 ]; then
+	PS3="Please enter your choice: "
+	OPTIONS=("Start Daemon" "Stop Daemon" "Opt3" "Quit")
+	select opt in "${OPTIONS[@]}"
+	do
+		case $opt in
+			"Opt1")
+				DO="Start"
+				;;
+			"Opt2")
+				DO="Stop"
+				;;
+			"Opt3")
+				echo "you chose choice $REPLY which is $opt"
+				;;
+			"Quit")
+				break
+				;;
+			*) echo "invalid option $REPLY";;
+		esac
+	done
+else
+	DO=$1
+fi
 case $1 in
 	start)
 		out_msg header 'Nzbget Management: Start Daemon/GUI'

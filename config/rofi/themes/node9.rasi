@@ -22,15 +22,15 @@ configuration {
 
 * {
 
-    background:     #171722ee;
+    background:     #171722EE;
     background-alt: #282A36FF;
     border:         #666666EE;
     foreground:     #FFFFFFFF;
-    handle:         #64a8e2FF;
-    selected:       #9a6bc0ee;
+    handle:         #64A8E2FF;
+    selected:       #9A6BC0EE;
     selected-text:  #1b1b1bFF;
-    active:         #a6e3a1FF;
-    urgent:         #f38ba8FF;
+    active:         #A6A3A1FF;
+    urgent:         #F38BA8FF;
 
     border-color:                var(border);
     handle-color:                var(handle);

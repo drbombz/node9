@@ -22,10 +22,11 @@
         "custom/end-right",
         "hyprland/workspaces",
         "custom/sep1",
-        "hyprland/window"
+        "hyprland/window",
+        "custom/end-window-right",
         ],
     
-    "modules-center": [  ],
+    "modules-center": [ ],
     
     "modules-right": [ 
         "group/tasks",
@@ -45,7 +46,9 @@
             "custom/taskbar-button",
             "wlr/taskbar",
             "custom/vert",
-            "memory"            
+            "memory",
+            "custom/vert",
+            "backlight"        
         ]
     },
 
@@ -127,7 +130,8 @@
     },
     
     "custom/sep1": {
-        "format": ""
+        //"format": ""
+        "format": ""
     },
 
 // Custom: Rounded Corners
@@ -138,6 +142,14 @@
     },
     
     "custom/end-right": {
+        "format"    : " ",
+        "tooltip"   : false
+    },
+    "custom/end-window-left": {
+        "format"    : " ",
+        "tooltip"   : false
+    },
+    "custom/end-window-right": {
         "format"    : " ",
         "tooltip"   : false
     },
@@ -173,6 +185,29 @@
         "persistent-workspaces" : { "*" : 4 }
     },
     
+    "cava": {
+        //"cava_config": "/home/upgrad3/.config/cava/config",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        //"noise_reduction": 0.77,
+        //"input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 28,
@@ -190,8 +225,8 @@
 
     "hyprland/window": {
         "format"    : "{}",
-        "max-length": 65,
-        "icon"      : false,
+        "max-length": 450,
+        "icon"      : true,
         "rewrite": {
             "-(.*) — Mozilla Firefox": "$1",
             "(.*) - Sublime Text(.*)": "$1",
@@ -201,7 +236,8 @@
     },
     
     "network": {
-        "format-wifi"           : "<span font='11'> </span> {essid}",
+        //"format-wifi"           : "<span font='11'> </span> {essid}",
+        "format-wifi"           : "<span font='11'> </span>",
         "format-ethernet"       : "",
         "format-linked"         : "",
         "format-disconnected"   : "⚠",
@@ -299,7 +335,8 @@
     
     "clock": {
         "timezone"      : "America/New_York",
-        "format"        : "<span font='14' color='#bcc0cc'>󰃰</span>   {:%a %d, %y %R}",
+        //"format"        : "<span font='14' color='#bcc0cc'>󰃰</span>   {:%a %d, %y %R}",
+        "format"        : "{:%a %d, %y %R}",
         "format-alt"    : "{:%a %d %b w%V %H:%M}",
         "tooltip-format": "<span color='#b88f74'><tt><small>{calendar}</small></tt></span>",
         "calendar": {
