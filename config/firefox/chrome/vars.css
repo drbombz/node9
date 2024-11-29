@@ -1,0 +1,63 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:root {
+    --user-panel-gap: 8px;
+    --user-sidebar-gap: 7px;
+    --user-radius: 8px;
+    
+
+    --user-transition: all 0.2s ease-out;
+ 
+    
+    @media (-moz-bool-pref: "uc.tweak.sidebar-full-collapse") {
+        --user-panel-gap: 12px;
+        --user-sidebar-gap: 6px;
+    }
+
+    &[uidensity=compact] {
+        --user-panel-gap: 6px; 
+        --user-sidebar-gap: 3px;
+
+        @media (-moz-bool-pref: "uc.tweak.sidebar-full-collapse") {
+            --user-panel-gap: 10px; 
+            --user-sidebar-gap: 7px;
+        }
+    }
+
+    &[titlepreface*="-"] {
+        --uc-sidebar-hover-width: 200px;
+        --uc-autohide-sidebar-delay: 20ms;
+    }
+}
+
+
+/* sidebar vars */
+
+@media not (-moz-bool-pref: "uc.tweak.sidebar-full-collapse") {
+#sidebar-box {
+    --uc-sidebar-width: 33px;
+    @media not (-moz-bool-pref: "uc.tweak.extra-compact") {
+        :root[uidensity=compact] & {
+            --uc-sidebar-width: 34px !important;
+        }
+    }
+    @media (-moz-bool-pref: "uc.tweak.wider-sidebar-collapse") {
+        --uc-sidebar-width: 80px;
+         
+        :root[uidensity=compact] & {
+            --uc-sidebar-width: 66px !important;
+        }
+    }
+    @media (-moz-bool-pref: "uc.tweak.extra-compact") {
+        :root[uidensity=compact] {
+            --user-sidebar-gap: 1px !important; 
+            & #sidebar-box {
+                --uc-sidebar-width: 28px !important;
+            }
+        }
+    }
+}}

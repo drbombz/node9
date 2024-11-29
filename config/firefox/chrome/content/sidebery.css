@@ -1,0 +1,55 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html") {
+    :root.root, #root {
+        --tabs-margin: 1.5px !important; 
+        --tabs-pinned-height: 30px !important;
+        --tabs-pinned-width: 30px !important;
+        --tabs-height: 30px !important;
+        --nav-btn-width: 30px !important;
+        --nav-btn-height: 28px !important;
+        --general-border-radius: 0px !important;
+         
+        @media (-moz-bool-pref:"uc.tweak.blur") {
+            --frame-bg: color-mix(in srgb, var(--frame-bg), transparent 20%) !important;
+        }
+        @media (-moz-bool-pref: "uc.tweak.extra-compact") {
+            .Tab {
+                padding-bottom: 1.5px !important;
+            }
+            --tabs-margin: 0px !important;
+            --tabs-width: 24px !important;
+            --tabs-inner-gap: 4px !important;
+        }
+    }
+
+    @media (max-width: 60px) {
+        .TabsPanel {
+            --tabs-indent: 0px !important; 
+        }
+        .bookmarks-tree {
+            --bookmarks-indent: 0px !important;
+        }
+        .TabsPanel .new-tab-btn > svg, .TabsPanel .new-tab-btn > img {
+            left: 6px !important;
+        }
+    }
+     
+    .TabsPanel .new-tab-btns {
+        padding: 0 var(--tabs-margin) !important;
+    }
+
+    #new-tab-btn {
+        width: 100% !important;
+    }
+     
+    .NavigationBar {
+        border-radius: 0px !important;
+        margin: 0.3px !important
+    }
+
+}

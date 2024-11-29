@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=remmina /home/upgrad3/.local/share/remmina/nuc9.remmina
+Type=Application
+Categories=Utilities
+Name=node9
+Icon=node9

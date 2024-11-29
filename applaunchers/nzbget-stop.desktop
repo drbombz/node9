@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=kitty -- /home/upgrad3/.n9-scripts/n9-nzbget.sh stop
+Type=Application
+Categories=Utilities
+Name=Nzbget (Stop-Daemon)
+Icon=nzbget

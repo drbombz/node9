@@ -1,0 +1,212 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+#main-window:not([customizing]):has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden])) {
+
+
+    #sidebar-box {
+        background-color: transparent !important;
+        margin: 
+            0
+            calc(var(--user-sidebar-gap) - var(--user-panel-gap))
+            var(--user-panel-gap)
+            var(--user-sidebar-gap)
+            !important;
+        width: 170px;
+        min-width: 34px !important;
+    }
+
+/*
+        #sidebar-box {
+              --uc-sidebar-width: 35px;
+  --uc-sidebar-hover-width: 210px;
+  --uc-autohide-sidebar-delay: 600ms;
+  --uc-autohide-transition-duration: 115ms;
+  --uc-autohide-transition-type: linear;
+        background-color: transparent !important;
+        margin: 
+            0
+            calc(var(--user-sidebar-gap) - var(--user-panel-gap))
+            var(--user-panel-gap)
+            var(--user-sidebar-gap)
+            !important;
+        width: var(--uc-sidebar-width) !important;
+        min-width: var(--uc-sidebar-width) !important;
+    }
+*/
+#sidebar-box[positionend]{ direction: rtl }
+#sidebar-box[positionend] > *{ direction: ltr }
+
+#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
+#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+
+#main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }
+    &:not([sizemode="fullscreen"]) #sidebar-box {
+        border-radius: var(--user-radius) !important;
+    }
+    &[sizemode="fullscreen"] #sidebar-box {
+        margin-right: var(--user-sidebar-gap) !important;
+        margin-bottom: 0px !important;
+    }
+
+    #webextpanels-window { background-color: transparent !important; }
+
+    #sidebar {
+        border-radius: var(--user-radius);
+        background-color: inherit !important;
+    }
+
+    #sidebar-splitter {
+        background-color: transparent !important;
+        border: none !important;
+        width: var(--user-sidebar-gap) !important;
+        margin-right: calc( -1 * var(--user-panel-gap) ) !important;
+        margin-left: calc(var(--user-panel-gap) - var(--user-sidebar-gap)) !important;
+        opacity: 0 !important;
+        border-radius: var(--user-radius);
+    }
+    #main-window[sizemode="fullscreen"] #sidebar-splitter {
+        margin-right: 0 !important;
+    }
+
+    /* dynamic sidebar */
+    &[titlepreface*="-"] {
+        #sidebar-splitter {
+            display: none !important;
+        }
+
+        #sidebar-box { 
+            position: relative;
+            z-index:1;
+            min-width: var(--uc-sidebar-width) !important;
+            width: var(--uc-sidebar-width) !important;
+            max-width: var(--uc-sidebar-width) !important;
+        }
+
+        #sidebar-box[positionend]{ direction: rtl }
+        #sidebar-box[positionend] > *{ direction: ltr }
+        #sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
+        #sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+
+        #sidebar-switcher-target{
+            -moz-box-pack: start !important;
+        }
+
+        #sidebar-header, #sidebar {
+            transition: min-width 115ms linear var(--uc-autohide-sidebar-delay) !important;
+            min-width: var(--uc-sidebar-width) !important;
+            width: var(--uc-sidebar-width) !important;
+            will-change: min-width;
+        }
+        #sidebar-box:hover > #sidebar-header,
+        #sidebar-box:hover > #sidebar {
+            min-width: var(--uc-sidebar-hover-width) !important;
+            transition-delay: 0ms !important;
+            transition: min-width 115ms linear var(--uc-autohide-sidebar-delay) !important;
+            background-color: var(--user-bg) !important;
+        }
+
+
+        @media (-moz-bool-pref: "uc.tweak.sidebar-full-collapse") { 
+            #sidebar-box:hover {
+                & #sidebar-header, #sidebar {
+                    padding: 0 var(--user-sidebar-gap) !important;
+                    background-color: var(--user-bg) !important;
+                    transition: min-width 0s, width 0s, padding 0s !important;
+                    transition-delay: 2ms !important;
+                }
+                &::before {
+                    background-color: transparent !important;
+                }
+            }
+            #sidebar-box {
+                max-width: var(--user-panel-gap) !important;
+                min-width: var(--user-panel-gap) !important;
+                width: var(--user-panel-gap) !important; 
+                transition: 
+                    min-width 0s, width 0s, padding 0s, margin 0s,
+                    opacity 5ms linear var(--uc-autohide-sidebar-delay) !important;
+                transition-delay: 2ms !important;
+                margin-right: calc(-1*var(--user-panel-gap)) !important;
+                margin-left: 0 !important;
+
+                & #sidebar-header, & #sidebar {
+                    will-change: auto !important;
+                    transition: min-width 0s, width 0s, padding 0s !important;
+                    transition-delay: 2ms !important;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    opacity: 1 !important;
+                    background-color: var(--user-panel-hint) !important;
+                    border-radius: var(--user-radius) !important;
+                    transition: var(--user-transition) !important;                 
+                    visibility: visible;
+                    display: unset;
+
+                    height: 80%;
+                    top: 10%;
+                    bottom: auto !important;
+                    width: calc(var(--user-panel-gap)*0.5) !important;
+                    left: calc(var(--user-panel-gap)*0.25) !important;
+                    z-index: 199 !important;
+                }
+            }
+            #sidebar-box:not(:hover) {
+                & > * { opacity: 0 !important; }
+                & #sidebar-header, & #sidebar {
+                    min-width: 0px !important;
+                    transition: min-width 0s, width 0s, padding 0s !important;
+                    transition-delay: 2ms !important;
+                }
+            }
+        }
+    }
+
+
+
+    /* sidebar header */   
+
+    @media not (-moz-bool-pref: "uc.tweak.sidebar-header") {
+        #sidebar-header {
+            display: none !important;
+        }
+    }
+
+    @media (-moz-bool-pref: "uc.tweak.sidebar-header") {
+        #sidebar {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+        }
+        #sidebar-header {
+            border-top-left-radius: var(--user-radius);
+            border-top-right-radius: var(--user-radius);
+        }
+    }
+
+    #sidebar-header {
+        padding-inline: 0 !important;
+        padding: 0 !important;
+        border: none !important;    
+        overflow: hidden !important;
+    }
+
+    #sidebar-close { display: none !important; }
+    #sidebar-icon { display: none !important; }
+    #sidebar-switcher-arrow { display: none !important; }
+    #sidebar-switcher-target { 
+        padding: 0 !important; 
+        border-radius: var(--user-radius) !important;
+    }
+    #sidebar-title {
+        font-size: 16px !important;
+        font-weight: 500;
+        padding-inline: 4px !important;
+    }
+
+}

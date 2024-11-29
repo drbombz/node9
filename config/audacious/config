@@ -1,0 +1,41 @@
+
+[audacious]
+cover_name_include=album,cover,front,folder,jpg
+use_file_cover=TRUE
+use_qt=FALSE
+
+[audqt]
+icon_theme=audacious-flat
+theme=dark
+
+[gtkui]
+column_widths=10,275,175,10,175,175,10,100,45,10,275,275,275,10,275,175,75
+player_maximized=TRUE
+player_x=1338
+player_y=671
+
+[gtkui-layout]
+item_count=0
+
+[pipewire]
+volume_left=61
+volume_right=61
+
+[qtui]
+column_widths=25,25,100,100,50,100,175,25,100,25,75,275,275,275,75,275,175
+player_height=234
+player_width=692
+playlist_columns=artist title album length
+playlist_headers=FALSE
+
+[skins]
+double_size=TRUE
+equalizer_x=0
+equalizer_y=0
+mainwin_font=SF Compact Rounded 12
+player_x=1666
+player_y=1901
+playlist_x=0
+playlist_y=0
+skin=/home/upgrad3/.local/share/audacious/Skins/Marshall (Minimal-dark)
+twoway_scroll=TRUE

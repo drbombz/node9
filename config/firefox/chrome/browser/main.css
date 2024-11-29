@@ -1,0 +1,134 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+@import url("../vars.css");
+@import url("icons.css");
+@import url("sidebar.css");
+@import url("url-bar.css");
+@import url("window-controls.css");
+@import url("extensions.css");
+@import url("nav-bar.css");
+
+body {
+    background-color: var(--user-bg);
+}
+ 
+/* tabs */
+
+html:not([sizemode="fullscreen"]) {
+    #appcontent {
+        margin: var(--user-panel-gap);
+        margin-top: 0 !important;
+
+        & browser {
+            border-radius: var(--user-radius);
+            background-color: transparent;
+            clip-path: circle(100%);
+        }
+    } 
+}
+
+#identity-box.extensionPage {
+    display: none;
+}
+
+#urlbar-background {
+    border: none !important; 
+}
+
+/* address bar */
+
+#urlbar-background {
+    border-radius: 6px;
+}
+
+/* link thingy when hovering over url */
+#statuspanel {
+    & #statuspanel-label {
+        border-radius: var(--user-radius) !important;
+        background-color: var(--lwt-accent-color) !important;
+        border: none !important;
+    }
+    
+    bottom: 2px !important;
+    &:not([mirror="true"]) { left: 2px !important; }
+    &[mirror="true"] { right: 2px !important; }
+}
+
+#navigator-toolbox {
+    border-bottom: none !important;
+} 
+
+#navigator-toolbox {
+    transition: margin-top 150ms ease-out;
+    z-index: 10;
+}
+ 
+/* appcontent */
+ 
+#browser, #sidebar-header, #sidebar-box { background-color: transparent !important; }
+
+#statuspanel {
+    overflow: hidden;
+}
+ 
+#tabbrowser-tabpanels {
+    background: transparent !important;
+}
+
+
+/* remove sidebar button bg */
+toolbar .toolbarbutton-1 {
+    &:not([disabled], :hover:active) {
+        &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
+            background-color: transparent !important;
+        }
+    }
+}
+
+/* dev tools */
+splitter.devtools-horizontal-splitter {
+    opacity: 0 !important;
+}
+
+.devtools-side-splitter {
+    opacity: 0 !important;
+}
+
+.devtools-toolbox-bottom-iframe {
+    border-radius: var(--user-radius) !important;
+    margin-top: var(--user-panel-gap) !important;
+}
+
+.devtools-toolbox-side-iframe {
+    border-radius: var(--user-radius) !important;
+
+    &:first-child {
+        margin-inline-end: var(--user-panel-gap) !important;
+    }
+
+    &:last-child {
+        margin-inline-start: var(--user-panel-gap) !important;
+    }
+}
+
+.browserContainer.responsive-mode {
+    background-color: var(--lwt-accent-color) !important;
+}
+
+.browserContainer.responsive-mode > .browserStack > browser {
+    border: none !important;
+}
+
+.browserContainer.responsive-mode > .rdm-toolbar {
+    border-radius: var(--user-radius) !important;
+    background-color: var(--lwt-accent-color) !important;
+}
+
+
+
+
+
