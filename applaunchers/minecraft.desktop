@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Minecraft
+GenericName=Minecraft
+Comment=
+Icon=minecraft
+Categories=Game;
+Exec=/home/upgrad3/Downloads/minecraft-launcher/minecraft-launcher
+TryExec=/home/upgrad3/Downloads/minecraft-launcher/minecraft-launcher
+StartupNotify=false
+Terminal=false

@@ -92,6 +92,7 @@ rdp_deviceScaleFactor=100
 rdp_desktopScaleFactor=140
 rdp_desktopOrientation=0
 shortcutkey_clipboard=98
+recent_RDP=192.168.1.8
 
 [ssh_colors]
 background=rgb(213,204,186)

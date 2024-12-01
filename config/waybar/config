@@ -9,27 +9,29 @@
 // ------------------------------------------------------------- 
     "layer"     : "top",
     "position"  : "top",
+    //"width"     : 2200,
     "width"     : 3200,
-    "height"    : 55,
-    "margin"    : "14, 10, 4, 10",
+    "height"    : 57,
+    "margin"    : "20, 0, 0, 20",
     "reload_style_on_change": true,
-    "gtk-layer-shell"   : "false",
+    "gtk-layer-shell" : "false",
     
     "modules-left": [
-        "custom/end-left",
+        "custom/end-left-wb",
         "hyprland/submap",
         "group/group-power",
-        "custom/end-right",
         "hyprland/workspaces",
         "custom/sep1",
         "hyprland/window",
-        "custom/end-window-right",
         ],
     
-    "modules-center": [ ],
+    "modules-center": [ 
+        
+    ],
     
     "modules-right": [ 
         "group/tasks",
+        "mpd",
         "group/systray-clock",
         "custom/end-right-wb"
         ],
@@ -126,7 +128,8 @@
     },
     
     "custom/vert": {
-        "format": "󰇙"
+        "format": "󰇙",
+        "tooltip": false
     },
     
     "custom/sep1": {
@@ -150,7 +153,7 @@
         "tooltip"   : false
     },
     "custom/end-window-right": {
-        "format"    : " ",
+        "format"    : "    ",
         "tooltip"   : false
     },
 
@@ -159,6 +162,10 @@
         "tooltip"   : false
     },
 
+    "custom/end-left-wb": {
+        "format"    : " ",
+        "tooltip"   : false
+    },
     
 // Modules
 // -------------------------------------------------------------  
@@ -208,6 +215,32 @@
                    }
     },
 
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "interval": 10,
+        "consume-icons": {
+            "on": " " // Icon shows only when "consume" is on
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 28,
@@ -228,9 +261,10 @@
         "max-length": 450,
         "icon"      : true,
         "rewrite": {
-            "-(.*) — Mozilla Firefox": "$1",
+            "-(.*) - Mozilla Firefox": "$1",
             "(.*) - Sublime Text(.*)": "$1",
-            "(.*) - Sublime Merge(.*)": "$1"
+            "(.*) - Sublime Merge(.*)": "$1",
+            "": "<span font='12' color='#728292'>󱄄 </span> Desktop"
         },
         "tooltip": false
     },
@@ -250,7 +284,7 @@
         "format"            : "<span font='14' color='#d198b0'></span>",
         "format-disabled"   : "<span font='14'>󰂲</span>",
         "format-off"        : "<span font='14'>󰂲</span>",
-        "format-connected"  : "<span font='12'></span> {device_alias}",
+        "format-connected"  : "<span font='12'></span>  {device_alias}",
         "on-click"          : "exec blueman-manager",
         "on-click-middle"   : "exec bluetoothctl power off",
         "on-click-right"    : "exec bluetoothctl power on"

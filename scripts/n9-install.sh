@@ -155,6 +155,7 @@ DIR_HOME="/home/$ME"
 DIR_DPLY="$DIR_HOME/node9"
 DIR_DPLY_BUILD="$DIR_DPLY/builds"
 DIR_DPLY_CFG="$DIR_DPLY/config"
+DIR_GO="$DIR_HOME/go"
 DIR_HOME_CFG="$DIR_HOME/.config"
 DIR_HOME_SHARE="$DIR_HOME/.local/share"
 DIR_HOME_ICONS="$DIR_HOME_SHARE/icons"
@@ -305,15 +306,6 @@ out_msg title 'Installing Applications'
 		out_msg complete
 	done
 
-	# aquamarine
-	#------------------------------------------------------------
-	out_msg title in aquamarine
-		cd $DIR_DPLY_BUILD
-		git clone https://github.com/hyprwm/aquamarine && cd aquamarine
-		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
-		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
-		sudo cmake --install build
-	out_msg complete
 
 	# codecs
 	#------------------------------------------------------------
@@ -330,6 +322,34 @@ out_msg title 'Installing Applications'
 		sudo make install
 	out_msg complete
 
+	# aquamarine
+	#------------------------------------------------------------
+	out_msg title in aquamarine
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/aquamarine && cd aquamarine
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install ./build
+	out_msg complete
+
+	# hyprland-protocols
+	#------------------------------------------------------------
+	out_msg title in hyprland-protocols
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprland-protocols && cd hyprland-protocols
+		meson build
+		sudo meson install -C build
+	out_msg complete
+
+	# hyprlang
+	#------------------------------------------------------------
+	out_msg title in hyprlang
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprlang && cd hyprlang
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target hyprlang -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install ./build
+	out_msg complete
 
 	# hyprcursor
 	#------------------------------------------------------------
@@ -340,6 +360,71 @@ out_msg title 'Installing Applications'
 		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
 		sudo cmake --install build
 	out_msg complete
+
+	# hyprsunset
+	#------------------------------------------------------------
+	out_msg title in hyprsunset
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprsunset && cd hyprsunset
+		cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+		cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf _NPROCESSORS_CONF`
+		sudo cmake --install build
+	out_msg complete
+
+	# hyprwayland-scanner
+	#------------------------------------------------------------
+	out_msg title in hyprwayland-scanner
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprwayland-scanner && cd hyprwayland-scanner
+		cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
+		cmake --build build -j `nproc`
+		sudo cmake --install build
+	out_msg complete
+
+	# hyprland
+	#------------------------------------------------------------
+	out_msg title in hyprland
+		cd $DIR_DPLY_BUILD
+		git clone --recursive https://github.com/hyprwm/Hyprland && cd hyprland
+		make all && sudo make install
+	out_msg complete
+
+
+	# astal (io)
+	#------------------------------------------------------------
+	out_msg title in 'astal (io)'
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/aylur/astal.git && cd astal/lib/astal/io
+		meson setup --prefix /usr build
+		meson install -C build
+	out_msg complete
+
+	# astal (gtk3)
+	#------------------------------------------------------------
+	out_msg title in 'astal (gtk3)'
+		cd $DIR_DPLY_BUILD/astal/lib/astal/gtk3
+		meson setup --prefix /usr build
+		meson install -C build
+	out_msg complete
+
+	# astal (gjs)
+	#------------------------------------------------------------
+	out_msg title in 'astal (gjs)'
+		cd $DIR_DPLY_BUILD/astal/lang/gjs
+		meson setup --prefix /usr build
+		meson install -C build
+	out_msg complete
+	
+	# ags
+	#------------------------------------------------------------
+	out_msg title in 'ags'
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/aylur/ags.git && cd ags
+		go install -ldflags "\
+			-X 'main.gtk4LayerShell=$(pkg-config --variable=libdir gtk4-layer-shell-0)/libgtk4-layer-shell.so' \
+			-X 'main.astalGjs=$(pkg-config --variable=srcdir astal-gjs)'"
+		sudo mv $DIR_GO/bin/ags /usr/bin/ags
+		out_msg complete
 
 	# hypridle
 	#------------------------------------------------------------
@@ -381,15 +466,7 @@ out_msg title 'Installing Applications'
 		sudo cmake --install build
 	out_msg complete
 
-	# hyprwayland-scanner
-	#------------------------------------------------------------
-	out_msg title in hyprwayland-scanner
-		cd $DIR_DPLY_BUILD
-		git clone https://https://github.com/hyprwm/hyprwayland-scanner && cd hyprwayland-scanner
-		cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
-		cmake --build build -j `nproc`
-		sudo cmake --install build
-	out_msg complete
+
 
 	# sway-audio-idle-inhibit
 	#------------------------------------------------------------

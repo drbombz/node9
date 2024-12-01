@@ -21,14 +21,15 @@ configuration {
 /*****----- Global Properties -----*****/
 
 * {
-
-    background:     #171722EE;
-    background-alt: #282A36FF;
+    background: #161622EE;
+    /*background:     #1d202aEE;*/
+    background-alt: #414458FF;
     border:         #666666EE;
-    foreground:     #FFFFFFFF;
+    foreground:     #afafafFF;
     handle:         #64A8E2FF;
-    selected:       #9A6BC0EE;
-    selected-text:  #1b1b1bFF;
+    /*selected:       #639cf8EE;*/
+    selected:       #6656a2EE;
+    selected-text:  #e5e5e5FF;
     active:         #A6A3A1FF;
     urgent:         #F38BA8FF;
 
@@ -169,7 +170,7 @@ listview {
     spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      0px;
     border-radius:               0px;
     border-color:                @border-color;
     background-color:            transparent;
@@ -177,9 +178,9 @@ listview {
     cursor:                      "default";
 }
 scrollbar {
-    handle-width:                5px ;
+    handle-width:                8px ;
     handle-color:                @handle-color;
-    border-radius:               10px;
+    border-radius:               15px;
     background-color:            @alternate-background;
 }
 
@@ -190,7 +191,7 @@ element {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               8px;
+    border-radius:               10px;
     border-color:                @border-color;
     background-color:            transparent;
     text-color:                  @foreground-color;
@@ -263,7 +264,7 @@ mode-switcher{
 button {
     padding:                     12px;
     border:                      0px solid;
-    border-radius:               8px;
+    border-radius:               10px;
     border-color:                @border-color;
     background-color:            @alternate-background;
     text-color:                  inherit;

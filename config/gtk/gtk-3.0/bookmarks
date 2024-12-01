@@ -13,3 +13,4 @@ file:///mnt/node9 --[ node9 ]---------
 file:///mnt/node9/_n9-backups _n9-backups
 file:///mnt/node9/_n9-wwwroot _n9-wwwroot
 sftp://drbomb@185.56.20.208:39610/ / on 185.56.20.208
+ftp://zoomworldlogics.com@secure52.ezhostingserver.com/ / on secure52.ezhostingserver.com

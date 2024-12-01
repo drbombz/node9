@@ -125,3 +125,12 @@ print -P "${BLUE} +/:' |   \\\_     /-------------------------------------------
 print -n -P "  \\\___|___/_____/ "
 print -n -P "%F{magenta}-- %F{blue}[ %F{magenta}Storage_${BLUE}${SPACE_AVAIL}%F{magenta}/${BLUE}${SPACE_TOTAL}%F{blue} ]"
 print -P "%F{blue}[ %F{magenta}Session_${BLUE}${SESSION_TYPE}%F{magenta}/${BLUE}${SESSION_DESKTOP}%F{blue} ]"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# bun completions
+[ -s "/home/upgrad3/.bun/_bun" ] && source "/home/upgrad3/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
