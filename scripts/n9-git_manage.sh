@@ -155,15 +155,15 @@ case $1 in
 		out_msg task sync kitty
 			cp $DIR_LOCAL_CFG/kitty/* $DIR_GIT_CFG/kitty
 
-		out_msg task sync kvantum
-			cp -rf $DIR_LOCAL_CFG/Kvantum/* $DIR_GIT_CFG/kvantum
-
 		out_msg task sync lsd
 			cp -rf $DIR_LOCAL_CFG/lsd/* $DIR_GIT_CFG/lsd
 
 		out_msg task sync n9-scripts
 			cp ~/.n9-scripts/* $DIR_GIT/scripts
 
+		out_msg task sync nemo
+			cp -rf $DIR_LOCAL_CFG/nemo/* $DIR_GIT_CFG/nemo
+			
 		out_msg task sync neofetch
 			cp $DIR_LOCAL_CFG/neofetch/config.conf $DIR_GIT_CFG/neofetch
 
@@ -261,4 +261,4 @@ do
 	sleep 1
 done
 echo -e " ///${NC} ${BLUE}goodbye!"
-sleep 900
+sleep 3

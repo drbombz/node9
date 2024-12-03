@@ -5,7 +5,7 @@
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
 @define-color noti-border-color #6d5da9;
-@define-color noti-bg rgba(48, 54, 71, 0.8);
+@define-color noti-bg rgba(48, 54, 71, 1.0);
 @define-color noti-bg-opaque rgb(48, 54, 71);
 @define-color noti-bg-darker rgb(32, 36, 47);
 @define-color noti-bg-hover rgb(56, 57, 56);
@@ -53,34 +53,32 @@
 
 .notification-row .notification-background .notification {
   /* The actual notification */
-  border-radius: 8px;
-  border: 2px solid @noti-border-color;
-  padding: 3px 0 3px 4px;
+  border-radius: 12px;
+  border: 3px solid @noti-border-color;
+  padding: 5px 10px 5px 10px;
   transition: background 0.15s ease-in-out;
   background: @noti-bg;
 }
 
 .notification-row .notification-background .notification.low {
-  /* Low Priority Notification */
+  border: 2px solid @noti-border-color;
 }
 
 .notification-row .notification-background .notification.normal {
-  /* Normal Priority Notification */
+  border: 2px solid @noti-border-color;
 }
 
 .notification-row .notification-background .notification.critical {
-  /* Critical Priority Notification */
+  border: 2px solid #de5468;
 }
 
 .notification-row .notification-background .notification .notification-action, .notification-row .notification-background .notification .notification-default-action {
   padding: 4px;
-  margin: 0;
-  margin-right: 400px;
   box-shadow: none;
   background: transparent;
   border: none;
   color: @text-color;
-  transition: background 0.15s ease-in-out;
+  transition: background 0.45s ease-in-out;
 }
 
 .notification-row .notification-background .notification .notification-action:hover, .notification-row .notification-background .notification .notification-default-action:hover {
@@ -310,8 +308,8 @@
 }
 
 .floating-notifications .notification {
-  margin-right: 450px;
-  min-width: 300px;
+  margin-right: 370px;
+  min-width: 400px;
   min-height: 80px;
   box-shadow: none;
 }
