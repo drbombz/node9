@@ -5,13 +5,14 @@
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
 window#osd {
-  padding: 12px 20px;
+  padding: 20px;
   border-radius: 999px;
-  border: 1px solid #64a8e2;
-  background: alpha(#2e2e41, 0.9);
+  border: 3px solid #8b7eba;
+  /*background: alpha(#677689, 0.8);*/
+  background-image: linear-gradient(#2c2c3e, #474f69);
 }
 window#osd #container {
-  margin: 16px 50px 16px 50px;
+  margin: 20px 60px;
 }
 window#osd image,
 window#osd label {
@@ -31,11 +32,11 @@ window#osd trough {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: alpha(@theme_fg_color, 0.5);
+  background: alpha(#161622, 0.5);
 }
 window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: @theme_fg_color;
+  background: #a8abc2;
 }

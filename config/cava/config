@@ -25,7 +25,7 @@ framerate = 60
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
  ; bars = 30
-bar_width = 3
+bar_width = 4
 bar_spacing = 0
 # bar_height is only used for output in "noritake" format
 ; bar_height = 32
@@ -144,13 +144,13 @@ bar_spacing = 0
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
- ; method = sdl_glsl
+; method = ncurses
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left' or 'right'.
 # Default is 'bottom'. Other orientations are only supported on sdl and ncruses
 # output. Note: many fonts have weird glyphs for 'top' and 'right' characters,
 # which can make ncurses not look right.
-; orientation = bottom
+; orientation = top
 
 # Visual channels. Can be 'stereo' or 'mono'.
 # 'stereo' mirrors both channels with low frequencies in center.
@@ -228,7 +228,7 @@ gradient_count = 8
 
 # n9
 gradient_color_1 = '#564888'
-gradient_color_2 = '#64549f'
+gradient_color_2 = '#5d4e93'
 gradient_color_3 = '#7766af'
 gradient_color_4 = '#9185bf'
 gradient_color_5 = '#afa6d0'

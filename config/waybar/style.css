@@ -246,7 +246,7 @@
     color: @teal;
 }
 #pulseaudio-slider slider {
-    background-color: @cyan;
+    background-color: #acb6c8;
     min-height: 0px;
     min-width: 0px;
     opacity: 0;
@@ -258,12 +258,11 @@
     min-height: 80px;
     min-width: 10px;
     border-radius: 5px;
-    background-color: @gray-light;
+    background-color: #495c8e;
 }
 #pulseaudio-slider highlight {
     min-width: 10px;
-    border-radius: 5px;
-    color: @green;
+    border-radius: 20px;
 }
 #pulseaudio-slider trough, #backlight-slider trough {
     min-height: 10px;

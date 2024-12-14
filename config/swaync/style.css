@@ -269,7 +269,7 @@
   Control Center: Main Window
 */
 .control-center {
-  background-color: #1f1f2c;
+  background-color: rgba(31, 31, 44, 0.95);
   color: @text-color;
   border: 2px solid @noti-border-color;
   border-radius: 12px;
@@ -318,19 +318,17 @@
 /* Title widget */
 .widget-title {
   color: #dbdbdb;
-  margin: 20px;
-  padding: 10px 15px 20px 55px;
+  margin: 10px;
+  padding: 10px 30px 10px 30px;
   font-size: 1.3rem;
   font-weight: 500;
-  border-bottom: 3px solid #535e98;
-  border-bottom-left-radius: 20px;
 }
 
 .widget-title > button {
   font-size: initial;
   color: @text-color;
   text-shadow: none;
-  background: @noti-bg;
+  background-image: linear-gradient(#272737, #434b63);
   border: 1px solid @noti-border-color;
   box-shadow: none;
   border-top-left-radius: 15px;
@@ -344,9 +342,9 @@
 /* DND widget */
 .widget-dnd {
   color: @text-color;
-  margin: 0px 20px 20px 20px;
-  padding: 10px 15px 10px 15px;
-  background-color: #373d51;
+  margin: 0px 15px 20px 15px;
+  padding: 10px 55px 10px 55px;
+  background-image: linear-gradient(#272737, #434b63);
   border: 3px solid #50437F;
   border-radius: 10px;
   font-size: 1.1rem;
@@ -355,17 +353,17 @@
 .widget-dnd > switch {
   font-size: initial;
   border-radius: 12px;
-  background: @noti-bg;
-  border: 5px solid #50437F;
+  background: #252438;
+  border: 3px solid #50437F;
   box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
-  background: #cba6f7;
+  background: #7b78a9;
 }
 
 .widget-dnd > switch slider {
-  background: #7a7a7a;
+  background: #b8b8b8;
   border-radius: 12px;
 }
 
@@ -387,10 +385,12 @@
 
 .widget-mpris .widget-mpris-player {
   padding: 12px;
-  margin: 30px 10px 30px 10px;
-  background-color: @mpris-album-art-overlay;
-  border-radius: 12px;
-  box-shadow: 0px 0px 10px rgba(15, 15, 15, 0.75);
+  padding-top: 25px;
+  margin: 20px 20px 20px 20px;
+  background-image: linear-gradient(#272737, #434b63);
+  border: 1px solid #737373;
+  border-radius: 8px;
+  box-shadow: 0px 0px 7px rgba(78, 78, 78, 0.70);
 }
 
 .widget-mpris .widget-mpris-player button:hover {
@@ -402,16 +402,16 @@
   padding: 0px;
   border-radius: 12px;
   box-shadow: none;
-  background-color: #262839;
+  background-color: transparent;
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-title {
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 22px;
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-subtitle {
-  font-size: 1.1rem;
+  font-size: 20px;
 }
 
 .widget-mpris .widget-mpris-player > box > button {
@@ -434,13 +434,17 @@
 /* Buttons widget */
 .widget-buttons-grid {
   padding: 8px;
-  margin: 0px 20px 10px 20px;
+  padding-left: 8px;
+  margin: 0px 20px 30px 20px;
   border-radius: 12px;
-  background-color: @noti-bg;
+  background-color: #373d51;
+  border: 3px solid #50437F;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
+  margin-left: 22px;
   background: @noti-bg;
+  border: 1px solid #7d7d7d;
   border-radius: 12px;
 }
 
@@ -466,7 +470,7 @@
   border: 3px solid #50437F;
   border-top-right-radius: 15px;
   padding: 10px 10px 10px 20px;
-  margin: 20px 15px 15px 15px;
+  margin: 0px 20px 15px 20px;
   font-size: 28px;
 }
 

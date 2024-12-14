@@ -47,11 +47,12 @@
     }
   },
   "widgets": [
-    "inhibitors",
     "title",
     "dnd",
     "notifications",
-    "volume"
+    "mpris",
+    "volume",
+    "buttons-grid"
   ],
   "widget-config": {
     "inhibitors": {
@@ -60,7 +61,7 @@
       "clear-all-button": true
     },
     "title": {
-      "text": "[ Notifications ]",
+      "text": "Notifications",
       "clear-all-button": true,
       "button-text": "Clear All"
     },
@@ -73,6 +74,26 @@
     },
       "volume": {
       "label": "󰕾"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰐥",
+          "command": "systemctl poweroff"
+        },
+        {
+          "label": "󰜉",
+          "command": "systemctl reboot"
+        },
+        {
+          "label": "󰌾",
+          "command": "hyprlock"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        }
+      ]
     }
   }
 }
