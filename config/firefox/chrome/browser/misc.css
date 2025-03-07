@@ -92,6 +92,10 @@ splitter.devtools-horizontal-splitter {
   .findbar-textbox {
     border-radius: var(--uc-radius) !important;
   }
+  
+  .findbar-container {
+    width: fit-content !important;
+  }
 
   @media not (-moz-bool-pref: "uc.tweak.findbar.bottom") {
     top: var(--uc-small-floating-margin) !important;

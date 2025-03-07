@@ -134,3 +134,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"

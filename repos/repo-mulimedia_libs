@@ -1,0 +1,7 @@
+[openSUSE-Tumbleweed (multimedia:libs)]
+name=openSUSE-Tumbleweed (multimedia:libs)zy
+enabled=1
+autorefresh=1
+baseurl=https://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Tumbleweed/
+type=rpm-md
+keeppackages=0

@@ -194,9 +194,9 @@ declare -a dirs_home=('Documents' 'Downloads' 'Music' 'Pictures')
 # Required Packages
 declare -a pkg_req=('brightnessctl' 'caca-utils' 'cairo-devel' 'cairo-tools' 'cargo' 'file-devel' 'fmt-devel' 'freeglut-devel' 'fftw3-devel'
 'go1.22' 'gobject-introspection' 'gobject-introspection-devel' 'gtk-layer-shell-devel' 'gtkmm3-devel' 'hyprlang-devel' 'libiniparser-devel' 'jsoncpp-devel' 'kf6-extra-cmake-modules'
-'libappindicator3-1' 'libdbusmenu-gtk3-devel' 'libdisplay-info-devel' 'libdrm-tools' 'libevdev-devel' 'libKF5GuiAddons5' 'libmpdclient-devel' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'librsvg' 'librsvg-devel' 
-'libzip' 'libzip-devel' 'typelib-1_0-Gtk-4_0' 'libxkbregistry-devel' 'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'playerctl-devel' 'pugixml-devel' 
-'pulseaudio-bash-completion' 'pulseaudio-zsh-completion' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'sndio' 'sndio-devel' 'spdlog-devel' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
+'libappindicator3-1' 'libdbusmenu-gtk3-devel' 'libdisplay-info-devel' 'libdrm-tools' 'libevdev-devel' 'libjxl-devel' 'libKF5GuiAddons5' 'libmpdclient-devel' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'librsvg' 'librsvg-devel' 
+'libzip' 'libzip-devel' 'typelib-1_0-Gtk-4_0' 'libxkbregistry-devel' 'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'playerctl-devel' 'pugixml-devel' 'pipewire-devel'
+'pulseaudio-bash-completion' 'pulseaudio-zsh-completion' 'qt6-waylandclient-private-devel' 're2-devel' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'sndio' 'sndio-devel' 'spdlog-devel' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
 
 # Optional Packages
 declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5-qtwayland-devel' 'libqt5-qdbus' 'libqt5-qtsvg-devel'
@@ -322,6 +322,17 @@ out_msg title 'Installing Applications'
 		sudo make install
 	out_msg complete
 
+	# sdbus
+	#------------------------------------------------------------
+	out_msg title in sdbus-cpp
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/Kistler-Group/sdbus-cpp && cd sdbus-cpp
+		mkdir build && cd build
+		cmake .. -DCMAKE_BUILD_TYPE=Release
+		cmake --build .
+		sudo cmake --build . --target install
+	out_msg complete
+
 	# aquamarine
 	#------------------------------------------------------------
 	out_msg title in aquamarine
@@ -352,6 +363,26 @@ out_msg title 'Installing Applications'
 	out_msg complete
 
 	# hyprcursor
+	#------------------------------------------------------------
+	out_msg title in hyprcursor
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprgraphics && cd hyprgraphics
+			cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+			cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf NPROCESSORS_CONF`
+			sudo cmake --install build
+	out_msg complete
+
+	# hyprland-qtutils
+	#------------------------------------------------------------
+	out_msg title in hyprcursor
+		cd $DIR_DPLY_BUILD
+		git clone https://github.com/hyprwm/hyprland-qtutils && cd hyprland-qtutils
+			cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
+			cmake --build ./build --config Release --target all -j`nproc 2>/dev/null || getconf NPROCESSORS_CONF`
+			sudo cmake --install build
+	out_msg complete
+
+	# hyprgraphics
 	#------------------------------------------------------------
 	out_msg title in hyprcursor
 		cd $DIR_DPLY_BUILD

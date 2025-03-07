@@ -155,7 +155,7 @@ toolbarspring {
     }
     & #nav-bar,
     & #PersonalToolbar {
-      background-color: #16141F !important;
+      background-color: var(--uc-bg) !important;
     }
     & #nav-bar {
       margin-top: var(--uc-sidebar-margin) !important;

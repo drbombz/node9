@@ -17,6 +17,8 @@ ME=$(whoami)
 DIR_HOME="/home/$ME"
 DIR_LOCAL_CFG="$DIR_HOME/.config"
 
+RUNNING=$(pgrep nzbget)
+
 # Functions
 #==================================================================================
 get_sudo() {
@@ -130,12 +132,18 @@ fi
 case $1 in
 	start)
 		out_msg header 'Nzbget Management: Start Daemon/GUI'
-
+		
 		out_msg title 'Starting Daemon'
-			out_msg task 'Using Config' "${DIR_LOCAL_CFG}/nzbget/nzbget.conf"
-			nzbget -D -c ~/.config/nzbget/nzbget.conf
-		out_msg complete
-		sleep 1
+			#if [[ $RUNNING ]]
+			#then
+		#		out_msg info 'Nzbget is already runnning'
+	#		else
+				out_msg task 'Using Config' "${DIR_LOCAL_CFG}/nzbget/nzbget.conf"
+					nzbget -D -c ~/.config/nzbget/nzbget.conf
+				out_msg complete
+				sleep 1
+	#		fi
+		
 		out_msg title 'Opening GUI'
 			out_msg task 'URL' 'http://127.0.0.1:6789'
 			firefox http://127.0.0.1:6789

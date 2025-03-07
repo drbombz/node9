@@ -40,6 +40,7 @@
         .titlebar-buttonbox-container {
           width: 78px !important;
           position: fixed !important;
+          left: 0 !important;
           & .titlebar-buttonbox {
             margin-inline: 12px !important;
           }

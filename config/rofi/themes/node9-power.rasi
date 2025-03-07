@@ -8,15 +8,15 @@
  **/
 
 * {
-    background:     #1E1E2DDD;
-    background-alt: #282A36FF;
+    background:     #1E1E2Dee;
+    background-alt: #37404aFF;
     border:         #666666EE;
     foreground:     #FFFFFFFF;
     handle:         #64a8e2FF;
     selected:       #9f73c3EE;
     selected-text:  #1b1b1bFF;
-    active:         #64a8e2FF;
-    urgent:         #e5423fFF;
+    active:         #536278FF;
+    urgent:         #f38ba8FF;
 }
 /*****----- Configuration -----*****/
 configuration {
@@ -85,18 +85,19 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
+    margin:                      0px 0px 0px 3px;
     padding:                     10px 20px 10px 16px;
-    border-radius:               10px;
+    border-radius:               6px;
     background-color:            @urgent;
     text-color:                  @background;
     cursor:                      "pointer";
 }
 prompt {
     enabled:                     true;
-    padding:                     12px;
-    border-radius:               10px;
+    padding:                     12px 63px 12px 55px;
+    border-radius:               6px;
     background-color:            @active;
-    text-color:                  @background;
+    text-color:                  #eaedf0;
 }
 
 /*****----- Message -----*****/

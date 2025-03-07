@@ -84,6 +84,8 @@
             "custom/power-shutdown",
             "custom/power-restart",
             "custom/power-logout",
+            "custom/vert2",
+            "custom/kitty",
         ]
     },
 
@@ -106,7 +108,7 @@
     "custom/power-shutdown": {
         "format"        : " {icon} ",
         "format-icons"  : "󰤆",
-        "on-click"      : "notify-send test",
+        "on-click"      : "systemctl poweroff",
         "tooltip"       : false
 
     },
@@ -114,7 +116,7 @@
     "custom/power-restart": {
         "format"        : " {icon} ",
         "format-icons"  : "",
-        "on-click"      : "notify-send test",
+        "on-click"      : "systemctl reboot",
         "tooltip"       : false
 
     },
@@ -122,9 +124,16 @@
     "custom/power-logout": {
         "format"        : " {icon} ",
         "format-icons"  : "󰗽",
-        "on-click"      : "notify-send test",
+        "on-click"      : "~/.n9-scripts/n9-logout.sh",
         "tooltip"       : false
 
+    },
+
+    "custom/kitty": {
+        "format"        : " {icon} ",
+        "format-icons"  : "",
+        "on-click"      : "kitty",
+        "tooltip"       : false
     },
     
     "custom/vert": {
@@ -132,6 +141,11 @@
         "tooltip": false
     },
     
+    "custom/vert2": {
+        "format": "󰇙",
+        "tooltip": false
+    },
+
     "custom/sep1": {
         //"format": ""
         "format": ""
@@ -354,10 +368,10 @@
         "tooltip": true,
         "format": "{icon}",
         "format-icons": {
-             "notification"     : "󰍥<span foreground='#209fb5'><sup></sup></span>",
-             "none"             : "󰍥",
-             "dnd-notification" : "󱙎<span foreground='#209fb5'><sup></sup></span>",
-             "dnd-none"         : "󱙎"
+             "notification"     : "󰭳<span foreground='#209fb5'><sup></sup></span>",
+             "none"             : "󰭳",
+             "dnd-notification" : "󰭲<span foreground='#209fb5'><sup></sup></span>",
+             "dnd-none"         : "󰭲"
         },
         "return-type"   : "json",
         "exec-if"       : "which swaync-client",

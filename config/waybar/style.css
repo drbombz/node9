@@ -87,7 +87,9 @@
 #custom-wlogout,
 #custom-power-shutdown,
 #custom-power-restart,
-#custom-power-logout {
+#custom-power-logout,
+#custom-kitty,
+#custom-vert2 {
     color: #7d88a8;
     font-size: 24px;
 }
@@ -99,10 +101,17 @@
     color: #a5a5a5;
     padding: 2px 9px 0px 0px;
 }
+#custom-vert2 {
+    padding: 5px 2px 0px 2px;
+}
+#custom-kitty {
+    color: #c480c7;
+}
 #submap:hover,
 #custom-power-shutdown:hover,
 #custom-power-restart:hover,
-#custom-power-logout:hover {
+#custom-power-logout:hover,
+#custom-kitty:hover {
     color: @cyan;
 }
 #workspaces {

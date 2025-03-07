@@ -23,17 +23,17 @@
 
 #urlbar {
   z-index: 9999 !important;
-  margin: auto !important;
 }
 
 #urlbar-background {
   border-radius: var(--uc-button-radius) !important;
   border: none !important;
   box-shadow: none !important;
+  background: transparent !important;
 }
 
 #urlbar[breakout-extend] #urlbar-background {
-  --urlbar-bg: var(--toolbar-field-background-color);
+  --urlbar-bg: var(--toolbar-field-focus-background-color);
   @media (-moz-platform: linux) {
     --urlbar-bg: Field;
   }
@@ -41,7 +41,7 @@
   @media not (-moz-bool-pref: "uc.tweak.no-blur") {
     background-color: color-mix(
       in oklab,
-      #222234ff 90%,
+      var(--urlbar-bg) 90%,
       transparent
     ) !important;
     backdrop-filter: blur(var(--uc-blur-radius)) !important;
@@ -62,10 +62,14 @@
       800px
     );
 
+    #urlbar,
+    #urlbar-container {
+      margin: auto !important;
+    }
+
     #urlbar-container {
       flex: 1;
       max-width: 1000px;
-      margin: auto !important;
     }
 
     #urlbar[breakout-extend] {
@@ -79,7 +83,7 @@
 
       .urlbar-input,
       #urlbar-input {
-        font-size: 18px !important;
+        font-size: 16px !important;
       }
     }
 

@@ -1,0 +1,7 @@
+[openSUSE-Tumbleweed (Standard)]
+name=openSUSE-Tumbleweed (Standard)
+enabled=1
+autorefresh=1
+baseurl=https://download.opensuse.org/repositories/openSUSE:/Tumbleweed/standard/
+type=rpm-md
+keeppackages=0

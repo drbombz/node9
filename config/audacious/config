@@ -18,8 +18,8 @@ player_y=671
 item_count=0
 
 [pipewire]
-volume_left=61
-volume_right=61
+volume_left=51
+volume_right=51
 
 [qtui]
 column_widths=25,25,100,100,50,100,175,25,100,25,75,275,275,275,75,275,175
