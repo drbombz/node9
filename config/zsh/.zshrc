@@ -14,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="node9"
+ZSH_THEME="gruvforest"
 #ZSH_THEME="duellj"
 
 # Set list of themes to pick from when loading at random
@@ -117,14 +117,25 @@ SESSION_DESKTOP=$(echo $DESKTOP_SESSION)
 SESSION_TYPE=$(echo $XDG_SESSION_TYPE)
 BLUE='\033[0;36m'$(tput bold)
 PURPLE='\033[0;35m'$(tput bold)
+YELLOW='\033[1;33m'$(tput bold)
+GREEN='\033[1;32m'$(tput bold)
 
-print -P "${BLUE}          ______"
+print -P "%F{YELLOW}          ______"
 print -P "    _____/::'   \\"
-print -P "   /:'   \\\:' |   \\\ %F{magenta}n9! "
-print -P "${BLUE} +/:' |   \\\_     /--------------------------------------------------------------------------------------+"
+print -P "   /:'   \\\:' |   \\\ %F{green}n9! "
+print -P "%F{YELLOW} +/:' |   \\\_     /--------------------------------------------------------------------------------------+"
 print -n -P "  \\\___|___/_____/ "
-print -n -P "%F{magenta}-- %F{blue}[ %F{magenta}Storage_${BLUE}${SPACE_AVAIL}%F{magenta}/${BLUE}${SPACE_TOTAL}%F{blue} ]"
-print -P "%F{blue}[ %F{magenta}Session_${BLUE}${SESSION_TYPE}%F{magenta}/${BLUE}${SESSION_DESKTOP}%F{blue} ]"
+print -n -P "%F{GREEN}-- %F{YELLOW}[ %F{red}Storage_%F{YELLOW}${SPACE_AVAIL}%F{green}/%F{YELLOW}${SPACE_TOTAL}%F{YELLOW} ]"
+print -P "%F{YELLOW}[ %F{red}Session_%F{YELLOW}${SESSION_TYPE}%F{GREEN}/%F{YELLOW}${SESSION_DESKTOP}%F{YELLOW} ]"
+
+
+#print -P "${BLUE}          ______"
+#print -P "    _____/::'   \\"
+#print -P "   /:'   \\\:' |   \\\ %F{magenta}n9! "
+#print -P "${BLUE} +/:' |   \\\_     /--------------------------------------------------------------------------------------+"
+#print -n -P "  \\\___|___/_____/ "
+#print -n -P "%F{magenta}-- %F{blue}[ %F{magenta}Storage_${BLUE}${SPACE_AVAIL}%F{magenta}/${BLUE}${SPACE_TOTAL}%F{blue} ]"
+#print -P "%F{blue}[ %F{magenta}Session_${BLUE}${SESSION_TYPE}%F{magenta}/${BLUE}${SESSION_DESKTOP}%F{blue} ]"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 

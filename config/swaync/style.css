@@ -4,7 +4,7 @@
   /:' |   \'  -   \'    | \'    __\_     / n9! -- [ swaync ]
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
-@define-color noti-border-color #6d5da9;
+@define-color noti-border-color #B3AE9A;
 @define-color noti-bg rgba(48, 54, 71, 1.0);
 @define-color noti-bg-opaque rgb(48, 54, 71);
 @define-color noti-bg-darker rgb(32, 36, 47);
@@ -13,7 +13,7 @@
 @define-color noti-bg-focus rgba(68, 68, 68, 0.6);
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
 @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color rgb(204, 204, 204);
+@define-color text-color #B3AE9A;
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(255, 133, 66);
 
@@ -269,7 +269,7 @@
   Control Center: Main Window
 */
 .control-center {
-  background-color: rgba(31, 31, 44, 0.95);
+  background-color: rgba(45,53,59,.95);
   color: @text-color;
   border: 2px solid @noti-border-color;
   border-radius: 12px;
@@ -317,7 +317,7 @@
 /*** Widgets ***/
 /* Title widget */
 .widget-title {
-  color: #dbdbdb;
+  color: @text-color;
   margin: 10px;
   padding: 10px 30px 10px 30px;
   font-size: 1.3rem;
@@ -328,7 +328,7 @@
   font-size: initial;
   color: @text-color;
   text-shadow: none;
-  background-image: linear-gradient(#272737, #434b63);
+  background-image: linear-gradient(#2D353B, #4d5c66);
   border: 1px solid @noti-border-color;
   box-shadow: none;
   border-top-left-radius: 15px;
@@ -344,8 +344,7 @@
   color: @text-color;
   margin: 0px 15px 20px 15px;
   padding: 13px 55px 8px 55px;
-  background-image: linear-gradient(#272737, #434b63);
-  border: 3px solid #50437F;
+  background-color: #3c464e;
   border-radius: 10px;
   font-size: 1.1rem;
 }
@@ -353,13 +352,13 @@
 .widget-dnd > switch {
   font-size: initial;
   border-radius: 12px;
-  background: #252438;
-  border: 3px solid #50437F;
+  background: #2D353B;
+  border: 3px solid #837c62;
   box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
-  background: #7b78a9;
+  background: #4c3743;
 }
 
 .widget-dnd > switch slider {
@@ -387,7 +386,7 @@
   padding: 12px;
   padding-top: 25px;
   margin: 20px 20px 20px 20px;
-  background-image: linear-gradient(#272737, #434b63);
+  background-image: linear-gradient(#2D353B, #4d5c66);
   border: 1px solid #737373;
   border-radius: 8px;
   box-shadow: 0px 0px 7px rgba(78, 78, 78, 0.70);
@@ -437,19 +436,19 @@
   padding-left: 8px;
   margin: 0px 20px 30px 20px;
   border-radius: 12px;
-  background-color: #373d51;
-  border: 3px solid #50437F;
+  background-color: #3c464e;
+  /*border: 1px solid #837c62;*/
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
   margin-left: 22px;
-  background: @noti-bg;
+  background: #2D353B;
   border: 1px solid #7d7d7d;
   border-radius: 12px;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: #111319;
+  background: #B3AE9A;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */
@@ -469,14 +468,20 @@
 
 /* Volume widget */
 .widget-volume {
-  background-color: #373d51;
-  border: 3px solid #50437F;
+  background-color: #3c464e;
+  /*border: 1px solid #837c62;*/
   border-top-right-radius: 15px;
   padding: 10px 10px 10px 20px;
   margin: 0px 20px 15px 20px;
   font-size: 28px;
 }
+.widget-volume trough highlight {
+  background: #83988b;
+}
 
+.widget-backlight trough highlight {
+  background: #ffffff;
+}
 .widget-volume > box > button {
   background: transparent;
   border: none;

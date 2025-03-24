@@ -4,30 +4,47 @@
   /:' |   \'  -   \'    | \'    __\_     / n9! -- [ waybar ]
  +\___|___/_______/_______/_______/_____/------------------------------------------------------------------+
                                                                                                           */
-                                                                                                          
+
+/* 
+Used Colors 
+*/       
+
+/* Backgrounds/Borders*/
+@define-color grad0-top     #272737;
+@define-color grad0-bot     #434b63;
+@define-color grad1-top     #12141a;
+@define-color grad1-bot     #2f3345;
+@define-color border0       #6d5da9;
+
+/* Text/Icons */
 @define-color blue          #89b4fa;
 @define-color cyan          #64a8e2;
-@define-color gray          #595959;
-@define-color gray-light    #959595;
 @define-color green         #a6e3a1;
-@define-color flamingo      #f2cdcd;
-@define-color lavender      #b4befe;
-@define-color maroon        #eba0ac;
-@define-color mauve         #cba6f7;
 @define-color orange        #ff9961;
-@define-color peach         #fab387;
 @define-color pink          #ff97d3;
-@define-color pink-light    #f5c2e7;
-@define-color purple        #1D192D;
-@define-color purple-light  #6d5da9;
 @define-color red           #f38ba8;
-@define-color rosewater     #f5e0dc;
-@define-color sapphire      #74c7ec;
-@define-color sky           #89dceb;
 @define-color teal          #94e2d5;
 @define-color yellow        #f9e2af;
 @define-color white         #efefef;
 @define-color clock         #322b4e;
+
+/* Available Colors */
+@define-color gray          #595959;
+@define-color gray-light    #959595;
+@define-color flamingo      #f2cdcd;
+@define-color lavender      #b4befe;
+@define-color maroon        #eba0ac;
+@define-color mauve         #cba6f7;
+@define-color peach         #fab387;
+@define-color pink-light    #f5c2e7;
+@define-color purple        #1D192D;
+@define-color purple-light  #6d5da9;
+@define-color rosewater     #f5e0dc;
+@define-color sapphire      #74c7ec;
+@define-color sky           #89dceb;
+
+
+
 
 /* Main
 *******************************************/
@@ -40,19 +57,18 @@
 }
 #waybar {
     min-width: 400px;
-    color: #a2a2a2;
     background: none;
 }
 #custom-end-right-wb {
-    background-image: linear-gradient(#272737, #434b63);
+    background-image: linear-gradient(@grad0-top, @grad0-bot);
     padding-left: 5px;
-    border-right: 1px solid @purple-light;
+    border-right: 1px solid @border0;
     border-top-right-radius: 18px;
 }
 #custom-end-left-wb {
-    background-image: linear-gradient(#272737, #434b63);
+    background-image: linear-gradient(@grad0-top, @grad0-bot);
     padding-left: 10px;
-    border-left: 1px solid @purple-light;
+    border-left: 1px solid @border0;
     border-bottom-left-radius: 18px;
 }
 
@@ -60,8 +76,8 @@
 *******************************************/
 .modules-left {
     padding-right: 10px;
-    background-image: linear-gradient(#12141a, #2f3345);
-    border: 3px solid @purple-light;
+    background-image: linear-gradient(@grad1-top, @grad1-bot);
+    border: 3px solid @border0;
     border-bottom-left-radius: 18px;
     border-top-right-radius: 18px;
     
@@ -69,8 +85,8 @@
 .modules-right {
     padding-left: 15px;
     /*background-image: linear-gradient(#0d0e13, #252836);*/
-    background-image: linear-gradient(#12141a, #2f3345);
-    border: 3px solid @purple-light;
+    background-image: linear-gradient(@grad1-top, @grad1-bot);
+    border: 3px solid @border0;
     border-top-right-radius: 18px;
     border-bottom-left-radius: 18px;
 }
@@ -79,9 +95,9 @@
 *******************************************/
 #group-power {
     padding-right: 10px;
-    background-image: linear-gradient(#272737, #434b63);
+    background-image: linear-gradient(@grad0-top, @grad0-bot);
     border-top-right-radius: 18px;
-    border-right: 3px solid @purple-light;
+    border-right: 3px solid @border0;
 }
 #submap,
 #custom-wlogout,
@@ -117,7 +133,7 @@
 #workspaces {
     padding: 2px 12px 0 10px;
     background-image: linear-gradient(#1f1f2c, #343a4d);
-    border-right: 3px solid @purple-light;
+    border-right: 3px solid @border0;
     border-bottom-right-radius: 18px;
 }
 #workspaces button {
@@ -135,7 +151,7 @@
     color: @tan;
 }
 #workspaces button:hover {
-    background: @purple-light;
+    background: @border0;
     border-top-right-radius: 16px;
     border-bottom-left-radius: 16px;  
     animation: gradient_f 20s ease-in infinite;
@@ -154,15 +170,6 @@
     color: @orange;
     padding: 4px 8px 0 24px;
     font-size: 22px;
-}
-
-/* Modules: Center
-*******************************************/
-#cava {
-    border: 1px solid @rosewater;
-}
-#mpd {
-
 }
 
 /* Modules: Right
@@ -185,7 +192,7 @@
 ----------------------*/
 #systray-clock {
     background-image: linear-gradient(#1f1f2c, #343a4d);
-    border-left: 3px solid @purple-light;
+    border-left: 3px solid @border0;
     border-bottom-left-radius: 18px;
 }
 
@@ -292,9 +299,9 @@
 #clock {
     color: @white;
     padding: 5px 8px 0px 18px;
-    background-image: linear-gradient(#272737, #434b63);
+    background-image: linear-gradient(@grad0-top, @grad0-bot);
     letter-spacing: 1px;
-    border-left: 3px solid @purple-light;
+    border-left: 3px solid @border0;
     border-bottom-left-radius: 16px;
 }
 
@@ -302,12 +309,12 @@
 *******************************************/
 tooltip {
     background-color: #343a4d;
-    background-image: linear-gradient(#272737, #434b63);
-    border: 1px solid @sapphire;
+    background-image: linear-gradient(@grad0-top, @grad0-bot);
+    border: 1px solid #ffffff;
     border-bottom-left-radius: 10px;
     border-radius: 10px;
 }
 tooltip label {
-    color: @rosewater;
+    color: #ffffff;
     padding: 15px;
 }

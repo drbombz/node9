@@ -227,14 +227,24 @@ gradient = 1
 gradient_count = 8
 
 # n9
-gradient_color_1 = '#564888'
-gradient_color_2 = '#5d4e93'
-gradient_color_3 = '#7766af'
-gradient_color_4 = '#9185bf'
-gradient_color_5 = '#afa6d0'
-gradient_color_6 = '#d3c4e0'
-gradient_color_7 = '#efe9f4'
-gradient_color_8 = '#ffffff'
+#gradient_color_1 = '#564888'
+#gradient_color_2 = '#5d4e93'
+#gradient_color_3 = '#7766af'
+#gradient_color_4 = '#9185bf'
+#gradient_color_5 = '#afa6d0'
+#gradient_color_6 = '#d3c4e0'
+#gradient_color_7 = '#efe9f4'
+#gradient_color_8 = '#ffffff'
+ 
+# gruvforest
+gradient_color_8 = '#e8e7e1'
+gradient_color_7 = '#e0ded6'
+gradient_color_6 = '#d1cec2'
+gradient_color_5 = '#b9b4a2'
+gradient_color_4 = '#aba58f'
+gradient_color_3 = '#9a9379'
+gradient_color_2 = '#878066'
+gradient_color_1 = '#746e57'
 
 # Catppuccin
 #gradient_color_1 = '#94e2d5'
