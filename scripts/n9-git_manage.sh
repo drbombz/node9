@@ -192,7 +192,7 @@ case $1 in
 			cp $DIR_LOCAL_CFG/swappy/config $DIR_GIT_CFG/swappy
 
 		out_msg task sync swaync
-			cp $DIR_LOCAL_CFG/swaync/* $DIR_GIT_CFG/swaync
+			cp -rf $DIR_LOCAL_CFG/swaync/* $DIR_GIT_CFG/swaync
 
 		out_msg task sync swayosd
 			cp $DIR_LOCAL_CFG/swayosd/* $DIR_GIT_CFG/swayosd
