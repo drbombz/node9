@@ -201,8 +201,9 @@ case $1 in
 			cp $DIR_LOCAL_SHARE/applications/* $DIR_GIT/applaunchers
 
 		out_msg task sync waybar
-			cp $DIR_LOCAL_CFG/waybar/config $DIR_GIT_CFG/waybar
-			cp $DIR_LOCAL_CFG/waybar/style.css $DIR_GIT_CFG/waybar
+			#cp $DIR_LOCAL_CFG/waybar/config $DIR_GIT_CFG/waybar
+			#cp $DIR_LOCAL_CFG/waybar/style.css $DIR_GIT_CFG/waybar
+			cp -rf $DIR_LOCAL_CFG/waybar/* $DIR_GIT_CFG/waybar
 
 		out_msg task sync wlogout
 			cp $DIR_LOCAL_CFG/wlogout/layout $DIR_GIT_CFG/wlogout
