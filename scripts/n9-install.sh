@@ -196,7 +196,10 @@ declare -a pkg_req=('brightnessctl' 'caca-utils' 'cairo-devel' 'cairo-tools' 'ca
 'go1.22' 'gobject-introspection' 'gobject-introspection-devel' 'gtk-layer-shell-devel' 'gtkmm3-devel' 'hyprlang-devel' 'libiniparser-devel' 'jsoncpp-devel' 'kf6-extra-cmake-modules'
 'libappindicator3-1' 'libdbusmenu-gtk3-devel' 'libdisplay-info-devel' 'libdrm-tools' 'libevdev-devel' 'libjxl-devel' 'libKF5GuiAddons5' 'libmpdclient-devel' 'libopenssl1_1' 'libpng12-devel' 'libsdbus-c++1' 'librsvg' 'librsvg-devel' 
 'libzip' 'libzip-devel' 'typelib-1_0-Gtk-4_0' 'libxkbregistry-devel' 'NetworkManager-connection-editor' 'NetworkManager-bluetooth' 'meson' 'mtpfs' 'mtp-tools' 'opi' 'pango-tools' 'playerctl-devel' 'pugixml-devel' 'pipewire-devel'
-'pulseaudio-bash-completion' 'pulseaudio-zsh-completion' 'qt6-waylandclient-private-devel' 're2-devel' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'sndio' 'sndio-devel' 'spdlog-devel' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland')
+'pulseaudio-bash-completion' 'pulseaudio-zsh-completion' 'qt6-waylandclient-private-devel' 're2-devel' 'sassc' 'sdbus-cpp-devel' 'scdoc' 'sndio' 'sndio-devel' 'spdlog-devel' 'unrar' 'unzip' 'wayland-protocols-devel' 'xdg-desktop-portal-hyprland'
+'ccache' 'gtest' 'libchromaprint-devel' 'libebur128-devel' 'libkeyfinder-devel' 'flac-devel' 'lame' 'libmp3lame-devel' 'libvorbis-devel' 'portaudio-devel' 'portmidi-devel' 'protobuf-devel'
+'librubberband-devel' 'libsndfile-devel' 'libdjinterop0-devel' 'ffmpeg-7-libavcodec-devel' 'ffmpeg-7-libavdevice-devel' 'opusfile-devel' 'soundtouch-devel' 'libtag-devel' 'libupower-glib-devel'
+'ms-gsl-devel' 'qtkeychain-qt5-devel' 'liblilv-0-devel' 'libmad-devel' 'libmodplug-devel' 'libusb-1_0-devel' 'libhidapi-devel' 'wavpack-devel' 'vamp-plugin-sdk' 'faad2-devel''sqlite3' 'sqlite3-devel')
 
 # Optional Packages
 declare -a pkg_opt=('cmake' 'gtk3-devel' 'libdrm-devel' 'libinput-devel' 'libqt5-qtwayland-devel' 'libqt5-qdbus' 'libqt5-qtsvg-devel'
@@ -211,7 +214,6 @@ declare -a repo_file=('azhou' 'mantarimay' 'packman' 'repo-debug' 'repo-non-oss'
 
 declare -a repo_url=(
     'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed'
-    'https://download.opensuse.org/repositories/home:/AZhou/openSUSE_Tumbleweed'
     'https://download.opensuse.org/repositories/home:/mantarimay:/sway/standard/'
     'https://download.sublimetext.com/rpm/stable/x86_64'
     'https://packages.microsoft.com/yumrepos/vscode'
@@ -374,7 +376,7 @@ out_msg title 'Installing Applications'
 
 	# hyprland-qtutils
 	#------------------------------------------------------------
-	out_msg title in hyprcursor
+	out_msg title in hyprland-qtutils
 		cd $DIR_DPLY_BUILD
 		git clone https://github.com/hyprwm/hyprland-qtutils && cd hyprland-qtutils
 			cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -S . -B ./build
